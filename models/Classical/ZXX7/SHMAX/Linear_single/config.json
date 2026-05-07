@@ -1,0 +1,27 @@
+{
+  "well": "ZXX7",
+  "target": "SHMAX",
+  "model": "Linear_single",
+  "split_mode": "last20",
+  "n_train": 2621,
+  "n_test": 655,
+  "features": [
+    "DTC",
+    "DTS",
+    "DEN",
+    "GR",
+    "CNL",
+    "LLD",
+    "LLS",
+    "RMSC",
+    "CAL"
+  ],
+  "n_features": 9,
+  "elapsed_sec": 0.0,
+  "r2_train": 0.0492,
+  "r2_test": -0.1668,
+  "mae_test": 834.1492,
+  "formula_or_arch": "-0.05987 * LLD + -575.7",
+  "feature_importance": null,
+  "feature_used": "LLD"
+}

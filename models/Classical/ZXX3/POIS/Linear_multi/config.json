@@ -1,0 +1,27 @@
+{
+  "well": "ZXX3",
+  "target": "POIS",
+  "model": "Linear_multi",
+  "split_mode": "last20",
+  "n_train": 3266,
+  "n_test": 816,
+  "features": [
+    "DTC",
+    "DTS",
+    "DEN",
+    "GR",
+    "CNL",
+    "LLD",
+    "LLS",
+    "RMSC",
+    "CAL"
+  ],
+  "n_features": 9,
+  "elapsed_sec": 0.0,
+  "r2_train": 0.9929,
+  "r2_test": 0.8344,
+  "mae_test": 0.0101,
+  "formula_or_arch": "linear_multi",
+  "feature_importance": null,
+  "feature_used": null
+}

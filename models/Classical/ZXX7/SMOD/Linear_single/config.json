@@ -1,0 +1,27 @@
+{
+  "well": "ZXX7",
+  "target": "SMOD",
+  "model": "Linear_single",
+  "split_mode": "last20",
+  "n_train": 2621,
+  "n_test": 655,
+  "features": [
+    "DTC",
+    "DTS",
+    "DEN",
+    "GR",
+    "CNL",
+    "LLD",
+    "LLS",
+    "RMSC",
+    "CAL"
+  ],
+  "n_features": 9,
+  "elapsed_sec": 0.0,
+  "r2_train": 0.9428,
+  "r2_test": 0.9337,
+  "mae_test": 1.1686,
+  "formula_or_arch": "-0.281 * DTS + 51.59",
+  "feature_importance": null,
+  "feature_used": "DTS"
+}

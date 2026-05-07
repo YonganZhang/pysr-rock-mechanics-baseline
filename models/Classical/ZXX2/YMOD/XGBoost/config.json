@@ -1,0 +1,37 @@
+{
+  "well": "ZXX2",
+  "target": "YMOD",
+  "model": "XGBoost",
+  "split_mode": "last20",
+  "n_train": 2140,
+  "n_test": 535,
+  "features": [
+    "DTC",
+    "DTS",
+    "DEN",
+    "GR",
+    "CNL",
+    "LLD",
+    "LLS",
+    "RMSC",
+    "CAL"
+  ],
+  "n_features": 9,
+  "elapsed_sec": 0.57,
+  "r2_train": 0.9751,
+  "r2_test": 0.5562,
+  "mae_test": 8529.096,
+  "formula_or_arch": "XGB(n=300, depth=4, lr=0.05, reg)",
+  "feature_importance": {
+    "DTC": 0.08814013749361038,
+    "DTS": 0.7118227481842041,
+    "DEN": 0.028261318802833557,
+    "GR": 0.013511084020137787,
+    "CNL": 0.01578177884221077,
+    "LLD": 0.05788423866033554,
+    "LLS": 0.017882520332932472,
+    "RMSC": 0.05316636338829994,
+    "CAL": 0.013549779541790485
+  },
+  "feature_used": null
+}

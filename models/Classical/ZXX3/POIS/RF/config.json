@@ -1,0 +1,37 @@
+{
+  "well": "ZXX3",
+  "target": "POIS",
+  "model": "RF",
+  "split_mode": "last20",
+  "n_train": 3266,
+  "n_test": 816,
+  "features": [
+    "DTC",
+    "DTS",
+    "DEN",
+    "GR",
+    "CNL",
+    "LLD",
+    "LLS",
+    "RMSC",
+    "CAL"
+  ],
+  "n_features": 9,
+  "elapsed_sec": 0.45,
+  "r2_train": 0.9992,
+  "r2_test": 0.9236,
+  "mae_test": 0.0052,
+  "formula_or_arch": "RF(n=300, depth=10, leaf=5)",
+  "feature_importance": {
+    "DTC": 0.00010508921144819992,
+    "DTS": 0.00026192352881442184,
+    "DEN": 0.0001847387285971394,
+    "GR": 5.174279524077022e-05,
+    "CNL": 2.421026014839292e-05,
+    "LLD": 1.1144134002680655e-05,
+    "LLS": 9.764873699926528e-06,
+    "RMSC": 0.9993177003976679,
+    "CAL": 3.368607038055528e-05
+  },
+  "feature_used": null
+}

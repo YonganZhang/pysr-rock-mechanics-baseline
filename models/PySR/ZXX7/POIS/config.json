@@ -1,0 +1,38 @@
+{
+  "well": "ZXX7",
+  "target": "POIS",
+  "model": "PySR",
+  "n_full": 3276,
+  "n_train": 2621,
+  "n_test": 655,
+  "depth_train_range": [
+    4060.0,
+    4322.0
+  ],
+  "depth_test_range": [
+    4322.1,
+    4387.5
+  ],
+  "features": [
+    "DTC",
+    "DTS",
+    "DEN",
+    "GR",
+    "CNL",
+    "LLD",
+    "LLS",
+    "RMSC",
+    "CAL"
+  ],
+  "n_features": 9,
+  "pysr_niter": 80,
+  "pysr_populations": 20,
+  "pysr_maxsize": 30,
+  "elapsed_sec": 377.3,
+  "r2_train": 0.9935,
+  "r2_test": 0.995,
+  "mae_train": 0.0006,
+  "mae_test": 0.0024,
+  "complexity": 11,
+  "formula": "(((-2.02123 / (DTS / DTC)) + 1.0900091) / RMSC) + 0.29482532"
+}

@@ -1,0 +1,27 @@
+{
+  "well": "ZXX3",
+  "target": "SHMAX",
+  "model": "MLP_BP",
+  "split_mode": "last20",
+  "n_train": 3266,
+  "n_test": 816,
+  "features": [
+    "DTC",
+    "DTS",
+    "DEN",
+    "GR",
+    "CNL",
+    "LLD",
+    "LLS",
+    "RMSC",
+    "CAL"
+  ],
+  "n_features": 9,
+  "elapsed_sec": 6.34,
+  "r2_train": 0.8004,
+  "r2_test": -20.9761,
+  "mae_test": 21.2279,
+  "formula_or_arch": "MLP-BP(128,64,32, adaptive_lr, ES)",
+  "feature_importance": null,
+  "feature_used": null
+}

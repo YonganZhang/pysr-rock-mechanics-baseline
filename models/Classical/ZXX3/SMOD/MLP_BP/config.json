@@ -1,0 +1,27 @@
+{
+  "well": "ZXX3",
+  "target": "SMOD",
+  "model": "MLP_BP",
+  "split_mode": "last20",
+  "n_train": 3266,
+  "n_test": 816,
+  "features": [
+    "DTC",
+    "DTS",
+    "DEN",
+    "GR",
+    "CNL",
+    "LLD",
+    "LLS",
+    "RMSC",
+    "CAL"
+  ],
+  "n_features": 9,
+  "elapsed_sec": 2.23,
+  "r2_train": 0.997,
+  "r2_test": -0.012,
+  "mae_test": 3.5791,
+  "formula_or_arch": "MLP-BP(128,64,32, adaptive_lr, ES)",
+  "feature_importance": null,
+  "feature_used": null
+}

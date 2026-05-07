@@ -1,0 +1,29 @@
+# 核心数值
+numpy>=2.0
+pandas>=2.0
+scipy>=1.10
+scikit-learn>=1.5
+
+# 符号回归
+pysr>=1.5
+gplearn>=0.4
+
+# 黑盒 ML
+xgboost>=2.0
+
+# 绘图
+matplotlib>=3.8
+seaborn>=0.13
+
+# 可解释性（SHAP 选用）
+shap>=0.50
+
+# 工具
+tabulate>=0.9
+defusedxml>=0.7
+
+# Optional: KAN (V2 历史对比，新版不依赖)
+# pykan>=0.2
+
+# Optional: pyoperon (高性能 GP-SR，配置较复杂)
+# pyoperon>=0.6

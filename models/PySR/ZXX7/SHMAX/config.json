@@ -1,0 +1,38 @@
+{
+  "well": "ZXX7",
+  "target": "SHMAX",
+  "model": "PySR",
+  "n_full": 3276,
+  "n_train": 2621,
+  "n_test": 655,
+  "depth_train_range": [
+    4060.0,
+    4322.0
+  ],
+  "depth_test_range": [
+    4322.1,
+    4387.5
+  ],
+  "features": [
+    "DTC",
+    "DTS",
+    "DEN",
+    "GR",
+    "CNL",
+    "LLD",
+    "LLS",
+    "RMSC",
+    "CAL"
+  ],
+  "n_features": 9,
+  "pysr_niter": 80,
+  "pysr_populations": 20,
+  "pysr_maxsize": 30,
+  "elapsed_sec": 381.7,
+  "r2_train": 0.9127,
+  "r2_test": -37993593557.4829,
+  "mae_train": 327.8042,
+  "mae_test": 9468408.5432,
+  "complexity": 13,
+  "formula": "(((DTC / 0.57367563) - GR) * -2.7994628) * (DTS - (GR - CNL))"
+}

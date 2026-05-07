@@ -1,0 +1,37 @@
+{
+  "well": "ZXX7",
+  "target": "SHMAX",
+  "model": "RF",
+  "split_mode": "last20",
+  "n_train": 2621,
+  "n_test": 655,
+  "features": [
+    "DTC",
+    "DTS",
+    "DEN",
+    "GR",
+    "CNL",
+    "LLD",
+    "LLS",
+    "RMSC",
+    "CAL"
+  ],
+  "n_features": 9,
+  "elapsed_sec": 0.49,
+  "r2_train": 0.9911,
+  "r2_test": -11.9024,
+  "mae_test": 2492.9355,
+  "formula_or_arch": "RF(n=300, depth=10, leaf=5)",
+  "feature_importance": {
+    "DTC": 0.003580529114056353,
+    "DTS": 0.0020933232225373096,
+    "DEN": 0.0003167253517310098,
+    "GR": 0.9911628865683509,
+    "CNL": 0.00019478534930715652,
+    "LLD": 0.00048071915301644376,
+    "LLS": 0.00021600386440580915,
+    "RMSC": 0.0010577806303747287,
+    "CAL": 0.000897246746220373
+  },
+  "feature_used": null
+}

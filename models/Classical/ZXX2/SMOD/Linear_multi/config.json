@@ -1,0 +1,27 @@
+{
+  "well": "ZXX2",
+  "target": "SMOD",
+  "model": "Linear_multi",
+  "split_mode": "last20",
+  "n_train": 2140,
+  "n_test": 535,
+  "features": [
+    "DTC",
+    "DTS",
+    "DEN",
+    "GR",
+    "CNL",
+    "LLD",
+    "LLS",
+    "RMSC",
+    "CAL"
+  ],
+  "n_features": 9,
+  "elapsed_sec": 0.0,
+  "r2_train": 0.8739,
+  "r2_test": -0.5208,
+  "mae_test": 2.0737,
+  "formula_or_arch": "linear_multi",
+  "feature_importance": null,
+  "feature_used": null
+}

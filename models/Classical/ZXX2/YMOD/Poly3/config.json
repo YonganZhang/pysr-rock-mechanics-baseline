@@ -1,0 +1,27 @@
+{
+  "well": "ZXX2",
+  "target": "YMOD",
+  "model": "Poly3",
+  "split_mode": "last20",
+  "n_train": 2140,
+  "n_test": 535,
+  "features": [
+    "DTC",
+    "DTS",
+    "DEN",
+    "GR",
+    "CNL",
+    "LLD",
+    "LLS",
+    "RMSC",
+    "CAL"
+  ],
+  "n_features": 9,
+  "elapsed_sec": 0.03,
+  "r2_train": 0.9435,
+  "r2_test": -37680342381096.36,
+  "mae_test": 6747614784.4736,
+  "formula_or_arch": "Poly(deg=3)",
+  "feature_importance": null,
+  "feature_used": null
+}

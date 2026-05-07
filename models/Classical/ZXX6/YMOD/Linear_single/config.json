@@ -1,0 +1,27 @@
+{
+  "well": "ZXX6",
+  "target": "YMOD",
+  "model": "Linear_single",
+  "split_mode": "last20",
+  "n_train": 915,
+  "n_test": 229,
+  "features": [
+    "DTC",
+    "DTS",
+    "DEN",
+    "GR",
+    "CNL",
+    "LLD",
+    "LLS",
+    "RMSC",
+    "CAL"
+  ],
+  "n_features": 9,
+  "elapsed_sec": 0.0,
+  "r2_train": 0.9515,
+  "r2_test": 0.7806,
+  "mae_test": 4377.8967,
+  "formula_or_arch": "-978.1 * DTC + 1.089e+05",
+  "feature_importance": null,
+  "feature_used": "DTC"
+}

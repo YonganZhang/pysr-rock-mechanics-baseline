@@ -1,0 +1,321 @@
+﻿well,target,model,split,r2_train,r2_test,formula,well_desens
+ZXX3,SMOD,PySR,OOD,0.9986,0.9994,((687.1306 / (DTS + -39.603275)) + -2.1329703) * DEN,WellB
+ZXX3,SHMAX,PySR,OOD,0.1807,0.4468,RMSC * 68.64286,WellB
+ZXX3,YMOD,PySR,OOD,0.9984,0.9978,((-7.5019225e6 / (DTS / 31.438822)) * DEN) / ((-116.46385 / RMSC) - (DTS + -64.7196)),WellB
+ZXX3,POIS,PySR,OOD,0.9995,0.9998,((-2.9638143 / RMSC) - -2.1267357) / RMSC,WellB
+ZXX2,SMOD,PySR,OOD,0.8591,0.4633,((DTC / (-1250.5509 / DTS)) + ((RMSC * -5.245918) + 22.29083)) - (DEN * -3.0975068),WellA
+ZXX2,SHMAX,PySR,OOD,0.7592,0.8321,((-1.058707 / LLS) - -175.90143) + ((CNL + DTS) * -0.3778503),WellA
+ZXX2,YMOD,PySR,OOD,0.8406,0.9571,((3.3563843e8 / ((1.6425742 / LLS) + DTC)) / DTS) + 6001.3936,WellA
+ZXX2,POIS,PySR,OOD,0.9997,0.9994,((-3.015982 / RMSC) - -2.173627) / RMSC,WellA
+ZXX7,SMOD,PySR,OOD,0.9994,0.9995,(((757.7159 / (DTS - 40.42858)) + -3.355225) * (DEN * 0.87455577)) + DEN,WellD
+ZXX7,SHMAX,PySR,OOD,0.9127,-37993593557.4829,(((DTC / 0.57367563) - GR) * -2.7994628) * (DTS - (GR - CNL)),WellD
+ZXX7,YMOD,PySR,OOD,0.9947,0.9715,(DTS * (-2895.532 + (DTS * 8.938052))) + ((DEN * 16504.393) + 218789.55),WellD
+ZXX7,POIS,PySR,OOD,0.9935,0.995,(((-2.02123 / (DTS / DTC)) + 1.0900091) / RMSC) + 0.29482532,WellD
+ZXX6,SMOD,PySR,OOD,0.9929,0.7765,((DTS * -0.28092703) - (DEN * -6.1396136)) + 34.49578,WellC
+ZXX6,SHMAX,PySR,OOD,0.9157,-0.0365,(RMSC * ((DEN * -4.5375595) + (59.63627 - (DTS / -18.818878)))) + (CNL * -0.21030429),WellC
+ZXX6,YMOD,PySR,OOD,0.9963,0.9951,(((GR + 31367.688) + (((((DTC + -487.32227) * DTC) - (-30555.922 - (RMSC * -5755.155))) * (132.84103 / DTC)) + DTC)) * DEN) + (0.49135017 - 763.7753),WellC
+ZXX6,POIS,PySR,OOD,0.9994,0.9987,((-3.0561342 / RMSC) + 2.2148435) / RMSC,WellC
+ZXX3,SMOD,PySR,Random,0.9993,0.9993,DEN * ((719.99976 / (DTS + -37.70976)) - 2.3317435),WellB
+ZXX3,SHMAX,PySR,Random,0.5905,0.6136,(((CNL * -0.18852259) - -48.43506) * RMSC) - -43.83805,WellB
+ZXX3,YMOD,PySR,Random,0.9978,0.9978,(((25327.975 / DEN) + ((DTS * 124.001656) + -32244.53)) * (239.57208 / (DEN - DTC))) + 14436.932,WellB
+ZXX3,POIS,PySR,Random,0.9999,0.9999,((RMSC + -1.4533873) / ((RMSC + RMSC) + -2.0889924)) + 0.037385732,WellB
+ZXX2,SMOD,PySR,Random,0.9789,0.9842,(DEN * 376.3053) / (DTS + -59.320988),WellA
+ZXX2,SHMAX,PySR,Random,0.9445,0.9556,((-1.3317935 / LLS) + (10410.099 / DTS)) + 42.486134,WellA
+ZXX2,YMOD,PySR,Random,0.9749,0.9817,(DEN * ((DTS * 7687.4634) / DTC)) / ((DTS + -43.425564) / 93.2069),WellA
+ZXX2,POIS,PySR,Random,0.9998,0.9998,-1.8815302 / ((0.0012631121 - DTC) / (DTC * (0.23368815 - ((((0.90845656 / RMSC) / RMSC) / RMSC) / RMSC)))),WellA
+ZXX7,SMOD,PySR,Random,0.9996,0.9995,(DEN * (92372.94 / DTS)) / DTS,WellD
+ZXX7,SHMAX,PySR,Random,0.6369,0.6383,LLS - (1054.4047 / LLS),WellD
+ZXX7,YMOD,PySR,Random,0.9993,0.999,(1.205398e7 / (((DTC - ((-223.34592 / DEN) - DTS)) - 183.1863) + DTS)) + ((DEN * 7953.083) - 35754.465),WellD
+ZXX7,POIS,PySR,Random,0.9976,0.9978,((-3.0342097 / RMSC) + 2.1835315) / RMSC,WellD
+ZXX6,SMOD,PySR,Random,0.9995,0.9996,((92375.195 / DTS) / DTS) * DEN,WellC
+ZXX6,SHMAX,PySR,Random,0.9346,-88.4059,(CAL - (((DTC + ((LLD / DTC) / (-46.77305 + ((DTC / (DTC + -46.77305)) - DTC)))) / (DTC + -46.77305)) - (DTC / CNL))) * CAL,WellC
+ZXX6,YMOD,PySR,Random,0.999,0.9989,((-3701.6545 / ((DTC * 39.647064) + -1863.0929)) + ((((DTS * 10.230051) + -1838.1072) * (-1194.0991 / DTC)) - -4750.251)) * DEN,WellC
+ZXX6,POIS,PySR,Random,0.9989,0.9997,((-3.0327525 / RMSC) - -2.2009037) / RMSC,WellC
+ZXX3,SMOD,gplearn,OOD,0.9832,0.9196,"(scaled) sub(mul(0.153, DEN), DTS)",WellB
+ZXX3,SHMAX,gplearn,OOD,0.4699,-85.6578,"(scaled) div(div(sub(sub(sub(RMSC, mul(CNL, 0.379)), mul(-0.429, DTC)), div(add(add(CAL, mul(add(CAL, mul(-0.429, sub(sub(sub(sub(sub(sub(RMSC, CNL), mul(DEN, sub(add(div(CAL, 1.448), sub(s",WellB
+ZXX3,YMOD,gplearn,OOD,0.9853,0.9002,"(scaled) sub(mul(0.165, sub(add(DEN, DTS), DTC)), DTS)",WellB
+ZXX3,POIS,gplearn,OOD,0.9931,-6390.8016,"(scaled) div(div(RMSC, div(LLS, LLD)), div(LLS, LLD))",WellB
+ZXX2,SMOD,gplearn,OOD,0.8958,0.0662,"(scaled) sub(div(mul(-0.279, mul(1.142, add(sub(div(sub(sub(add(sub(div(mul(-0.279, mul(sub(sub(sub(sub(div(LLD, DTS), DTS), DTS), DTS), DTS), mul(add(LLD, RMSC), RMSC))), 2.512), GR), add(",WellA
+ZXX2,SHMAX,gplearn,OOD,0.7721,0.9235,"(scaled) sub(div(add(DTC, add(CNL, LLD)), -2.956), div(div(div(div(div(div(div(div(div(div(div(DTS, 1.087), 1.087), 1.087), 1.087), 1.087), 1.087), 1.087), 1.087), 1.087), 1.087), 1.087))",WellA
+ZXX2,YMOD,gplearn,OOD,0.8846,-54.7065,"(scaled) sub(mul(0.219, add(DTS, sub(mul(0.196, add(DTS, add(add(add(mul(DTS, mul(RMSC, LLS)), add(DEN, sub(add(DTS, add(DEN, sub(sub(DTS, add(RMSC, CNL)), DTC))), DTC))), sub(LLS, add(RMSC",WellA
+ZXX2,POIS,gplearn,OOD,0.9843,0.8967,(scaled) RMSC,WellA
+ZXX7,SMOD,gplearn,OOD,0.942,0.9274,"(scaled) sub(sub(DEN, DTS), DEN)",WellD
+ZXX7,SHMAX,gplearn,OOD,0.9292,-4143551.8476,"(scaled) sub(sub(GR, div(div(CNL, 2.354), sub(2.341, div(div(sub(sub(DTS, GR), RMSC), 2.341), sub(2.341, DTC))))), div(div(div(CNL, sub(2.354, div(mul(RMSC, CAL), 2.315))), sub(2.341, DTC))",WellD
+ZXX7,YMOD,gplearn,OOD,0.9786,-1157.7271,"(scaled) sub(mul(mul(add(add(add(add(add(add(add(sub(mul(2.984, GR), RMSC), div(DEN, RMSC)), div(DEN, RMSC)), div(DEN, mul(DEN, CAL))), mul(-1.240, DEN)), sub(GR, LLD)), div(-1.569, RMSC)),",WellD
+ZXX7,POIS,gplearn,OOD,0.9648,0.9106,"(scaled) mul(0.987, RMSC)",WellD
+ZXX6,SMOD,gplearn,OOD,0.9929,0.7744,"(scaled) sub(mul(0.220, DEN), div(DTS, div(-2.115, -2.057)))",WellC
+ZXX6,SHMAX,gplearn,OOD,0.9511,0.0008,"(scaled) add(add(add(add(sub(RMSC, mul(0.196, DEN)), mul(mul(DTS, DEN), 0.073)), mul(add(sub(RMSC, sub(DEN, DTS)), add(sub(RMSC, mul(sub(sub(RMSC, sub(DEN, DTS)), CNL), add(RMSC, sub(DTS, C",WellC
+ZXX6,YMOD,gplearn,OOD,0.9822,0.7148,"(scaled) sub(mul(DEN, 0.317), div(DTS, 1.048))",WellC
+ZXX6,POIS,gplearn,OOD,0.996,0.8787,(scaled) RMSC,WellC
+ZXX3,SMOD,gplearn,Random,0.9781,0.9777,"(scaled) sub(div(div(sub(RMSC, CNL), 2.752), 2.495), div(div(div(DTS, 1.048), 1.065), 1.048))",WellB
+ZXX3,SHMAX,gplearn,Random,0.6269,0.6622,"(scaled) sub(sub(add(RMSC, DTC), div(DTS, 1.581)), div(CNL, 2.045))",WellB
+ZXX3,YMOD,gplearn,Random,0.9818,0.9824,"(scaled) sub(mul(sub(mul(sub(sub(sub(sub(sub(sub(sub(sub(sub(sub(sub(sub(CNL, div(RMSC, DEN)), div(CNL, DEN)), div(RMSC, DEN)), div(RMSC, DEN)), div(CNL, div(DEN, RMSC))), sub(RMSC, DTC)), ",WellB
+ZXX3,POIS,gplearn,Random,0.9815,0.9839,"(scaled) add(add(LLD, RMSC), sub(sub(CNL, LLS), CNL))",WellB
+ZXX2,SMOD,gplearn,Random,0.9789,0.9821,"(scaled) sub(mul(mul(add(2.438, DTS), sub(DTS, mul(0.817, mul(add(add(2.238, LLD), DTC), 0.196)))), 0.196), DTS)",WellA
+ZXX2,SHMAX,gplearn,Random,0.9183,0.5848,"(scaled) sub(div(mul(DTS, sub(DEN, GR)), sub(sub(sub(sub(div(mul(mul(-1.338, DTS), sub(GR, sub(DEN, sub(div(mul(mul(-1.338, DTS), sub(GR, sub(DEN, GR))), DEN), DTS)))), sub(sub(-1.338, DTS)",WellA
+ZXX2,YMOD,gplearn,Random,0.9781,0.9813,"(scaled) sub(mul(0.228, add(add(LLS, add(sub(mul(0.228, add(add(add(DEN, DTS), mul(sub(DTC, -0.661), add(add(LLS, DTC), DTS))), sub(sub(add(DEN, DTS), sub(DTC, -0.661)), sub(DTC, mul(0.228,",WellA
+ZXX2,POIS,gplearn,Random,0.9623,0.9652,"(scaled) mul(0.987, mul(0.987, RMSC))",WellA
+ZXX7,SMOD,gplearn,Random,0.998,0.9981,"(scaled) sub(mul(add(add(sub(DTS, sub(1.515, DTS)), mul(DTS, DTS)), add(add(add(DEN, add(sub(DTS, sub(sub(sub(sub(1.421, DTC), DTS), DEN), add(DTS, LLD))), mul(DTS, DTS))), mul(DTS, DTS)), ",WellD
+ZXX7,SHMAX,gplearn,Random,0.6395,0.6322,"(scaled) mul(sub(sub(add(add(add(DTC, -0.097), GR), mul(sub(LLS, DTC), GR)), DTS), DTC), LLD)",WellD
+ZXX7,YMOD,gplearn,Random,0.9983,0.9983,"(scaled) sub(mul(add(add(sub(mul(DEN, DTC), DTS), sub(add(sub(sub(sub(sub(sub(LLS, RMSC), DTS), DTS), add(DTS, mul(DTC, DTS))), DTS), sub(sub(sub(2.031, DEN), add(DEN, mul(DTS, DTS))), mul(",WellD
+ZXX7,POIS,gplearn,Random,0.9978,0.998,"(scaled) div(mul(-2.315, div(mul(-2.315, sub(RMSC, -0.119)), sub(mul(-0.119, RMSC), 2.419))), sub(mul(div(mul(-2.315, sub(RMSC, -0.119)), sub(mul(-0.119, RMSC), 2.419)), -0.146), 2.419))",WellD
+ZXX6,SMOD,gplearn,Random,0.9854,0.9861,"(scaled) sub(mul(0.196, add(DEN, sub(DTS, CNL))), DTS)",WellC
+ZXX6,SHMAX,gplearn,Random,0.9195,-120.0764,"(scaled) mul(mul(mul(div(mul(mul(RMSC, sub(CNL, DTC)), mul(add(DEN, GR), 0.421)), sub(CNL, DTC)), div(CAL, DTS)), mul(mul(mul(mul(RMSC, sub(CNL, DTC)), mul(mul(sub(add(LLS, sub(add(LLS, div",WellC
+ZXX6,YMOD,gplearn,Random,0.9731,0.9759,"(scaled) div(DTC, -1.005)",WellC
+ZXX6,POIS,gplearn,Random,0.995,0.9955,"(scaled) add(mul(-0.160, mul(add(mul(-0.160, add(sub(DEN, DTC), div(add(add(add(1.204, RMSC), add(add(1.435, RMSC), sub(CNL, LLS))), RMSC), DEN))), RMSC), DEN)), RMSC)",WellC
+ZXX3,SMOD,Linear_single,OOD,0.9602,0.9044,-0.2509 * DTS + 47.41,WellB
+ZXX3,SMOD,SVR_rbf,OOD,0.9979,-0.0252,"SVR(rbf, {'svr__C': 10, 'svr__gamma': 0.1}, y-scaled)",WellB
+ZXX3,SMOD,XGBoost,OOD,0.9988,0.8441,"XGB(n=300, depth=4, lr=0.05, reg)",WellB
+ZXX3,SMOD,Poly3,OOD,0.9989,0.9616,Poly(deg=3),WellB
+ZXX3,SMOD,Poly2,OOD,0.9987,0.9824,Poly(deg=2),WellB
+ZXX3,SMOD,RF,OOD,0.9985,0.8851,"RF(n=300, depth=10, leaf=5)",WellB
+ZXX3,SMOD,MLP_BP,OOD,0.997,-0.012,"MLP-BP(128,64,32, adaptive_lr, ES)",WellB
+ZXX3,SMOD,Linear_multi,OOD,0.9901,-33.4669,linear_multi,WellB
+ZXX3,SHMAX,Linear_single,OOD,0.2466,0.5545,45.26 * RMSC + 42.8,WellB
+ZXX3,SHMAX,SVR_rbf,OOD,0.725,-0.4035,"SVR(rbf, {'svr__C': 10, 'svr__gamma': 0.1}, y-scaled)",WellB
+ZXX3,SHMAX,XGBoost,OOD,0.9112,0.4096,"XGB(n=300, depth=4, lr=0.05, reg)",WellB
+ZXX3,SHMAX,Poly3,OOD,0.6762,-889.3116,Poly(deg=3),WellB
+ZXX3,SHMAX,Poly2,OOD,0.5467,-11.3046,Poly(deg=2),WellB
+ZXX3,SHMAX,RF,OOD,0.934,0.1747,"RF(n=300, depth=10, leaf=5)",WellB
+ZXX3,SHMAX,MLP_BP,OOD,0.8004,-20.9761,"MLP-BP(128,64,32, adaptive_lr, ES)",WellB
+ZXX3,SHMAX,Linear_multi,OOD,0.4022,-2922.1945,linear_multi,WellB
+ZXX3,YMOD,Linear_single,OOD,0.8398,0.9247,-1263 * DTC + 1.277e+05,WellB
+ZXX3,YMOD,SVR_rbf,OOD,0.9979,-0.0229,"SVR(rbf, {'svr__C': 10, 'svr__gamma': 0.1}, y-scaled)",WellB
+ZXX3,YMOD,XGBoost,OOD,0.9986,0.8012,"XGB(n=300, depth=4, lr=0.05, reg)",WellB
+ZXX3,YMOD,Poly3,OOD,0.9987,0.9677,Poly(deg=3),WellB
+ZXX3,YMOD,Poly2,OOD,0.9985,0.9865,Poly(deg=2),WellB
+ZXX3,YMOD,RF,OOD,0.9983,0.8163,"RF(n=300, depth=10, leaf=5)",WellB
+ZXX3,YMOD,MLP_BP,OOD,0.9888,0.6575,"MLP-BP(128,64,32, adaptive_lr, ES)",WellB
+ZXX3,YMOD,Linear_multi,OOD,0.9907,-25.1552,linear_multi,WellB
+ZXX3,POIS,Linear_single,OOD,0.9925,0.9571,0.3425 * RMSC + -0.3503,WellB
+ZXX3,POIS,SVR_rbf,OOD,0.9974,0.1086,"SVR(rbf, {'svr__C': 1, 'svr__gamma': 0.1}, y-scaled)",WellB
+ZXX3,POIS,XGBoost,OOD,0.9947,0.8428,"XGB(n=300, depth=4, lr=0.05, reg)",WellB
+ZXX3,POIS,Poly3,OOD,0.9995,0.706,Poly(deg=3),WellB
+ZXX3,POIS,Poly2,OOD,0.9995,0.9952,Poly(deg=2),WellB
+ZXX3,POIS,RF,OOD,0.9992,0.9236,"RF(n=300, depth=10, leaf=5)",WellB
+ZXX3,POIS,MLP_BP,OOD,0.9036,-22.4741,"MLP-BP(128,64,32, adaptive_lr, ES)",WellB
+ZXX3,POIS,Linear_multi,OOD,0.9929,0.8344,linear_multi,WellB
+ZXX2,SMOD,Linear_single,OOD,0.7701,0.5068,-0.1125 * DTS + 28.1,WellA
+ZXX2,SMOD,SVR_rbf,OOD,0.9328,-0.6251,"SVR(rbf, {'svr__C': 1, 'svr__gamma': 0.1}, y-scaled)",WellA
+ZXX2,SMOD,XGBoost,OOD,0.9787,0.2766,"XGB(n=300, depth=4, lr=0.05, reg)",WellA
+ZXX2,SMOD,Poly3,OOD,0.9484,-33927331086128.953,Poly(deg=3),WellA
+ZXX2,SMOD,Poly2,OOD,0.9192,-4484161.4991,Poly(deg=2),WellA
+ZXX2,SMOD,RF,OOD,0.9802,0.2741,"RF(n=300, depth=10, leaf=5)",WellA
+ZXX2,SMOD,MLP_BP,OOD,0.9883,-1418.9555,"MLP-BP(128,64,32, adaptive_lr, ES)",WellA
+ZXX2,SMOD,Linear_multi,OOD,0.8739,-0.5208,linear_multi,WellA
+ZXX2,SHMAX,Linear_single,OOD,0.6111,0.6782,-0.3944 * DTS + 170.8,WellA
+ZXX2,SHMAX,SVR_rbf,OOD,0.8947,-1.0626,"SVR(rbf, {'svr__C': 1, 'svr__gamma': 0.1}, y-scaled)",WellA
+ZXX2,SHMAX,XGBoost,OOD,0.9718,0.0468,"XGB(n=300, depth=4, lr=0.05, reg)",WellA
+ZXX2,SHMAX,Poly3,OOD,0.9388,-13209640388542.727,Poly(deg=3),WellA
+ZXX2,SHMAX,Poly2,OOD,0.9018,-8233869.935,Poly(deg=2),WellA
+ZXX2,SHMAX,RF,OOD,0.9501,0.1404,"RF(n=300, depth=10, leaf=5)",WellA
+ZXX2,SHMAX,MLP_BP,OOD,0.9646,-13459.919,"MLP-BP(128,64,32, adaptive_lr, ES)",WellA
+ZXX2,SHMAX,Linear_multi,OOD,0.7982,-5.3964,linear_multi,WellA
+ZXX2,YMOD,Linear_single,OOD,0.6082,0.6993,-583.7 * DTC + 8.058e+04,WellA
+ZXX2,YMOD,SVR_rbf,OOD,0.9216,-0.4254,"SVR(rbf, {'svr__C': 1, 'svr__gamma': 0.1}, y-scaled)",WellA
+ZXX2,YMOD,XGBoost,OOD,0.9751,0.5562,"XGB(n=300, depth=4, lr=0.05, reg)",WellA
+ZXX2,YMOD,Poly3,OOD,0.9435,-37680342381096.36,Poly(deg=3),WellA
+ZXX2,YMOD,Poly2,OOD,0.9117,-4864002.0202,Poly(deg=2),WellA
+ZXX2,YMOD,RF,OOD,0.975,0.3668,"RF(n=300, depth=10, leaf=5)",WellA
+ZXX2,YMOD,MLP_BP,OOD,0.9351,-1310.6548,"MLP-BP(128,64,32, adaptive_lr, ES)",WellA
+ZXX2,YMOD,Linear_multi,OOD,0.8599,-0.5225,linear_multi,WellA
+ZXX2,POIS,Linear_single,OOD,0.9844,0.8928,0.3068 * RMSC + -0.2756,WellA
+ZXX2,POIS,SVR_rbf,OOD,0.9975,-0.0157,"SVR(rbf, {'svr__C': 10, 'svr__gamma': 0.1}, y-scaled)",WellA
+ZXX2,POIS,XGBoost,OOD,0.998,0.7743,"XGB(n=300, depth=4, lr=0.05, reg)",WellA
+ZXX2,POIS,Poly3,OOD,0.9998,-48722729062.0546,Poly(deg=3),WellA
+ZXX2,POIS,Poly2,OOD,0.9997,-20207.2786,Poly(deg=2),WellA
+ZXX2,POIS,RF,OOD,0.9998,0.8232,"RF(n=300, depth=10, leaf=5)",WellA
+ZXX2,POIS,MLP_BP,OOD,0.9772,-42346.9369,"MLP-BP(128,64,32, adaptive_lr, ES)",WellA
+ZXX2,POIS,Linear_multi,OOD,0.9873,0.2855,linear_multi,WellA
+ZXX7,SMOD,Linear_single,OOD,0.9428,0.9337,-0.281 * DTS + 51.59,WellD
+ZXX7,SMOD,SVR_rbf,OOD,0.9982,-0.0431,"SVR(rbf, {'svr__C': 100, 'svr__gamma': 0.1}, y-scaled)",WellD
+ZXX7,SMOD,XGBoost,OOD,0.9996,0.9347,"XGB(n=300, depth=4, lr=0.05, reg)",WellD
+ZXX7,SMOD,Poly3,OOD,0.9996,-869503419487.4015,Poly(deg=3),WellD
+ZXX7,SMOD,Poly2,OOD,0.9996,-261180.0101,Poly(deg=2),WellD
+ZXX7,SMOD,RF,OOD,0.9987,0.9372,"RF(n=300, depth=10, leaf=5)",WellD
+ZXX7,SMOD,MLP_BP,OOD,0.9985,-511.8566,"MLP-BP(128,64,32, adaptive_lr, ES)",WellD
+ZXX7,SMOD,Linear_multi,OOD,0.9949,-25.1281,linear_multi,WellD
+ZXX7,SHMAX,Linear_single,OOD,0.0492,-0.1668,-0.05987 * LLD + -575.7,WellD
+ZXX7,SHMAX,SVR_rbf,OOD,0.9962,-36.4801,"SVR(rbf, {'svr__C': 100, 'svr__gamma': 0.1}, y-scaled)",WellD
+ZXX7,SHMAX,XGBoost,OOD,1.0,-12.343,"XGB(n=300, depth=4, lr=0.05, reg)",WellD
+ZXX7,SHMAX,Poly3,OOD,0.9983,-1368843122737721.5,Poly(deg=3),WellD
+ZXX7,SHMAX,Poly2,OOD,0.979,-62798186364.8674,Poly(deg=2),WellD
+ZXX7,SHMAX,RF,OOD,0.9911,-11.9024,"RF(n=300, depth=10, leaf=5)",WellD
+ZXX7,SHMAX,MLP_BP,OOD,0.9984,-41360.0179,"MLP-BP(128,64,32, adaptive_lr, ES)",WellD
+ZXX7,SHMAX,Linear_multi,OOD,0.89,-36785.0195,linear_multi,WellD
+ZXX7,YMOD,Linear_single,OOD,0.9339,0.9072,-688.8 * DTS + 1.283e+05,WellD
+ZXX7,YMOD,SVR_rbf,OOD,0.9983,-0.0211,"SVR(rbf, {'svr__C': 100, 'svr__gamma': 0.1}, y-scaled)",WellD
+ZXX7,YMOD,XGBoost,OOD,0.9996,0.9235,"XGB(n=300, depth=4, lr=0.05, reg)",WellD
+ZXX7,YMOD,Poly3,OOD,0.9997,-989130189726.5144,Poly(deg=3),WellD
+ZXX7,YMOD,Poly2,OOD,0.9996,-666626.9368,Poly(deg=2),WellD
+ZXX7,YMOD,RF,OOD,0.998,0.9383,"RF(n=300, depth=10, leaf=5)",WellD
+ZXX7,YMOD,MLP_BP,OOD,0.9972,-285.0133,"MLP-BP(128,64,32, adaptive_lr, ES)",WellD
+ZXX7,YMOD,Linear_multi,OOD,0.9952,-9.3838,linear_multi,WellD
+ZXX7,POIS,Linear_single,OOD,0.9648,0.9083,0.3244 * RMSC + -0.3077,WellD
+ZXX7,POIS,SVR_rbf,OOD,0.9964,-0.3326,"SVR(rbf, {'svr__C': 100, 'svr__gamma': 0.1}, y-scaled)",WellD
+ZXX7,POIS,XGBoost,OOD,0.9908,0.9127,"XGB(n=300, depth=4, lr=0.05, reg)",WellD
+ZXX7,POIS,Poly3,OOD,0.9962,-616175308109.3303,Poly(deg=3),WellD
+ZXX7,POIS,Poly2,OOD,0.9951,-1669188.0309,Poly(deg=2),WellD
+ZXX7,POIS,RF,OOD,0.9925,0.8955,"RF(n=300, depth=10, leaf=5)",WellD
+ZXX7,POIS,MLP_BP,OOD,0.9051,-17248.9031,"MLP-BP(128,64,32, adaptive_lr, ES)",WellD
+ZXX7,POIS,Linear_multi,OOD,0.9723,-18.6615,linear_multi,WellD
+ZXX6,SMOD,Linear_single,OOD,0.8879,0.7748,-0.3773 * DTC + 43.57,WellC
+ZXX6,SMOD,SVR_rbf,OOD,0.995,-1.2508,"SVR(rbf, {'svr__C': 1, 'svr__gamma': 0.1}, y-scaled)",WellC
+ZXX6,SMOD,XGBoost,OOD,0.9987,0.0452,"XGB(n=300, depth=4, lr=0.05, reg)",WellC
+ZXX6,SMOD,Poly3,OOD,0.999,-1701356202731.0242,Poly(deg=3),WellC
+ZXX6,SMOD,Poly2,OOD,0.9982,-887866.8893,Poly(deg=2),WellC
+ZXX6,SMOD,RF,OOD,0.9941,-0.0414,"RF(n=300, depth=10, leaf=5)",WellC
+ZXX6,SMOD,MLP_BP,OOD,0.9955,-35313.7033,"MLP-BP(128,64,32, adaptive_lr, ES)",WellC
+ZXX6,SMOD,Linear_multi,OOD,0.994,-41.8947,linear_multi,WellC
+ZXX6,SHMAX,Linear_single,OOD,0.0218,0.0714,-0.01658 * LLD + 88.68,WellC
+ZXX6,SHMAX,SVR_rbf,OOD,0.9937,-0.027,"SVR(rbf, {'svr__C': 100, 'svr__gamma': 0.1}, y-scaled)",WellC
+ZXX6,SHMAX,XGBoost,OOD,0.9946,-0.029,"XGB(n=300, depth=4, lr=0.05, reg)",WellC
+ZXX6,SHMAX,Poly3,OOD,0.9783,-87429818389.8513,Poly(deg=3),WellC
+ZXX6,SHMAX,Poly2,OOD,0.9546,-2787.0096,Poly(deg=2),WellC
+ZXX6,SHMAX,RF,OOD,0.9869,-0.0287,"RF(n=300, depth=10, leaf=5)",WellC
+ZXX6,SHMAX,MLP_BP,OOD,0.9664,-81.8721,"MLP-BP(128,64,32, adaptive_lr, ES)",WellC
+ZXX6,SHMAX,Linear_multi,OOD,0.9245,-0.0067,linear_multi,WellC
+ZXX6,YMOD,Linear_single,OOD,0.9515,0.7806,-978.1 * DTC + 1.089e+05,WellC
+ZXX6,YMOD,SVR_rbf,OOD,0.9956,-1.0392,"SVR(rbf, {'svr__C': 1, 'svr__gamma': 0.1}, y-scaled)",WellC
+ZXX6,YMOD,XGBoost,OOD,0.999,0.0668,"XGB(n=300, depth=4, lr=0.05, reg)",WellC
+ZXX6,YMOD,Poly3,OOD,0.9991,-1492383817235.672,Poly(deg=3),WellC
+ZXX6,YMOD,Poly2,OOD,0.9984,-576837.9963,Poly(deg=2),WellC
+ZXX6,YMOD,RF,OOD,0.9943,-0.0978,"RF(n=300, depth=10, leaf=5)",WellC
+ZXX6,YMOD,MLP_BP,OOD,0.9964,-8591.6648,"MLP-BP(128,64,32, adaptive_lr, ES)",WellC
+ZXX6,YMOD,Linear_multi,OOD,0.9944,-23.6177,linear_multi,WellC
+ZXX6,POIS,Linear_single,OOD,0.996,0.8803,0.4803 * RMSC + -0.5716,WellC
+ZXX6,POIS,SVR_rbf,OOD,0.9971,-0.1311,"SVR(rbf, {'svr__C': 10, 'svr__gamma': 0.1}, y-scaled)",WellC
+ZXX6,POIS,XGBoost,OOD,0.9892,0.57,"XGB(n=300, depth=4, lr=0.05, reg)",WellC
+ZXX6,POIS,Poly3,OOD,0.9995,-75120404727.7694,Poly(deg=3),WellC
+ZXX6,POIS,Poly2,OOD,0.9995,-486809.6662,Poly(deg=2),WellC
+ZXX6,POIS,RF,OOD,0.998,0.6894,"RF(n=300, depth=10, leaf=5)",WellC
+ZXX6,POIS,MLP_BP,OOD,0.9209,-181407.514,"MLP-BP(128,64,32, adaptive_lr, ES)",WellC
+ZXX6,POIS,Linear_multi,OOD,0.9972,0.0016,linear_multi,WellC
+ZXX3,SMOD,Linear_single,Random,0.9437,0.943,-0.2958 * DTS + 53.28,WellB
+ZXX3,SMOD,SVR_rbf,Random,0.9977,0.9969,"SVR(rbf, {'svr__C': 1, 'svr__gamma': 0.1}, y-scaled)",WellB
+ZXX3,SMOD,XGBoost,Random,0.9995,0.9984,"XGB(n=300, depth=4, lr=0.05, reg)",WellB
+ZXX3,SMOD,Poly3,Random,0.9995,0.9994,Poly(deg=3),WellB
+ZXX3,SMOD,Poly2,Random,0.9992,0.999,Poly(deg=2),WellB
+ZXX3,SMOD,RF,Random,0.9993,0.9984,"RF(n=300, depth=10, leaf=5)",WellB
+ZXX3,SMOD,MLP_BP,Random,0.9988,0.9973,"MLP-BP(128,64,32, adaptive_lr, ES)",WellB
+ZXX3,SMOD,Linear_multi,Random,0.9865,0.9867,linear_multi,WellB
+ZXX3,SHMAX,Linear_single,Random,0.4788,0.5156,49.1 * RMSC + 36.59,WellB
+ZXX3,SHMAX,SVR_rbf,Random,0.817,0.851,"SVR(rbf, {'svr__C': 10, 'svr__gamma': 'scale'}, y-scaled)",WellB
+ZXX3,SHMAX,XGBoost,Random,0.9427,0.9301,"XGB(n=300, depth=4, lr=0.05, reg)",WellB
+ZXX3,SHMAX,Poly3,Random,0.7738,0.7939,Poly(deg=3),WellB
+ZXX3,SHMAX,Poly2,Random,0.7272,0.7605,Poly(deg=2),WellB
+ZXX3,SHMAX,RF,Random,0.9492,0.9264,"RF(n=300, depth=10, leaf=5)",WellB
+ZXX3,SHMAX,MLP_BP,Random,0.8873,0.8917,"MLP-BP(128,64,32, adaptive_lr, ES)",WellB
+ZXX3,SHMAX,Linear_multi,Random,0.6538,0.6909,linear_multi,WellB
+ZXX3,YMOD,Linear_single,Random,0.9192,0.9293,-1276 * DTC + 1.293e+05,WellB
+ZXX3,YMOD,SVR_rbf,Random,0.9977,0.9972,"SVR(rbf, {'svr__C': 1, 'svr__gamma': 0.1}, y-scaled)",WellB
+ZXX3,YMOD,XGBoost,Random,0.9994,0.9984,"XGB(n=300, depth=4, lr=0.05, reg)",WellB
+ZXX3,YMOD,Poly3,Random,0.9995,0.9994,Poly(deg=3),WellB
+ZXX3,YMOD,Poly2,Random,0.9993,0.9991,Poly(deg=2),WellB
+ZXX3,YMOD,RF,Random,0.9993,0.9982,"RF(n=300, depth=10, leaf=5)",WellB
+ZXX3,YMOD,MLP_BP,Random,0.9971,0.9949,"MLP-BP(128,64,32, adaptive_lr, ES)",WellB
+ZXX3,YMOD,Linear_multi,Random,0.9866,0.9871,linear_multi,WellB
+ZXX3,POIS,Linear_single,Random,0.976,0.9786,0.3686 * RMSC + -0.3989,WellB
+ZXX3,POIS,SVR_rbf,Random,0.9974,0.9959,"SVR(rbf, {'svr__C': 1, 'svr__gamma': 0.1}, y-scaled)",WellB
+ZXX3,POIS,XGBoost,Random,0.9985,0.9993,"XGB(n=300, depth=4, lr=0.05, reg)",WellB
+ZXX3,POIS,Poly3,Random,0.9999,0.9998,Poly(deg=3),WellB
+ZXX3,POIS,Poly2,Random,0.9998,0.9998,Poly(deg=2),WellB
+ZXX3,POIS,RF,Random,0.9999,0.9998,"RF(n=300, depth=10, leaf=5)",WellB
+ZXX3,POIS,MLP_BP,Random,0.9859,0.9725,"MLP-BP(128,64,32, adaptive_lr, ES)",WellB
+ZXX3,POIS,Linear_multi,Random,0.9913,0.9928,linear_multi,WellB
+ZXX2,SMOD,Linear_single,Random,0.8982,0.9115,-0.2274 * DTS + 45.56,WellA
+ZXX2,SMOD,SVR_rbf,Random,0.9927,0.9926,"SVR(rbf, {'svr__C': 10, 'svr__gamma': 0.1}, y-scaled)",WellA
+ZXX2,SMOD,XGBoost,Random,0.9972,0.9956,"XGB(n=300, depth=4, lr=0.05, reg)",WellA
+ZXX2,SMOD,Poly3,Random,0.9917,0.9923,Poly(deg=3),WellA
+ZXX2,SMOD,Poly2,Random,0.9897,0.9921,Poly(deg=2),WellA
+ZXX2,SMOD,RF,Random,0.9968,0.9933,"RF(n=300, depth=10, leaf=5)",WellA
+ZXX2,SMOD,MLP_BP,Random,0.9936,0.9941,"MLP-BP(128,64,32, adaptive_lr, ES)",WellA
+ZXX2,SMOD,Linear_multi,Random,0.9641,0.9682,linear_multi,WellA
+ZXX2,SHMAX,Linear_single,Random,0.879,0.8899,-0.6077 * DTS + 203.5,WellA
+ZXX2,SHMAX,SVR_rbf,Random,0.9772,0.9814,"SVR(rbf, {'svr__C': 1, 'svr__gamma': 'scale'}, y-scaled)",WellA
+ZXX2,SHMAX,XGBoost,Random,0.9937,0.9897,"XGB(n=300, depth=4, lr=0.05, reg)",WellA
+ZXX2,SHMAX,Poly3,Random,0.9827,0.9801,Poly(deg=3),WellA
+ZXX2,SHMAX,Poly2,Random,0.9778,0.9825,Poly(deg=2),WellA
+ZXX2,SHMAX,RF,Random,0.9866,0.9728,"RF(n=300, depth=10, leaf=5)",WellA
+ZXX2,SHMAX,MLP_BP,Random,0.9886,0.9887,"MLP-BP(128,64,32, adaptive_lr, ES)",WellA
+ZXX2,SHMAX,Linear_multi,Random,0.9461,0.9439,linear_multi,WellA
+ZXX2,YMOD,Linear_single,Random,0.872,0.8987,-903.1 * DTC + 1.071e+05,WellA
+ZXX2,YMOD,SVR_rbf,Random,0.9876,0.9897,"SVR(rbf, {'svr__C': 1, 'svr__gamma': 0.1}, y-scaled)",WellA
+ZXX2,YMOD,XGBoost,Random,0.9964,0.9953,"XGB(n=300, depth=4, lr=0.05, reg)",WellA
+ZXX2,YMOD,Poly3,Random,0.9909,0.9862,Poly(deg=3),WellA
+ZXX2,YMOD,Poly2,Random,0.9872,0.99,Poly(deg=2),WellA
+ZXX2,YMOD,RF,Random,0.9952,0.9924,"RF(n=300, depth=10, leaf=5)",WellA
+ZXX2,YMOD,MLP_BP,Random,0.9845,0.9875,"MLP-BP(128,64,32, adaptive_lr, ES)",WellA
+ZXX2,YMOD,Linear_multi,Random,0.958,0.9625,linear_multi,WellA
+ZXX2,POIS,Linear_single,Random,0.9623,0.9653,0.3489 * RMSC + -0.3554,WellA
+ZXX2,POIS,SVR_rbf,Random,0.9944,0.9944,"SVR(rbf, {'svr__C': 1, 'svr__gamma': 0.1}, y-scaled)",WellA
+ZXX2,POIS,XGBoost,Random,0.9983,0.9983,"XGB(n=300, depth=4, lr=0.05, reg)",WellA
+ZXX2,POIS,Poly3,Random,0.9999,0.9998,Poly(deg=3),WellA
+ZXX2,POIS,Poly2,Random,0.9993,0.9995,Poly(deg=2),WellA
+ZXX2,POIS,RF,Random,0.998,0.9979,"RF(n=300, depth=10, leaf=5)",WellA
+ZXX2,POIS,MLP_BP,Random,0.9958,0.9826,"MLP-BP(128,64,32, adaptive_lr, ES)",WellA
+ZXX2,POIS,Linear_multi,Random,0.9734,0.9787,linear_multi,WellA
+ZXX7,SMOD,Linear_single,Random,0.9409,0.9428,-0.2719 * DTS + 50.48,WellD
+ZXX7,SMOD,SVR_rbf,Random,0.9967,0.9956,"SVR(rbf, {'svr__C': 1, 'svr__gamma': 0.1}, y-scaled)",WellD
+ZXX7,SMOD,XGBoost,Random,0.9996,0.9986,"XGB(n=300, depth=4, lr=0.05, reg)",WellD
+ZXX7,SMOD,Poly3,Random,0.9997,0.9994,Poly(deg=3),WellD
+ZXX7,SMOD,Poly2,Random,0.9996,0.9994,Poly(deg=2),WellD
+ZXX7,SMOD,RF,Random,0.9989,0.9977,"RF(n=300, depth=10, leaf=5)",WellD
+ZXX7,SMOD,MLP_BP,Random,0.9989,0.9969,"MLP-BP(128,64,32, adaptive_lr, ES)",WellD
+ZXX7,SMOD,Linear_multi,Random,0.9862,0.9869,linear_multi,WellD
+ZXX7,SHMAX,Linear_single,Random,0.4944,0.5167,0.9654 * LLS + -227.7,WellD
+ZXX7,SHMAX,SVR_rbf,Random,0.942,0.9574,"SVR(rbf, {'svr__C': 10, 'svr__gamma': 0.1}, y-scaled)",WellD
+ZXX7,SHMAX,XGBoost,Random,0.9996,0.9707,"XGB(n=300, depth=4, lr=0.05, reg)",WellD
+ZXX7,SHMAX,Poly3,Random,0.962,0.8918,Poly(deg=3),WellD
+ZXX7,SHMAX,Poly2,Random,0.8919,0.8396,Poly(deg=2),WellD
+ZXX7,SHMAX,RF,Random,0.9848,0.9598,"RF(n=300, depth=10, leaf=5)",WellD
+ZXX7,SHMAX,MLP_BP,Random,0.9935,0.9556,"MLP-BP(128,64,32, adaptive_lr, ES)",WellD
+ZXX7,SHMAX,Linear_multi,Random,0.7279,0.7262,linear_multi,WellD
+ZXX7,YMOD,Linear_single,Random,0.9232,0.9189,-702.7 * DTS + 1.302e+05,WellD
+ZXX7,YMOD,SVR_rbf,Random,0.9968,0.9959,"SVR(rbf, {'svr__C': 1, 'svr__gamma': 0.1}, y-scaled)",WellD
+ZXX7,YMOD,XGBoost,Random,0.9996,0.9977,"XGB(n=300, depth=4, lr=0.05, reg)",WellD
+ZXX7,YMOD,Poly3,Random,0.9997,0.9994,Poly(deg=3),WellD
+ZXX7,YMOD,Poly2,Random,0.9996,0.9994,Poly(deg=2),WellD
+ZXX7,YMOD,RF,Random,0.9984,0.9971,"RF(n=300, depth=10, leaf=5)",WellD
+ZXX7,YMOD,MLP_BP,Random,0.9976,0.996,"MLP-BP(128,64,32, adaptive_lr, ES)",WellD
+ZXX7,YMOD,Linear_multi,Random,0.9863,0.9876,linear_multi,WellD
+ZXX7,POIS,Linear_single,Random,0.964,0.9665,0.3663 * RMSC + -0.3865,WellD
+ZXX7,POIS,SVR_rbf,Random,0.9979,0.9964,"SVR(rbf, {'svr__C': 10, 'svr__gamma': 0.1}, y-scaled)",WellD
+ZXX7,POIS,XGBoost,Random,0.9973,0.997,"XGB(n=300, depth=4, lr=0.05, reg)",WellD
+ZXX7,POIS,Poly3,Random,0.999,0.9986,Poly(deg=3),WellD
+ZXX7,POIS,Poly2,Random,0.9986,0.9984,Poly(deg=2),WellD
+ZXX7,POIS,RF,Random,0.9986,0.9981,"RF(n=300, depth=10, leaf=5)",WellD
+ZXX7,POIS,MLP_BP,Random,0.9899,0.9565,"MLP-BP(128,64,32, adaptive_lr, ES)",WellD
+ZXX7,POIS,Linear_multi,Random,0.9837,0.9834,linear_multi,WellD
+ZXX6,SMOD,Linear_single,Random,0.9627,0.963,-0.4876 * DTC + 51.51,WellC
+ZXX6,SMOD,SVR_rbf,Random,0.9972,0.9943,"SVR(rbf, {'svr__C': 10, 'svr__gamma': 0.1}, y-scaled)",WellC
+ZXX6,SMOD,XGBoost,Random,0.9997,0.999,"XGB(n=300, depth=4, lr=0.05, reg)",WellC
+ZXX6,SMOD,Poly3,Random,0.9997,0.9993,Poly(deg=3),WellC
+ZXX6,SMOD,Poly2,Random,0.9995,0.9994,Poly(deg=2),WellC
+ZXX6,SMOD,RF,Random,0.9988,0.9976,"RF(n=300, depth=10, leaf=5)",WellC
+ZXX6,SMOD,MLP_BP,Random,0.9985,0.9973,"MLP-BP(128,64,32, adaptive_lr, ES)",WellC
+ZXX6,SMOD,Linear_multi,Random,0.9945,0.993,linear_multi,WellC
+ZXX6,SHMAX,Linear_single,Random,0.0109,-77.4955,-487.4 * DEN + 1354,WellC
+ZXX6,SHMAX,SVR_rbf,Random,0.0721,-9.7193,"SVR(rbf, {'svr__C': 1, 'svr__gamma': 0.1}, y-scaled)",WellC
+ZXX6,SHMAX,XGBoost,Random,1.0,-571.9001,"XGB(n=300, depth=4, lr=0.05, reg)",WellC
+ZXX6,SHMAX,Poly3,Random,0.9904,-596.6529,Poly(deg=3),WellC
+ZXX6,SHMAX,Poly2,Random,0.9248,-1288.7398,Poly(deg=2),WellC
+ZXX6,SHMAX,RF,Random,0.8415,-910.8645,"RF(n=300, depth=10, leaf=5)",WellC
+ZXX6,SHMAX,MLP_BP,Random,0.0708,-59.9252,"MLP-BP(128,64,32, adaptive_lr, ES)",WellC
+ZXX6,SHMAX,Linear_multi,Random,0.2905,-1275.0282,linear_multi,WellC
+ZXX6,YMOD,Linear_single,Random,0.9731,0.9761,-1326 * DTC + 1.337e+05,WellC
+ZXX6,YMOD,SVR_rbf,Random,0.997,0.9936,"SVR(rbf, {'svr__C': 100, 'svr__gamma': 0.1}, y-scaled)",WellC
+ZXX6,YMOD,XGBoost,Random,0.9998,0.9988,"XGB(n=300, depth=4, lr=0.05, reg)",WellC
+ZXX6,YMOD,Poly3,Random,0.9998,0.9992,Poly(deg=3),WellC
+ZXX6,YMOD,Poly2,Random,0.9995,0.9989,Poly(deg=2),WellC
+ZXX6,YMOD,RF,Random,0.9985,0.9975,"RF(n=300, depth=10, leaf=5)",WellC
+ZXX6,YMOD,MLP_BP,Random,0.9951,0.9951,"MLP-BP(128,64,32, adaptive_lr, ES)",WellC
+ZXX6,YMOD,Linear_multi,Random,0.9938,0.9935,linear_multi,WellC
+ZXX6,POIS,Linear_single,Random,0.9705,0.9761,0.393 * RMSC + -0.4244,WellC
+ZXX6,POIS,SVR_rbf,Random,0.9973,0.9929,"SVR(rbf, {'svr__C': 10, 'svr__gamma': 0.1}, y-scaled)",WellC
+ZXX6,POIS,XGBoost,Random,0.9974,0.9952,"XGB(n=300, depth=4, lr=0.05, reg)",WellC
+ZXX6,POIS,Poly3,Random,0.9998,0.9992,Poly(deg=3),WellC
+ZXX6,POIS,Poly2,Random,0.9997,0.9993,Poly(deg=2),WellC
+ZXX6,POIS,RF,Random,0.9994,0.9981,"RF(n=300, depth=10, leaf=5)",WellC
+ZXX6,POIS,MLP_BP,Random,0.9507,0.8898,"MLP-BP(128,64,32, adaptive_lr, ES)",WellC
+ZXX6,POIS,Linear_multi,Random,0.9963,0.9963,linear_multi,WellC

@@ -1,0 +1,27 @@
+{
+  "well": "ZXX7",
+  "target": "SMOD",
+  "model": "Poly3",
+  "split_mode": "last20",
+  "n_train": 2621,
+  "n_test": 655,
+  "features": [
+    "DTC",
+    "DTS",
+    "DEN",
+    "GR",
+    "CNL",
+    "LLD",
+    "LLS",
+    "RMSC",
+    "CAL"
+  ],
+  "n_features": 9,
+  "elapsed_sec": 0.01,
+  "r2_train": 0.9996,
+  "r2_test": -869503419487.4015,
+  "mae_test": 178438.3659,
+  "formula_or_arch": "Poly(deg=3)",
+  "feature_importance": null,
+  "feature_used": null
+}

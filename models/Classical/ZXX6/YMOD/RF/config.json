@@ -1,0 +1,37 @@
+{
+  "well": "ZXX6",
+  "target": "YMOD",
+  "model": "RF",
+  "split_mode": "last20",
+  "n_train": 915,
+  "n_test": 229,
+  "features": [
+    "DTC",
+    "DTS",
+    "DEN",
+    "GR",
+    "CNL",
+    "LLD",
+    "LLS",
+    "RMSC",
+    "CAL"
+  ],
+  "n_features": 9,
+  "elapsed_sec": 0.34,
+  "r2_train": 0.9943,
+  "r2_test": -0.0978,
+  "mae_test": 9194.7289,
+  "formula_or_arch": "RF(n=300, depth=10, leaf=5)",
+  "feature_importance": {
+    "DTC": 0.9598268459739845,
+    "DTS": 0.02409788130342211,
+    "DEN": 0.006383418206389199,
+    "GR": 0.0013166844451440608,
+    "CNL": 0.0014798907881189449,
+    "LLD": 0.0023382266931292065,
+    "LLS": 0.001370276507988742,
+    "RMSC": 0.0014083332888066465,
+    "CAL": 0.0017784427930165542
+  },
+  "feature_used": null
+}

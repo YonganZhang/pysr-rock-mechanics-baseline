@@ -1,0 +1,38 @@
+{
+  "well": "ZXX2",
+  "target": "SMOD",
+  "model": "PySR",
+  "n_full": 2675,
+  "n_train": 2140,
+  "n_test": 535,
+  "depth_train_range": [
+    4023.0,
+    4236.8999
+  ],
+  "depth_test_range": [
+    4237.0,
+    4290.3999
+  ],
+  "features": [
+    "DTC",
+    "DTS",
+    "DEN",
+    "GR",
+    "CNL",
+    "LLD",
+    "LLS",
+    "RMSC",
+    "CAL"
+  ],
+  "n_features": 9,
+  "pysr_niter": 80,
+  "pysr_populations": 20,
+  "pysr_maxsize": 30,
+  "elapsed_sec": 59.0,
+  "r2_train": 0.8591,
+  "r2_test": 0.4633,
+  "mae_train": 0.2991,
+  "mae_test": 3.4111,
+  "complexity": 15,
+  "formula": "((DTC / (-1250.5509 / DTS)) + ((RMSC * -5.245918) + 22.29083)) - (DEN * -3.0975068)"
+}

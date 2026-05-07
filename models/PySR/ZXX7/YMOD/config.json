@@ -1,0 +1,38 @@
+{
+  "well": "ZXX7",
+  "target": "YMOD",
+  "model": "PySR",
+  "n_full": 3276,
+  "n_train": 2621,
+  "n_test": 655,
+  "depth_train_range": [
+    4060.0,
+    4322.0
+  ],
+  "depth_test_range": [
+    4322.1,
+    4387.5
+  ],
+  "features": [
+    "DTC",
+    "DTS",
+    "DEN",
+    "GR",
+    "CNL",
+    "LLD",
+    "LLS",
+    "RMSC",
+    "CAL"
+  ],
+  "n_features": 9,
+  "pysr_niter": 80,
+  "pysr_populations": 20,
+  "pysr_maxsize": 30,
+  "elapsed_sec": 383.5,
+  "r2_train": 0.9947,
+  "r2_test": 0.9715,
+  "mae_train": 299.2721,
+  "mae_test": 2097.4354,
+  "complexity": 13,
+  "formula": "(DTS * (-2895.532 + (DTS * 8.938052))) + ((DEN * 16504.393) + 218789.55)"
+}

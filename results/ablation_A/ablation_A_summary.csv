@@ -1,0 +1,741 @@
+﻿well,target,removed_feature,model,n_features,features,r2_train,r2_test,elapsed_sec,formula
+ZXX7,YMOD,(none),Linear_single,9,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9339,0.9072,0.0,-688.8 * DTS + 1.283e+05
+ZXX7,YMOD,(none),Linear_multi,9,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9952,-9.3838,0.0,linear_multi
+ZXX7,YMOD,(none),RF,9,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.998,0.9383,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX7,YMOD,(none),XGBoost,9,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9996,0.9235,0.9,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX7,YMOD,(none),MLP_BP,9,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9972,-285.0133,4.2,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX7,SMOD,(none),Linear_single,9,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9428,0.9337,0.0,-0.281 * DTS + 51.59
+ZXX7,SMOD,(none),Linear_multi,9,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9949,-25.1281,0.0,linear_multi
+ZXX7,SMOD,(none),RF,9,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9987,0.9372,0.5,"RF(n=300, depth=10, leaf=5)"
+ZXX7,SMOD,(none),XGBoost,9,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9996,0.9347,0.3,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX7,SMOD,(none),MLP_BP,9,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9985,-511.8566,1.4,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX7,POIS,(none),Linear_single,9,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9648,0.9083,0.0,0.3244 * RMSC + -0.3077
+ZXX7,POIS,(none),Linear_multi,9,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9723,-18.6615,0.0,linear_multi
+ZXX7,POIS,(none),RF,9,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9925,0.8955,0.5,"RF(n=300, depth=10, leaf=5)"
+ZXX7,POIS,(none),XGBoost,9,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9908,0.9127,0.3,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX7,POIS,(none),MLP_BP,9,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9051,-17248.9031,2.4,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX7,SHMAX,(none),Linear_single,9,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.0492,-0.1668,0.0,-0.05987 * LLD + -575.7
+ZXX7,SHMAX,(none),Linear_multi,9,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.89,-36785.0195,0.0,linear_multi
+ZXX7,SHMAX,(none),RF,9,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9911,-11.9024,0.5,"RF(n=300, depth=10, leaf=5)"
+ZXX7,SHMAX,(none),XGBoost,9,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",1.0,-12.343,0.3,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX7,SHMAX,(none),MLP_BP,9,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9984,-41360.0179,6.4,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX2,YMOD,DTC,Linear_single,8,"['DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.7806,0.5959,0.0,-280.9 * DTS + 7.627e+04
+ZXX2,YMOD,DTC,Linear_multi,8,"['DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.8141,-1.6782,0.0,linear_multi
+ZXX2,YMOD,DTC,RF,8,"['DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9725,0.3348,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX2,YMOD,DTC,XGBoost,8,"['DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9713,0.4693,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX2,YMOD,DTC,MLP_BP,8,"['DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9108,-1398.1553,9.9,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX2,SMOD,DTC,Linear_single,8,"['DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.7701,0.5068,0.0,-0.1125 * DTS + 28.1
+ZXX2,SMOD,DTC,Linear_multi,8,"['DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.8326,-1.091,0.0,linear_multi
+ZXX2,SMOD,DTC,RF,8,"['DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9765,0.2427,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX2,SMOD,DTC,XGBoost,8,"['DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9732,0.3052,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX2,SMOD,DTC,MLP_BP,8,"['DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9842,-655.8138,7.2,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX2,POIS,DTC,Linear_single,8,"['DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9844,0.8928,0.0,0.3068 * RMSC + -0.2756
+ZXX2,POIS,DTC,Linear_multi,8,"['DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9868,-0.472,0.0,linear_multi
+ZXX2,POIS,DTC,RF,8,"['DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9998,0.8227,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX2,POIS,DTC,XGBoost,8,"['DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.998,0.7743,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX2,POIS,DTC,MLP_BP,8,"['DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9954,-4926.122,2.7,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX2,SHMAX,DTC,Linear_single,8,"['DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.6111,0.6782,0.0,-0.3944 * DTS + 170.8
+ZXX2,SHMAX,DTC,Linear_multi,8,"['DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.7772,-3.3597,0.0,linear_multi
+ZXX2,SHMAX,DTC,RF,8,"['DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9259,0.1284,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX2,SHMAX,DTC,XGBoost,8,"['DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9674,-0.0308,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX2,SHMAX,DTC,MLP_BP,8,"['DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9476,-12827.5258,4.8,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX3,YMOD,DTC,Linear_single,8,"['DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9496,0.835,0.0,-600.9 * DTS + 1.162e+05
+ZXX3,YMOD,DTC,Linear_multi,8,"['DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9893,-36.2348,0.0,linear_multi
+ZXX3,YMOD,DTC,RF,8,"['DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9978,0.8009,0.5,"RF(n=300, depth=10, leaf=5)"
+ZXX3,YMOD,DTC,XGBoost,8,"['DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9984,0.7904,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX3,YMOD,DTC,MLP_BP,8,"['DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9946,0.6883,5.2,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX3,SMOD,DTC,Linear_single,8,"['DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9602,0.9044,0.0,-0.2509 * DTS + 47.41
+ZXX3,SMOD,DTC,Linear_multi,8,"['DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9884,-49.6461,0.0,linear_multi
+ZXX3,SMOD,DTC,RF,8,"['DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9985,0.8839,0.5,"RF(n=300, depth=10, leaf=5)"
+ZXX3,SMOD,DTC,XGBoost,8,"['DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9987,0.8563,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX3,SMOD,DTC,MLP_BP,8,"['DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.998,0.5043,3.3,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX3,POIS,DTC,Linear_single,8,"['DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9925,0.9571,0.0,0.3425 * RMSC + -0.3503
+ZXX3,POIS,DTC,Linear_multi,8,"['DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9929,0.7654,0.0,linear_multi
+ZXX3,POIS,DTC,RF,8,"['DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9992,0.9245,0.5,"RF(n=300, depth=10, leaf=5)"
+ZXX3,POIS,DTC,XGBoost,8,"['DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9947,0.8402,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX3,POIS,DTC,MLP_BP,8,"['DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9767,-0.2892,2.9,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX3,SHMAX,DTC,Linear_single,8,"['DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.2466,0.5545,0.0,45.26 * RMSC + 42.8
+ZXX3,SHMAX,DTC,Linear_multi,8,"['DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.3981,-2553.227,0.0,linear_multi
+ZXX3,SHMAX,DTC,RF,8,"['DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9326,0.1604,0.5,"RF(n=300, depth=10, leaf=5)"
+ZXX3,SHMAX,DTC,XGBoost,8,"['DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9076,0.3702,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX3,SHMAX,DTC,MLP_BP,8,"['DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.7747,-33.3706,6.9,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX6,YMOD,DTC,Linear_single,8,"['DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.878,0.6008,0.0,-677 * DTS + 1.212e+05
+ZXX6,YMOD,DTC,Linear_multi,8,"['DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9944,-24.3135,0.0,linear_multi
+ZXX6,YMOD,DTC,RF,8,"['DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9934,-0.0841,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX6,YMOD,DTC,XGBoost,8,"['DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9984,0.1049,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX6,YMOD,DTC,MLP_BP,8,"['DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9965,-7206.3278,4.9,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX6,SMOD,DTC,Linear_single,8,"['DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9429,0.7076,0.0,-0.2802 * DTS + 50.62
+ZXX6,SMOD,DTC,Linear_multi,8,"['DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.994,-43.8601,0.0,linear_multi
+ZXX6,SMOD,DTC,RF,8,"['DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9947,-0.042,0.3,"RF(n=300, depth=10, leaf=5)"
+ZXX6,SMOD,DTC,XGBoost,8,"['DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9986,0.1267,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX6,SMOD,DTC,MLP_BP,8,"['DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9963,-26063.2189,1.8,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX6,POIS,DTC,Linear_single,8,"['DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.996,0.8803,0.0,0.4803 * RMSC + -0.5716
+ZXX6,POIS,DTC,Linear_multi,8,"['DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9968,0.1534,0.0,linear_multi
+ZXX6,POIS,DTC,RF,8,"['DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.998,0.689,0.3,"RF(n=300, depth=10, leaf=5)"
+ZXX6,POIS,DTC,XGBoost,8,"['DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9892,0.5698,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX6,POIS,DTC,MLP_BP,8,"['DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9703,-32166.7294,1.3,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX6,SHMAX,DTC,Linear_single,8,"['DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.0218,0.0714,0.0,-0.01658 * LLD + 88.68
+ZXX6,SHMAX,DTC,Linear_multi,8,"['DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9228,-0.0048,0.0,linear_multi
+ZXX6,SHMAX,DTC,RF,8,"['DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9868,-0.0287,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX6,SHMAX,DTC,XGBoost,8,"['DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9941,-0.029,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX6,SHMAX,DTC,MLP_BP,8,"['DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9245,-50.0811,2.4,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX7,YMOD,DTC,Linear_single,8,"['DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9339,0.9072,0.0,-688.8 * DTS + 1.283e+05
+ZXX7,YMOD,DTC,Linear_multi,8,"['DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.995,-6.1305,0.0,linear_multi
+ZXX7,YMOD,DTC,RF,8,"['DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.998,0.9269,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX7,YMOD,DTC,XGBoost,8,"['DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9995,0.9124,0.3,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX7,YMOD,DTC,MLP_BP,8,"['DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9948,-532.1136,3.6,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX7,SMOD,DTC,Linear_single,8,"['DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9428,0.9337,0.0,-0.281 * DTS + 51.59
+ZXX7,SMOD,DTC,Linear_multi,8,"['DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9941,-15.5438,0.0,linear_multi
+ZXX7,SMOD,DTC,RF,8,"['DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9987,0.9283,0.5,"RF(n=300, depth=10, leaf=5)"
+ZXX7,SMOD,DTC,XGBoost,8,"['DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9996,0.9451,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX7,SMOD,DTC,MLP_BP,8,"['DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9983,-1110.214,1.1,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX7,POIS,DTC,Linear_single,8,"['DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9648,0.9083,0.0,0.3244 * RMSC + -0.3077
+ZXX7,POIS,DTC,Linear_multi,8,"['DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9723,-17.9076,0.0,linear_multi
+ZXX7,POIS,DTC,RF,8,"['DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9921,0.9315,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX7,POIS,DTC,XGBoost,8,"['DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9898,0.8602,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX7,POIS,DTC,MLP_BP,8,"['DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9594,-1689.9708,1.7,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX7,SHMAX,DTC,Linear_single,8,"['DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.0492,-0.1668,0.0,-0.05987 * LLD + -575.7
+ZXX7,SHMAX,DTC,Linear_multi,8,"['DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.885,-40305.2429,0.0,linear_multi
+ZXX7,SHMAX,DTC,RF,8,"['DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9905,-11.6671,0.5,"RF(n=300, depth=10, leaf=5)"
+ZXX7,SHMAX,DTC,XGBoost,8,"['DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",1.0,-12.0032,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX7,SHMAX,DTC,MLP_BP,8,"['DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9979,-77059.7446,5.4,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX2,YMOD,DTS,Linear_single,8,"['DTC', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.6082,0.6993,0.0,-583.7 * DTC + 8.058e+04
+ZXX2,YMOD,DTS,Linear_multi,8,"['DTC', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.7869,0.4062,0.0,linear_multi
+ZXX2,YMOD,DTS,RF,8,"['DTC', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9575,0.4217,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX2,YMOD,DTS,XGBoost,8,"['DTC', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9596,0.5801,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX2,YMOD,DTS,MLP_BP,8,"['DTC', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.8393,-1203.2565,5.1,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX2,SMOD,DTS,Linear_single,8,"['DTC', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.511,0.5068,0.0,-0.2157 * DTC + 28.39
+ZXX2,SMOD,DTS,Linear_multi,8,"['DTC', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.8065,0.6229,0.0,linear_multi
+ZXX2,SMOD,DTS,RF,8,"['DTC', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9616,0.1539,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX2,SMOD,DTS,XGBoost,8,"['DTC', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9637,0.2747,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX2,SMOD,DTS,MLP_BP,8,"['DTC', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9758,-296.9918,5.1,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX2,POIS,DTS,Linear_single,8,"['DTC', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9844,0.8928,0.0,0.3068 * RMSC + -0.2756
+ZXX2,POIS,DTS,Linear_multi,8,"['DTC', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9871,0.5245,0.0,linear_multi
+ZXX2,POIS,DTS,RF,8,"['DTC', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9998,0.8226,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX2,POIS,DTS,XGBoost,8,"['DTC', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.998,0.7743,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX2,POIS,DTS,MLP_BP,8,"['DTC', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9966,-5851.5271,3.3,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX2,SHMAX,DTS,Linear_single,8,"['DTC', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.4699,0.6445,0.0,-0.8143 * DTC + 176.4
+ZXX2,SHMAX,DTS,Linear_multi,8,"['DTC', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.7242,-13.1991,0.0,linear_multi
+ZXX2,SHMAX,DTS,RF,8,"['DTC', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9391,0.0667,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX2,SHMAX,DTS,XGBoost,8,"['DTC', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9586,0.0437,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX2,SHMAX,DTS,MLP_BP,8,"['DTC', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9374,-11640.1753,4.2,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX3,YMOD,DTS,Linear_single,8,"['DTC', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.8398,0.9247,0.0,-1263 * DTC + 1.277e+05
+ZXX3,YMOD,DTS,Linear_multi,8,"['DTC', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9906,-26.9578,0.0,linear_multi
+ZXX3,YMOD,DTS,RF,8,"['DTC', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9955,0.8213,0.5,"RF(n=300, depth=10, leaf=5)"
+ZXX3,YMOD,DTS,XGBoost,8,"['DTC', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9976,0.5981,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX3,YMOD,DTS,MLP_BP,8,"['DTC', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9945,0.7383,4.6,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX3,SMOD,DTS,Linear_single,8,"['DTC', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.7804,0.8827,0.0,-0.5055 * DTC + 50.67
+ZXX3,SMOD,DTS,Linear_multi,8,"['DTC', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9899,-37.5087,0.0,linear_multi
+ZXX3,SMOD,DTS,RF,8,"['DTC', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9956,0.8652,0.5,"RF(n=300, depth=10, leaf=5)"
+ZXX3,SMOD,DTS,XGBoost,8,"['DTC', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9975,0.7065,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX3,SMOD,DTS,MLP_BP,8,"['DTC', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9978,0.7549,2.6,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX3,POIS,DTS,Linear_single,8,"['DTC', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9925,0.9571,0.0,0.3425 * RMSC + -0.3503
+ZXX3,POIS,DTS,Linear_multi,8,"['DTC', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9929,0.7686,0.0,linear_multi
+ZXX3,POIS,DTS,RF,8,"['DTC', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9992,0.9245,0.5,"RF(n=300, depth=10, leaf=5)"
+ZXX3,POIS,DTS,XGBoost,8,"['DTC', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9947,0.841,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX3,POIS,DTS,MLP_BP,8,"['DTC', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.988,-0.0061,3.8,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX3,SHMAX,DTS,Linear_single,8,"['DTC', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.2466,0.5545,0.0,45.26 * RMSC + 42.8
+ZXX3,SHMAX,DTS,Linear_multi,8,"['DTC', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.4002,-2717.7721,0.0,linear_multi
+ZXX3,SHMAX,DTS,RF,8,"['DTC', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9216,0.3205,0.5,"RF(n=300, depth=10, leaf=5)"
+ZXX3,SHMAX,DTS,XGBoost,8,"['DTC', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9085,0.4486,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX3,SHMAX,DTS,MLP_BP,8,"['DTC', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.7844,-5.6256,7.5,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX6,YMOD,DTS,Linear_single,8,"['DTC', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9515,0.7806,0.0,-978.1 * DTC + 1.089e+05
+ZXX6,YMOD,DTS,Linear_multi,8,"['DTC', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.993,-16.2778,0.0,linear_multi
+ZXX6,YMOD,DTS,RF,8,"['DTC', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9932,-0.0949,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX6,YMOD,DTS,XGBoost,8,"['DTC', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9986,0.0407,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX6,YMOD,DTS,MLP_BP,8,"['DTC', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9951,-11981.5345,5.0,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX6,SMOD,DTS,Linear_single,8,"['DTC', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.8879,0.7748,0.0,-0.3773 * DTC + 43.57
+ZXX6,SMOD,DTS,Linear_multi,8,"['DTC', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9926,-30.5149,0.0,linear_multi
+ZXX6,SMOD,DTS,RF,8,"['DTC', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.99,-0.0911,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX6,SMOD,DTS,XGBoost,8,"['DTC', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9976,-0.0191,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX6,SMOD,DTS,MLP_BP,8,"['DTC', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9956,-28073.7122,1.6,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX6,POIS,DTS,Linear_single,8,"['DTC', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.996,0.8803,0.0,0.4803 * RMSC + -0.5716
+ZXX6,POIS,DTS,Linear_multi,8,"['DTC', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9968,0.0361,0.0,linear_multi
+ZXX6,POIS,DTS,RF,8,"['DTC', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.998,0.6893,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX6,POIS,DTS,XGBoost,8,"['DTC', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9892,0.5698,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX6,POIS,DTS,MLP_BP,8,"['DTC', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9655,-20617.693,1.0,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX6,SHMAX,DTS,Linear_single,8,"['DTC', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.0218,0.0714,0.0,-0.01658 * LLD + 88.68
+ZXX6,SHMAX,DTS,Linear_multi,8,"['DTC', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9218,-0.0031,0.0,linear_multi
+ZXX6,SHMAX,DTS,RF,8,"['DTC', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9865,-0.0288,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX6,SHMAX,DTS,XGBoost,8,"['DTC', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9947,-0.029,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX6,SHMAX,DTS,MLP_BP,8,"['DTC', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9649,-51.3761,4.0,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX7,YMOD,DTS,Linear_single,8,"['DTC', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.6689,0.6188,0.0,-1781 * CNL + 6.772e+04
+ZXX7,YMOD,DTS,Linear_multi,8,"['DTC', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9952,-11.6836,0.0,linear_multi
+ZXX7,YMOD,DTS,RF,8,"['DTC', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.997,0.8141,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX7,YMOD,DTS,XGBoost,8,"['DTC', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9993,0.7617,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX7,YMOD,DTS,MLP_BP,8,"['DTC', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9949,-476.4213,2.7,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX7,SMOD,DTS,Linear_single,8,"['DTC', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.6584,0.6685,0.0,-0.7174 * CNL + 26.72
+ZXX7,SMOD,DTS,Linear_multi,8,"['DTC', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9949,-22.9871,0.0,linear_multi
+ZXX7,SMOD,DTS,RF,8,"['DTC', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.998,0.7382,0.5,"RF(n=300, depth=10, leaf=5)"
+ZXX7,SMOD,DTS,XGBoost,8,"['DTC', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9992,0.7656,0.3,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX7,SMOD,DTS,MLP_BP,8,"['DTC', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9984,-1106.3861,1.8,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX7,POIS,DTS,Linear_single,8,"['DTC', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9648,0.9083,0.0,0.3244 * RMSC + -0.3077
+ZXX7,POIS,DTS,Linear_multi,8,"['DTC', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9722,-16.9475,0.0,linear_multi
+ZXX7,POIS,DTS,RF,8,"['DTC', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9924,0.8856,0.5,"RF(n=300, depth=10, leaf=5)"
+ZXX7,POIS,DTS,XGBoost,8,"['DTC', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9904,0.9196,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX7,POIS,DTS,MLP_BP,8,"['DTC', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9883,-915.1389,3.0,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX7,SHMAX,DTS,Linear_single,8,"['DTC', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.0492,-0.1668,0.0,-0.05987 * LLD + -575.7
+ZXX7,SHMAX,DTS,Linear_multi,8,"['DTC', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.886,-40556.7149,0.0,linear_multi
+ZXX7,SHMAX,DTS,RF,8,"['DTC', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.991,-11.9397,0.5,"RF(n=300, depth=10, leaf=5)"
+ZXX7,SHMAX,DTS,XGBoost,8,"['DTC', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",1.0,-11.894,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX7,SHMAX,DTS,MLP_BP,8,"['DTC', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9977,-64894.6267,4.3,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX2,YMOD,DEN,Linear_single,8,"['DTC', 'DTS', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.6082,0.6993,0.0,-583.7 * DTC + 8.058e+04
+ZXX2,YMOD,DEN,Linear_multi,8,"['DTC', 'DTS', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.8515,-1.6669,0.0,linear_multi
+ZXX2,YMOD,DEN,RF,8,"['DTC', 'DTS', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9732,0.3787,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX2,YMOD,DEN,XGBoost,8,"['DTC', 'DTS', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9728,0.3438,0.3,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX2,YMOD,DEN,MLP_BP,8,"['DTC', 'DTS', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.917,-990.2376,7.8,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX2,SMOD,DEN,Linear_single,8,"['DTC', 'DTS', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.7701,0.5068,0.0,-0.1125 * DTS + 28.1
+ZXX2,SMOD,DEN,Linear_multi,8,"['DTC', 'DTS', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.8674,-1.5111,0.0,linear_multi
+ZXX2,SMOD,DEN,RF,8,"['DTC', 'DTS', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9791,0.262,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX2,SMOD,DEN,XGBoost,8,"['DTC', 'DTS', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9769,0.0662,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX2,SMOD,DEN,MLP_BP,8,"['DTC', 'DTS', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9839,-800.6448,5.4,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX2,POIS,DEN,Linear_single,8,"['DTC', 'DTS', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9844,0.8928,0.0,0.3068 * RMSC + -0.2756
+ZXX2,POIS,DEN,Linear_multi,8,"['DTC', 'DTS', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9865,0.5661,0.0,linear_multi
+ZXX2,POIS,DEN,RF,8,"['DTC', 'DTS', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9998,0.8225,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX2,POIS,DEN,XGBoost,8,"['DTC', 'DTS', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.998,0.7743,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX2,POIS,DEN,MLP_BP,8,"['DTC', 'DTS', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.992,-13701.9352,2.0,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX2,SHMAX,DEN,Linear_single,8,"['DTC', 'DTS', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.6111,0.6782,0.0,-0.3944 * DTS + 170.8
+ZXX2,SHMAX,DEN,Linear_multi,8,"['DTC', 'DTS', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.7931,-6.6077,0.0,linear_multi
+ZXX2,SHMAX,DEN,RF,8,"['DTC', 'DTS', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9471,0.1301,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX2,SHMAX,DEN,XGBoost,8,"['DTC', 'DTS', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9717,-0.0905,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX2,SHMAX,DEN,MLP_BP,8,"['DTC', 'DTS', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9662,-15584.5081,6.5,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX3,YMOD,DEN,Linear_single,8,"['DTC', 'DTS', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.8398,0.9247,0.0,-1263 * DTC + 1.277e+05
+ZXX3,YMOD,DEN,Linear_multi,8,"['DTC', 'DTS', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9822,-41.7897,0.0,linear_multi
+ZXX3,YMOD,DEN,RF,8,"['DTC', 'DTS', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.996,0.8147,0.5,"RF(n=300, depth=10, leaf=5)"
+ZXX3,YMOD,DEN,XGBoost,8,"['DTC', 'DTS', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9972,0.7943,0.3,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX3,YMOD,DEN,MLP_BP,8,"['DTC', 'DTS', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9903,0.6559,4.4,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX3,SMOD,DEN,Linear_single,8,"['DTC', 'DTS', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9602,0.9044,0.0,-0.2509 * DTS + 47.41
+ZXX3,SMOD,DEN,Linear_multi,8,"['DTC', 'DTS', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9828,-53.5776,0.0,linear_multi
+ZXX3,SMOD,DEN,RF,8,"['DTC', 'DTS', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.997,0.8825,0.5,"RF(n=300, depth=10, leaf=5)"
+ZXX3,SMOD,DEN,XGBoost,8,"['DTC', 'DTS', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9976,0.847,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX3,SMOD,DEN,MLP_BP,8,"['DTC', 'DTS', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9929,0.4075,2.5,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX3,POIS,DEN,Linear_single,8,"['DTC', 'DTS', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9925,0.9571,0.0,0.3425 * RMSC + -0.3503
+ZXX3,POIS,DEN,Linear_multi,8,"['DTC', 'DTS', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9929,0.8821,0.0,linear_multi
+ZXX3,POIS,DEN,RF,8,"['DTC', 'DTS', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9992,0.9238,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX3,POIS,DEN,XGBoost,8,"['DTC', 'DTS', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9947,0.8439,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX3,POIS,DEN,MLP_BP,8,"['DTC', 'DTS', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9766,-1.3076,1.9,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX3,SHMAX,DEN,Linear_single,8,"['DTC', 'DTS', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.2466,0.5545,0.0,45.26 * RMSC + 42.8
+ZXX3,SHMAX,DEN,Linear_multi,8,"['DTC', 'DTS', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.4013,-2820.0656,0.0,linear_multi
+ZXX3,SHMAX,DEN,RF,8,"['DTC', 'DTS', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9315,0.1436,0.5,"RF(n=300, depth=10, leaf=5)"
+ZXX3,SHMAX,DEN,XGBoost,8,"['DTC', 'DTS', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9083,0.4276,0.3,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX3,SHMAX,DEN,MLP_BP,8,"['DTC', 'DTS', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.7854,-35.1922,8.6,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX6,YMOD,DEN,Linear_single,8,"['DTC', 'DTS', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9515,0.7806,0.0,-978.1 * DTC + 1.089e+05
+ZXX6,YMOD,DEN,Linear_multi,8,"['DTC', 'DTS', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.972,-90.303,0.0,linear_multi
+ZXX6,YMOD,DEN,RF,8,"['DTC', 'DTS', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9927,-0.087,0.3,"RF(n=300, depth=10, leaf=5)"
+ZXX6,YMOD,DEN,XGBoost,8,"['DTC', 'DTS', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9968,0.0507,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX6,YMOD,DEN,MLP_BP,8,"['DTC', 'DTS', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9764,-10049.681,3.4,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX6,SMOD,DEN,Linear_single,8,"['DTC', 'DTS', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.8879,0.7748,0.0,-0.3773 * DTC + 43.57
+ZXX6,SMOD,DEN,Linear_multi,8,"['DTC', 'DTS', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9691,-146.4569,0.0,linear_multi
+ZXX6,SMOD,DEN,RF,8,"['DTC', 'DTS', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9919,-0.0418,0.3,"RF(n=300, depth=10, leaf=5)"
+ZXX6,SMOD,DEN,XGBoost,8,"['DTC', 'DTS', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9959,0.0549,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX6,SMOD,DEN,MLP_BP,8,"['DTC', 'DTS', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9942,-45371.6814,2.2,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX6,POIS,DEN,Linear_single,8,"['DTC', 'DTS', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.996,0.8803,0.0,0.4803 * RMSC + -0.5716
+ZXX6,POIS,DEN,Linear_multi,8,"['DTC', 'DTS', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9972,0.2764,0.0,linear_multi
+ZXX6,POIS,DEN,RF,8,"['DTC', 'DTS', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.998,0.6897,0.3,"RF(n=300, depth=10, leaf=5)"
+ZXX6,POIS,DEN,XGBoost,8,"['DTC', 'DTS', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9892,0.5698,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX6,POIS,DEN,MLP_BP,8,"['DTC', 'DTS', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9761,-34420.6685,1.1,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX6,SHMAX,DEN,Linear_single,8,"['DTC', 'DTS', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.0218,0.0714,0.0,-0.01658 * LLD + 88.68
+ZXX6,SHMAX,DEN,Linear_multi,8,"['DTC', 'DTS', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.8939,0.0023,0.0,linear_multi
+ZXX6,SHMAX,DEN,RF,8,"['DTC', 'DTS', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9856,-0.0287,0.3,"RF(n=300, depth=10, leaf=5)"
+ZXX6,SHMAX,DEN,XGBoost,8,"['DTC', 'DTS', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9938,-0.029,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX6,SHMAX,DEN,MLP_BP,8,"['DTC', 'DTS', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9611,-58.5256,2.9,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX7,YMOD,DEN,Linear_single,8,"['DTC', 'DTS', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9339,0.9072,0.0,-688.8 * DTS + 1.283e+05
+ZXX7,YMOD,DEN,Linear_multi,8,"['DTC', 'DTS', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9876,0.4595,0.0,linear_multi
+ZXX7,YMOD,DEN,RF,8,"['DTC', 'DTS', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9976,0.9147,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX7,YMOD,DEN,XGBoost,8,"['DTC', 'DTS', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9992,0.8957,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX7,YMOD,DEN,MLP_BP,8,"['DTC', 'DTS', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9889,-303.6419,3.2,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX7,SMOD,DEN,Linear_single,8,"['DTC', 'DTS', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9428,0.9337,0.0,-0.281 * DTS + 51.59
+ZXX7,SMOD,DEN,Linear_multi,8,"['DTC', 'DTS', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9882,-4.6434,0.0,linear_multi
+ZXX7,SMOD,DEN,RF,8,"['DTC', 'DTS', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9982,0.9224,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX7,SMOD,DEN,XGBoost,8,"['DTC', 'DTS', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9992,0.9109,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX7,SMOD,DEN,MLP_BP,8,"['DTC', 'DTS', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9938,-789.6596,2.4,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX7,POIS,DEN,Linear_single,8,"['DTC', 'DTS', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9648,0.9083,0.0,0.3244 * RMSC + -0.3077
+ZXX7,POIS,DEN,Linear_multi,8,"['DTC', 'DTS', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9717,-22.9661,0.0,linear_multi
+ZXX7,POIS,DEN,RF,8,"['DTC', 'DTS', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9923,0.8914,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX7,POIS,DEN,XGBoost,8,"['DTC', 'DTS', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9902,0.9144,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX7,POIS,DEN,MLP_BP,8,"['DTC', 'DTS', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9688,-2361.9554,1.7,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX7,SHMAX,DEN,Linear_single,8,"['DTC', 'DTS', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.0492,-0.1668,0.0,-0.05987 * LLD + -575.7
+ZXX7,SHMAX,DEN,Linear_multi,8,"['DTC', 'DTS', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.8867,-39373.9964,0.0,linear_multi
+ZXX7,SHMAX,DEN,RF,8,"['DTC', 'DTS', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9911,-11.9219,0.5,"RF(n=300, depth=10, leaf=5)"
+ZXX7,SHMAX,DEN,XGBoost,8,"['DTC', 'DTS', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",1.0,-12.2784,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX7,SHMAX,DEN,MLP_BP,8,"['DTC', 'DTS', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9982,-61410.7344,4.5,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX2,YMOD,GR,Linear_single,8,"['DTC', 'DTS', 'DEN', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.6166,0.6804,0.0,-576 * DTC + 7.998e+04
+ZXX2,YMOD,GR,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.8612,0.9213,0.0,linear_multi
+ZXX2,YMOD,GR,RF,8,"['DTC', 'DTS', 'DEN', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9745,0.3769,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX2,YMOD,GR,XGBoost,8,"['DTC', 'DTS', 'DEN', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9753,0.5541,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX2,YMOD,GR,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9169,-641.5953,6.2,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX2,SMOD,GR,Linear_single,8,"['DTC', 'DTS', 'DEN', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.7694,0.4859,0.0,-0.1132 * DTS + 28.2
+ZXX2,SMOD,GR,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.8736,0.8921,0.0,linear_multi
+ZXX2,SMOD,GR,RF,8,"['DTC', 'DTS', 'DEN', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9797,0.2605,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX2,SMOD,GR,XGBoost,8,"['DTC', 'DTS', 'DEN', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9764,0.2773,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX2,SMOD,GR,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9877,-373.0512,5.6,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX2,POIS,GR,Linear_single,8,"['DTC', 'DTS', 'DEN', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9846,0.8969,0.0,0.3073 * RMSC + -0.2766
+ZXX2,POIS,GR,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9875,0.5026,0.0,linear_multi
+ZXX2,POIS,GR,RF,8,"['DTC', 'DTS', 'DEN', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9998,0.8277,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX2,POIS,GR,XGBoost,8,"['DTC', 'DTS', 'DEN', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.998,0.7811,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX2,POIS,GR,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9908,-26186.2465,1.9,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX2,SHMAX,GR,Linear_single,8,"['DTC', 'DTS', 'DEN', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.6131,0.6629,0.0,-0.3952 * DTS + 170.9
+ZXX2,SHMAX,GR,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.7977,-3.0566,0.0,linear_multi
+ZXX2,SHMAX,GR,RF,8,"['DTC', 'DTS', 'DEN', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9499,0.1151,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX2,SHMAX,GR,XGBoost,8,"['DTC', 'DTS', 'DEN', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9693,0.0438,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX2,SHMAX,GR,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9619,-6655.5628,4.8,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX3,YMOD,GR,Linear_single,8,"['DTC', 'DTS', 'DEN', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.8522,0.9321,0.0,-1254 * DTC + 1.27e+05
+ZXX3,YMOD,GR,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.99,-86.081,0.0,linear_multi
+ZXX3,YMOD,GR,RF,8,"['DTC', 'DTS', 'DEN', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9983,0.7929,0.5,"RF(n=300, depth=10, leaf=5)"
+ZXX3,YMOD,GR,XGBoost,8,"['DTC', 'DTS', 'DEN', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9986,0.7827,0.3,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX3,YMOD,GR,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9877,-390052.394,3.8,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX3,SMOD,GR,Linear_single,8,"['DTC', 'DTS', 'DEN', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.7968,0.9056,0.0,-0.5025 * DTC + 50.46
+ZXX3,SMOD,GR,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9894,-67.3973,0.0,linear_multi
+ZXX3,SMOD,GR,RF,8,"['DTC', 'DTS', 'DEN', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9988,0.8668,0.5,"RF(n=300, depth=10, leaf=5)"
+ZXX3,SMOD,GR,XGBoost,8,"['DTC', 'DTS', 'DEN', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9988,0.8272,0.3,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX3,SMOD,GR,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9951,-1798014.8513,1.8,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX3,POIS,GR,Linear_single,8,"['DTC', 'DTS', 'DEN', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9925,0.9602,0.0,0.3418 * RMSC + -0.349
+ZXX3,POIS,GR,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9929,-462.0395,0.0,linear_multi
+ZXX3,POIS,GR,RF,8,"['DTC', 'DTS', 'DEN', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9992,0.9318,0.5,"RF(n=300, depth=10, leaf=5)"
+ZXX3,POIS,GR,XGBoost,8,"['DTC', 'DTS', 'DEN', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9949,0.8668,0.3,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX3,POIS,GR,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9947,-788778.3322,5.4,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX3,SHMAX,GR,Linear_single,8,"['DTC', 'DTS', 'DEN', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.2627,0.626,0.0,48.68 * RMSC + 36.68
+ZXX3,SHMAX,GR,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.4352,-324876.5897,0.0,linear_multi
+ZXX3,SHMAX,GR,RF,8,"['DTC', 'DTS', 'DEN', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9336,-0.0461,0.5,"RF(n=300, depth=10, leaf=5)"
+ZXX3,SHMAX,GR,XGBoost,8,"['DTC', 'DTS', 'DEN', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9014,0.4126,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX3,SHMAX,GR,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.6684,-23833355.4597,4.1,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX6,YMOD,GR,Linear_single,8,"['DTC', 'DTS', 'DEN', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9515,0.7806,0.0,-978.1 * DTC + 1.089e+05
+ZXX6,YMOD,GR,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.994,-19.475,0.0,linear_multi
+ZXX6,YMOD,GR,RF,8,"['DTC', 'DTS', 'DEN', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9943,-0.1004,0.3,"RF(n=300, depth=10, leaf=5)"
+ZXX6,YMOD,GR,XGBoost,8,"['DTC', 'DTS', 'DEN', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9989,0.0679,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX6,YMOD,GR,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9956,-8691.9045,3.6,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX6,SMOD,GR,Linear_single,8,"['DTC', 'DTS', 'DEN', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.8879,0.7748,0.0,-0.3773 * DTC + 43.57
+ZXX6,SMOD,GR,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9935,-35.2156,0.0,linear_multi
+ZXX6,SMOD,GR,RF,8,"['DTC', 'DTS', 'DEN', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9941,-0.0435,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX6,SMOD,GR,XGBoost,8,"['DTC', 'DTS', 'DEN', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9987,0.0493,0.3,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX6,SMOD,GR,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9959,-34298.8462,1.3,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX6,POIS,GR,Linear_single,8,"['DTC', 'DTS', 'DEN', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.996,0.8803,0.0,0.4803 * RMSC + -0.5716
+ZXX6,POIS,GR,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9971,0.454,0.0,linear_multi
+ZXX6,POIS,GR,RF,8,"['DTC', 'DTS', 'DEN', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.998,0.6904,0.3,"RF(n=300, depth=10, leaf=5)"
+ZXX6,POIS,GR,XGBoost,8,"['DTC', 'DTS', 'DEN', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9892,0.57,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX6,POIS,GR,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9808,-27770.4365,1.9,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX6,SHMAX,GR,Linear_single,8,"['DTC', 'DTS', 'DEN', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.0218,0.0714,0.0,-0.01658 * LLD + 88.68
+ZXX6,SHMAX,GR,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9229,-0.0033,0.0,linear_multi
+ZXX6,SHMAX,GR,RF,8,"['DTC', 'DTS', 'DEN', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9867,-0.0287,0.3,"RF(n=300, depth=10, leaf=5)"
+ZXX6,SHMAX,GR,XGBoost,8,"['DTC', 'DTS', 'DEN', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9943,-0.0289,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX6,SHMAX,GR,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9488,-42.4498,3.2,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX7,YMOD,GR,Linear_single,8,"['DTC', 'DTS', 'DEN', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9345,0.9107,0.0,-680.1 * DTS + 1.272e+05
+ZXX7,YMOD,GR,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9939,-0.1771,0.0,linear_multi
+ZXX7,YMOD,GR,RF,8,"['DTC', 'DTS', 'DEN', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9981,0.9352,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX7,YMOD,GR,XGBoost,8,"['DTC', 'DTS', 'DEN', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9996,0.7771,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX7,YMOD,GR,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9972,-131.9052,3.1,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX7,SMOD,GR,Linear_single,8,"['DTC', 'DTS', 'DEN', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9418,0.9527,0.0,-0.2765 * DTS + 51.02
+ZXX7,SMOD,GR,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9933,-1.7877,0.0,linear_multi
+ZXX7,SMOD,GR,RF,8,"['DTC', 'DTS', 'DEN', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9986,0.9835,0.5,"RF(n=300, depth=10, leaf=5)"
+ZXX7,SMOD,GR,XGBoost,8,"['DTC', 'DTS', 'DEN', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9996,0.7649,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX7,SMOD,GR,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9987,-623.0448,1.0,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX7,POIS,GR,Linear_single,8,"['DTC', 'DTS', 'DEN', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9666,0.9308,0.0,0.3268 * RMSC + -0.312
+ZXX7,POIS,GR,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9721,-1.6467,0.0,linear_multi
+ZXX7,POIS,GR,RF,8,"['DTC', 'DTS', 'DEN', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9927,0.9472,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX7,POIS,GR,XGBoost,8,"['DTC', 'DTS', 'DEN', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9916,0.9578,0.3,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX7,POIS,GR,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9853,-1140.8163,2.0,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX7,SHMAX,GR,Linear_single,8,"['DTC', 'DTS', 'DEN', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.2825,0.3743,0.0,129.3 * DTS + -1.778e+04
+ZXX7,SHMAX,GR,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.7712,-194.9974,0.0,linear_multi
+ZXX7,SHMAX,GR,RF,8,"['DTC', 'DTS', 'DEN', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9905,0.0288,0.5,"RF(n=300, depth=10, leaf=5)"
+ZXX7,SHMAX,GR,XGBoost,8,"['DTC', 'DTS', 'DEN', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9999,-0.937,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX7,SHMAX,GR,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'CNL', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9947,-0.5304,5.7,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX2,YMOD,CNL,Linear_single,8,"['DTC', 'DTS', 'DEN', 'GR', 'LLD', 'LLS', 'RMSC', 'CAL']",0.6082,0.6993,0.0,-583.7 * DTC + 8.058e+04
+ZXX2,YMOD,CNL,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'GR', 'LLD', 'LLS', 'RMSC', 'CAL']",0.858,-0.4236,0.0,linear_multi
+ZXX2,YMOD,CNL,RF,8,"['DTC', 'DTS', 'DEN', 'GR', 'LLD', 'LLS', 'RMSC', 'CAL']",0.975,0.3854,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX2,YMOD,CNL,XGBoost,8,"['DTC', 'DTS', 'DEN', 'GR', 'LLD', 'LLS', 'RMSC', 'CAL']",0.975,0.5849,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX2,YMOD,CNL,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'GR', 'LLD', 'LLS', 'RMSC', 'CAL']",0.8998,-941.2114,5.6,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX2,SMOD,CNL,Linear_single,8,"['DTC', 'DTS', 'DEN', 'GR', 'LLD', 'LLS', 'RMSC', 'CAL']",0.7701,0.5068,0.0,-0.1125 * DTS + 28.1
+ZXX2,SMOD,CNL,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'GR', 'LLD', 'LLS', 'RMSC', 'CAL']",0.8722,-0.3693,0.0,linear_multi
+ZXX2,SMOD,CNL,RF,8,"['DTC', 'DTS', 'DEN', 'GR', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9795,0.2571,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX2,SMOD,CNL,XGBoost,8,"['DTC', 'DTS', 'DEN', 'GR', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9767,0.3479,0.3,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX2,SMOD,CNL,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'GR', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9828,-481.9211,4.7,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX2,POIS,CNL,Linear_single,8,"['DTC', 'DTS', 'DEN', 'GR', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9844,0.8928,0.0,0.3068 * RMSC + -0.2756
+ZXX2,POIS,CNL,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'GR', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9872,0.4147,0.0,linear_multi
+ZXX2,POIS,CNL,RF,8,"['DTC', 'DTS', 'DEN', 'GR', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9998,0.8223,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX2,POIS,CNL,XGBoost,8,"['DTC', 'DTS', 'DEN', 'GR', 'LLD', 'LLS', 'RMSC', 'CAL']",0.998,0.774,0.3,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX2,POIS,CNL,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'GR', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9906,-25788.2913,1.9,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX2,SHMAX,CNL,Linear_single,8,"['DTC', 'DTS', 'DEN', 'GR', 'LLD', 'LLS', 'RMSC', 'CAL']",0.6111,0.6782,0.0,-0.3944 * DTS + 170.8
+ZXX2,SHMAX,CNL,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'GR', 'LLD', 'LLS', 'RMSC', 'CAL']",0.7778,-3.7505,0.0,linear_multi
+ZXX2,SHMAX,CNL,RF,8,"['DTC', 'DTS', 'DEN', 'GR', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9443,0.1376,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX2,SHMAX,CNL,XGBoost,8,"['DTC', 'DTS', 'DEN', 'GR', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9694,0.1111,0.3,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX2,SHMAX,CNL,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'GR', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9519,-10492.4865,6.0,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX3,YMOD,CNL,Linear_single,8,"['DTC', 'DTS', 'DEN', 'GR', 'LLD', 'LLS', 'RMSC', 'CAL']",0.8398,0.9247,0.0,-1263 * DTC + 1.277e+05
+ZXX3,YMOD,CNL,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'GR', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9907,-23.899,0.0,linear_multi
+ZXX3,YMOD,CNL,RF,8,"['DTC', 'DTS', 'DEN', 'GR', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9982,0.8183,0.5,"RF(n=300, depth=10, leaf=5)"
+ZXX3,YMOD,CNL,XGBoost,8,"['DTC', 'DTS', 'DEN', 'GR', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9986,0.8012,0.3,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX3,YMOD,CNL,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'GR', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9898,0.6817,3.7,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX3,SMOD,CNL,Linear_single,8,"['DTC', 'DTS', 'DEN', 'GR', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9602,0.9044,0.0,-0.2509 * DTS + 47.41
+ZXX3,SMOD,CNL,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'GR', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9901,-33.4713,0.0,linear_multi
+ZXX3,SMOD,CNL,RF,8,"['DTC', 'DTS', 'DEN', 'GR', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9985,0.8853,0.5,"RF(n=300, depth=10, leaf=5)"
+ZXX3,SMOD,CNL,XGBoost,8,"['DTC', 'DTS', 'DEN', 'GR', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9988,0.8488,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX3,SMOD,CNL,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'GR', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9973,0.4649,1.9,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX3,POIS,CNL,Linear_single,8,"['DTC', 'DTS', 'DEN', 'GR', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9925,0.9571,0.0,0.3425 * RMSC + -0.3503
+ZXX3,POIS,CNL,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'GR', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9928,-0.2869,0.0,linear_multi
+ZXX3,POIS,CNL,RF,8,"['DTC', 'DTS', 'DEN', 'GR', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9992,0.9238,0.5,"RF(n=300, depth=10, leaf=5)"
+ZXX3,POIS,CNL,XGBoost,8,"['DTC', 'DTS', 'DEN', 'GR', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9947,0.8443,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX3,POIS,CNL,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'GR', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9744,-5.7433,2.3,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX3,SHMAX,CNL,Linear_single,8,"['DTC', 'DTS', 'DEN', 'GR', 'LLD', 'LLS', 'RMSC', 'CAL']",0.2466,0.5545,0.0,45.26 * RMSC + 42.8
+ZXX3,SHMAX,CNL,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'GR', 'LLD', 'LLS', 'RMSC', 'CAL']",0.4019,-2639.8704,0.0,linear_multi
+ZXX3,SHMAX,CNL,RF,8,"['DTC', 'DTS', 'DEN', 'GR', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9285,0.0921,0.5,"RF(n=300, depth=10, leaf=5)"
+ZXX3,SHMAX,CNL,XGBoost,8,"['DTC', 'DTS', 'DEN', 'GR', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9094,0.4543,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX3,SHMAX,CNL,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'GR', 'LLD', 'LLS', 'RMSC', 'CAL']",0.7674,-10.652,9.1,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX6,YMOD,CNL,Linear_single,8,"['DTC', 'DTS', 'DEN', 'GR', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9515,0.7806,0.0,-978.1 * DTC + 1.089e+05
+ZXX6,YMOD,CNL,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'GR', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9944,-23.4393,0.0,linear_multi
+ZXX6,YMOD,CNL,RF,8,"['DTC', 'DTS', 'DEN', 'GR', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9943,-0.1027,0.3,"RF(n=300, depth=10, leaf=5)"
+ZXX6,YMOD,CNL,XGBoost,8,"['DTC', 'DTS', 'DEN', 'GR', 'LLD', 'LLS', 'RMSC', 'CAL']",0.999,0.0591,0.3,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX6,YMOD,CNL,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'GR', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9958,-10739.0305,5.1,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX6,SMOD,CNL,Linear_single,8,"['DTC', 'DTS', 'DEN', 'GR', 'LLD', 'LLS', 'RMSC', 'CAL']",0.8879,0.7748,0.0,-0.3773 * DTC + 43.57
+ZXX6,SMOD,CNL,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'GR', 'LLD', 'LLS', 'RMSC', 'CAL']",0.994,-42.1942,0.0,linear_multi
+ZXX6,SMOD,CNL,RF,8,"['DTC', 'DTS', 'DEN', 'GR', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9941,-0.0423,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX6,SMOD,CNL,XGBoost,8,"['DTC', 'DTS', 'DEN', 'GR', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9987,0.0459,0.3,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX6,SMOD,CNL,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'GR', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9973,-21781.9593,2.0,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX6,POIS,CNL,Linear_single,8,"['DTC', 'DTS', 'DEN', 'GR', 'LLD', 'LLS', 'RMSC', 'CAL']",0.996,0.8803,0.0,0.4803 * RMSC + -0.5716
+ZXX6,POIS,CNL,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'GR', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9972,-0.4121,0.0,linear_multi
+ZXX6,POIS,CNL,RF,8,"['DTC', 'DTS', 'DEN', 'GR', 'LLD', 'LLS', 'RMSC', 'CAL']",0.998,0.6895,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX6,POIS,CNL,XGBoost,8,"['DTC', 'DTS', 'DEN', 'GR', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9892,0.57,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX6,POIS,CNL,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'GR', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9711,-9985.9526,1.1,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX6,SHMAX,CNL,Linear_single,8,"['DTC', 'DTS', 'DEN', 'GR', 'LLD', 'LLS', 'RMSC', 'CAL']",0.0218,0.0714,0.0,-0.01658 * LLD + 88.68
+ZXX6,SHMAX,CNL,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'GR', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9011,-0.0291,0.0,linear_multi
+ZXX6,SHMAX,CNL,RF,8,"['DTC', 'DTS', 'DEN', 'GR', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9864,-0.0287,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX6,SHMAX,CNL,XGBoost,8,"['DTC', 'DTS', 'DEN', 'GR', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9942,-0.0289,0.3,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX6,SHMAX,CNL,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'GR', 'LLD', 'LLS', 'RMSC', 'CAL']",0.964,-43.887,4.4,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX7,YMOD,CNL,Linear_single,8,"['DTC', 'DTS', 'DEN', 'GR', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9339,0.9072,0.0,-688.8 * DTS + 1.283e+05
+ZXX7,YMOD,CNL,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'GR', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9952,-9.1715,0.0,linear_multi
+ZXX7,YMOD,CNL,RF,8,"['DTC', 'DTS', 'DEN', 'GR', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9981,0.9363,0.5,"RF(n=300, depth=10, leaf=5)"
+ZXX7,YMOD,CNL,XGBoost,8,"['DTC', 'DTS', 'DEN', 'GR', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9996,0.9295,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX7,YMOD,CNL,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'GR', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9956,-399.3859,3.8,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX7,SMOD,CNL,Linear_single,8,"['DTC', 'DTS', 'DEN', 'GR', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9428,0.9337,0.0,-0.281 * DTS + 51.59
+ZXX7,SMOD,CNL,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'GR', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9948,-24.4562,0.0,linear_multi
+ZXX7,SMOD,CNL,RF,8,"['DTC', 'DTS', 'DEN', 'GR', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9987,0.9369,0.5,"RF(n=300, depth=10, leaf=5)"
+ZXX7,SMOD,CNL,XGBoost,8,"['DTC', 'DTS', 'DEN', 'GR', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9996,0.9631,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX7,SMOD,CNL,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'GR', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9989,-793.7289,1.8,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX7,POIS,CNL,Linear_single,8,"['DTC', 'DTS', 'DEN', 'GR', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9648,0.9083,0.0,0.3244 * RMSC + -0.3077
+ZXX7,POIS,CNL,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'GR', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9713,-17.8399,0.0,linear_multi
+ZXX7,POIS,CNL,RF,8,"['DTC', 'DTS', 'DEN', 'GR', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9924,0.8941,0.5,"RF(n=300, depth=10, leaf=5)"
+ZXX7,POIS,CNL,XGBoost,8,"['DTC', 'DTS', 'DEN', 'GR', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9904,0.9072,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX7,POIS,CNL,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'GR', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9568,-3578.9543,2.1,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX7,SHMAX,CNL,Linear_single,8,"['DTC', 'DTS', 'DEN', 'GR', 'LLD', 'LLS', 'RMSC', 'CAL']",0.0492,-0.1668,0.0,-0.05987 * LLD + -575.7
+ZXX7,SHMAX,CNL,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'GR', 'LLD', 'LLS', 'RMSC', 'CAL']",0.8821,-37423.6632,0.0,linear_multi
+ZXX7,SHMAX,CNL,RF,8,"['DTC', 'DTS', 'DEN', 'GR', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9911,-11.9959,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX7,SHMAX,CNL,XGBoost,8,"['DTC', 'DTS', 'DEN', 'GR', 'LLD', 'LLS', 'RMSC', 'CAL']",1.0,-12.3526,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX7,SHMAX,CNL,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'GR', 'LLD', 'LLS', 'RMSC', 'CAL']",0.9982,-63354.3453,4.1,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX2,YMOD,LLD,Linear_single,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLS', 'RMSC', 'CAL']",0.6082,0.6993,0.0,-583.7 * DTC + 8.058e+04
+ZXX2,YMOD,LLD,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLS', 'RMSC', 'CAL']",0.8583,0.2616,0.0,linear_multi
+ZXX2,YMOD,LLD,RF,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLS', 'RMSC', 'CAL']",0.9734,0.3662,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX2,YMOD,LLD,XGBoost,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLS', 'RMSC', 'CAL']",0.9749,0.5751,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX2,YMOD,LLD,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLS', 'RMSC', 'CAL']",0.8963,-504.5653,5.3,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX2,SMOD,LLD,Linear_single,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLS', 'RMSC', 'CAL']",0.7701,0.5068,0.0,-0.1125 * DTS + 28.1
+ZXX2,SMOD,LLD,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLS', 'RMSC', 'CAL']",0.8726,0.0466,0.0,linear_multi
+ZXX2,SMOD,LLD,RF,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLS', 'RMSC', 'CAL']",0.9779,0.2492,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX2,SMOD,LLD,XGBoost,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLS', 'RMSC', 'CAL']",0.9758,0.2544,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX2,SMOD,LLD,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLS', 'RMSC', 'CAL']",0.9807,-494.878,3.7,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX2,POIS,LLD,Linear_single,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLS', 'RMSC', 'CAL']",0.9844,0.8928,0.0,0.3068 * RMSC + -0.2756
+ZXX2,POIS,LLD,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLS', 'RMSC', 'CAL']",0.9873,0.2285,0.0,linear_multi
+ZXX2,POIS,LLD,RF,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLS', 'RMSC', 'CAL']",0.9998,0.8223,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX2,POIS,LLD,XGBoost,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLS', 'RMSC', 'CAL']",0.998,0.774,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX2,POIS,LLD,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLS', 'RMSC', 'CAL']",0.9953,-13286.1802,3.7,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX2,SHMAX,LLD,Linear_single,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLS', 'RMSC', 'CAL']",0.6111,0.6782,0.0,-0.3944 * DTS + 170.8
+ZXX2,SHMAX,LLD,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLS', 'RMSC', 'CAL']",0.7577,-18.1997,0.0,linear_multi
+ZXX2,SHMAX,LLD,RF,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLS', 'RMSC', 'CAL']",0.9488,0.1362,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX2,SHMAX,LLD,XGBoost,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLS', 'RMSC', 'CAL']",0.9688,0.0478,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX2,SHMAX,LLD,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLS', 'RMSC', 'CAL']",0.9648,-15498.2962,6.9,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX3,YMOD,LLD,Linear_single,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLS', 'RMSC', 'CAL']",0.8398,0.9247,0.0,-1263 * DTC + 1.277e+05
+ZXX3,YMOD,LLD,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLS', 'RMSC', 'CAL']",0.9888,0.8782,0.0,linear_multi
+ZXX3,YMOD,LLD,RF,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLS', 'RMSC', 'CAL']",0.9982,0.8182,0.5,"RF(n=300, depth=10, leaf=5)"
+ZXX3,YMOD,LLD,XGBoost,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLS', 'RMSC', 'CAL']",0.9986,0.8025,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX3,YMOD,LLD,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLS', 'RMSC', 'CAL']",0.9954,0.6965,5.0,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX3,SMOD,LLD,Linear_single,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLS', 'RMSC', 'CAL']",0.9602,0.9044,0.0,-0.2509 * DTS + 47.41
+ZXX3,SMOD,LLD,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLS', 'RMSC', 'CAL']",0.9883,0.871,0.0,linear_multi
+ZXX3,SMOD,LLD,RF,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLS', 'RMSC', 'CAL']",0.9985,0.8851,0.5,"RF(n=300, depth=10, leaf=5)"
+ZXX3,SMOD,LLD,XGBoost,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLS', 'RMSC', 'CAL']",0.9988,0.8446,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX3,SMOD,LLD,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLS', 'RMSC', 'CAL']",0.9982,0.4383,2.4,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX3,POIS,LLD,Linear_single,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLS', 'RMSC', 'CAL']",0.9925,0.9571,0.0,0.3425 * RMSC + -0.3503
+ZXX3,POIS,LLD,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLS', 'RMSC', 'CAL']",0.9929,0.9585,0.0,linear_multi
+ZXX3,POIS,LLD,RF,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLS', 'RMSC', 'CAL']",0.9992,0.9237,0.5,"RF(n=300, depth=10, leaf=5)"
+ZXX3,POIS,LLD,XGBoost,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLS', 'RMSC', 'CAL']",0.9947,0.844,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX3,POIS,LLD,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLS', 'RMSC', 'CAL']",0.9963,-3.6422,7.3,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX3,SHMAX,LLD,Linear_single,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLS', 'RMSC', 'CAL']",0.2466,0.5545,0.0,45.26 * RMSC + 42.8
+ZXX3,SHMAX,LLD,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLS', 'RMSC', 'CAL']",0.3587,0.7361,0.0,linear_multi
+ZXX3,SHMAX,LLD,RF,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLS', 'RMSC', 'CAL']",0.9132,0.2217,0.5,"RF(n=300, depth=10, leaf=5)"
+ZXX3,SHMAX,LLD,XGBoost,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLS', 'RMSC', 'CAL']",0.8944,0.4064,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX3,SHMAX,LLD,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLS', 'RMSC', 'CAL']",0.8029,-12.4459,6.9,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX6,YMOD,LLD,Linear_single,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLS', 'RMSC', 'CAL']",0.9515,0.7806,0.0,-978.1 * DTC + 1.089e+05
+ZXX6,YMOD,LLD,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLS', 'RMSC', 'CAL']",0.9943,-0.7509,0.0,linear_multi
+ZXX6,YMOD,LLD,RF,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLS', 'RMSC', 'CAL']",0.9943,-0.0964,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX6,YMOD,LLD,XGBoost,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLS', 'RMSC', 'CAL']",0.999,0.0621,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX6,YMOD,LLD,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLS', 'RMSC', 'CAL']",0.997,-6257.2908,4.2,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX6,SMOD,LLD,Linear_single,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLS', 'RMSC', 'CAL']",0.8879,0.7748,0.0,-0.3773 * DTC + 43.57
+ZXX6,SMOD,LLD,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLS', 'RMSC', 'CAL']",0.9938,-2.8369,0.0,linear_multi
+ZXX6,SMOD,LLD,RF,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLS', 'RMSC', 'CAL']",0.9942,-0.0426,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX6,SMOD,LLD,XGBoost,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLS', 'RMSC', 'CAL']",0.9988,0.0382,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX6,SMOD,LLD,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLS', 'RMSC', 'CAL']",0.9956,-22043.0587,1.5,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX6,POIS,LLD,Linear_single,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLS', 'RMSC', 'CAL']",0.996,0.8803,0.0,0.4803 * RMSC + -0.5716
+ZXX6,POIS,LLD,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLS', 'RMSC', 'CAL']",0.9972,-1.9668,0.0,linear_multi
+ZXX6,POIS,LLD,RF,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLS', 'RMSC', 'CAL']",0.998,0.6904,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX6,POIS,LLD,XGBoost,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLS', 'RMSC', 'CAL']",0.9892,0.5699,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX6,POIS,LLD,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLS', 'RMSC', 'CAL']",0.9494,-38587.3254,0.8,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX6,SHMAX,LLD,Linear_single,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLS', 'RMSC', 'CAL']",0.0212,0.0695,0.0,-0.01801 * LLS + 88.67
+ZXX6,SHMAX,LLD,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLS', 'RMSC', 'CAL']",0.9192,-0.056,0.0,linear_multi
+ZXX6,SHMAX,LLD,RF,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLS', 'RMSC', 'CAL']",0.9867,-0.0287,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX6,SHMAX,LLD,XGBoost,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLS', 'RMSC', 'CAL']",0.9946,-0.0289,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX6,SHMAX,LLD,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLS', 'RMSC', 'CAL']",0.9573,-46.9857,3.6,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX7,YMOD,LLD,Linear_single,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLS', 'RMSC', 'CAL']",0.9339,0.9072,0.0,-688.8 * DTS + 1.283e+05
+ZXX7,YMOD,LLD,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLS', 'RMSC', 'CAL']",0.9952,-11.1076,0.0,linear_multi
+ZXX7,YMOD,LLD,RF,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLS', 'RMSC', 'CAL']",0.998,0.9341,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX7,YMOD,LLD,XGBoost,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLS', 'RMSC', 'CAL']",0.9996,0.9377,0.3,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX7,YMOD,LLD,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLS', 'RMSC', 'CAL']",0.9972,-360.2846,3.0,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX7,SMOD,LLD,Linear_single,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLS', 'RMSC', 'CAL']",0.9428,0.9337,0.0,-0.281 * DTS + 51.59
+ZXX7,SMOD,LLD,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLS', 'RMSC', 'CAL']",0.9949,-28.6552,0.0,linear_multi
+ZXX7,SMOD,LLD,RF,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLS', 'RMSC', 'CAL']",0.9987,0.9389,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX7,SMOD,LLD,XGBoost,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLS', 'RMSC', 'CAL']",0.9996,0.9546,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX7,SMOD,LLD,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLS', 'RMSC', 'CAL']",0.9988,-725.6674,1.1,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX7,POIS,LLD,Linear_single,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLS', 'RMSC', 'CAL']",0.9648,0.9083,0.0,0.3244 * RMSC + -0.3077
+ZXX7,POIS,LLD,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLS', 'RMSC', 'CAL']",0.9723,-19.0037,0.0,linear_multi
+ZXX7,POIS,LLD,RF,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLS', 'RMSC', 'CAL']",0.9924,0.8947,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX7,POIS,LLD,XGBoost,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLS', 'RMSC', 'CAL']",0.9907,0.9155,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX7,POIS,LLD,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLS', 'RMSC', 'CAL']",0.9401,-4231.461,1.4,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX7,SHMAX,LLD,Linear_single,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLS', 'RMSC', 'CAL']",0.5346,-0.2188,0.0,0.9787 * LLS + -235.1
+ZXX7,SHMAX,LLD,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLS', 'RMSC', 'CAL']",0.8896,-38139.9366,0.0,linear_multi
+ZXX7,SHMAX,LLD,RF,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLS', 'RMSC', 'CAL']",0.991,-11.8598,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX7,SHMAX,LLD,XGBoost,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLS', 'RMSC', 'CAL']",1.0,-12.6049,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX7,SHMAX,LLD,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLS', 'RMSC', 'CAL']",0.9979,-40288.0645,4.5,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX2,YMOD,LLS,Linear_single,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'RMSC', 'CAL']",0.6082,0.6993,0.0,-583.7 * DTC + 8.058e+04
+ZXX2,YMOD,LLS,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'RMSC', 'CAL']",0.8595,-0.5403,0.0,linear_multi
+ZXX2,YMOD,LLS,RF,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'RMSC', 'CAL']",0.974,0.3802,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX2,YMOD,LLS,XGBoost,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'RMSC', 'CAL']",0.9762,0.5809,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX2,YMOD,LLS,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'RMSC', 'CAL']",0.9134,-352.3073,7.4,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX2,SMOD,LLS,Linear_single,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'RMSC', 'CAL']",0.7701,0.5068,0.0,-0.1125 * DTS + 28.1
+ZXX2,SMOD,LLS,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'RMSC', 'CAL']",0.8735,-0.7362,0.0,linear_multi
+ZXX2,SMOD,LLS,RF,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'RMSC', 'CAL']",0.9793,0.253,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX2,SMOD,LLS,XGBoost,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'RMSC', 'CAL']",0.9773,0.3549,0.3,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX2,SMOD,LLS,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'RMSC', 'CAL']",0.9782,-108.416,4.4,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX2,POIS,LLS,Linear_single,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'RMSC', 'CAL']",0.9844,0.8928,0.0,0.3068 * RMSC + -0.2756
+ZXX2,POIS,LLS,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'RMSC', 'CAL']",0.9872,0.5888,0.0,linear_multi
+ZXX2,POIS,LLS,RF,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'RMSC', 'CAL']",0.9998,0.822,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX2,POIS,LLS,XGBoost,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'RMSC', 'CAL']",0.998,0.7743,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX2,POIS,LLS,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'RMSC', 'CAL']",0.9947,-4134.5125,2.5,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX2,SHMAX,LLS,Linear_single,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'RMSC', 'CAL']",0.6111,0.6782,0.0,-0.3944 * DTS + 170.8
+ZXX2,SHMAX,LLS,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'RMSC', 'CAL']",0.7969,-0.1109,0.0,linear_multi
+ZXX2,SHMAX,LLS,RF,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'RMSC', 'CAL']",0.9484,0.1361,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX2,SHMAX,LLS,XGBoost,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'RMSC', 'CAL']",0.9678,0.0789,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX2,SHMAX,LLS,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'RMSC', 'CAL']",0.961,-3238.3094,5.9,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX3,YMOD,LLS,Linear_single,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'RMSC', 'CAL']",0.8398,0.9247,0.0,-1263 * DTC + 1.277e+05
+ZXX3,YMOD,LLS,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'RMSC', 'CAL']",0.9888,0.8783,0.0,linear_multi
+ZXX3,YMOD,LLS,RF,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'RMSC', 'CAL']",0.9982,0.8182,0.5,"RF(n=300, depth=10, leaf=5)"
+ZXX3,YMOD,LLS,XGBoost,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'RMSC', 'CAL']",0.9986,0.801,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX3,YMOD,LLS,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'RMSC', 'CAL']",0.9952,0.6917,4.3,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX3,SMOD,LLS,Linear_single,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'RMSC', 'CAL']",0.9602,0.9044,0.0,-0.2509 * DTS + 47.41
+ZXX3,SMOD,LLS,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'RMSC', 'CAL']",0.9883,0.871,0.0,linear_multi
+ZXX3,SMOD,LLS,RF,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'RMSC', 'CAL']",0.9985,0.8856,0.5,"RF(n=300, depth=10, leaf=5)"
+ZXX3,SMOD,LLS,XGBoost,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'RMSC', 'CAL']",0.9988,0.846,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX3,SMOD,LLS,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'RMSC', 'CAL']",0.9976,0.3597,1.7,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX3,POIS,LLS,Linear_single,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'RMSC', 'CAL']",0.9925,0.9571,0.0,0.3425 * RMSC + -0.3503
+ZXX3,POIS,LLS,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'RMSC', 'CAL']",0.9929,0.9585,0.0,linear_multi
+ZXX3,POIS,LLS,RF,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'RMSC', 'CAL']",0.9992,0.9237,0.5,"RF(n=300, depth=10, leaf=5)"
+ZXX3,POIS,LLS,XGBoost,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'RMSC', 'CAL']",0.9947,0.8428,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX3,POIS,LLS,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'RMSC', 'CAL']",0.9911,-4.6504,3.8,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX3,SHMAX,LLS,Linear_single,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'RMSC', 'CAL']",0.2466,0.5545,0.0,45.26 * RMSC + 42.8
+ZXX3,SHMAX,LLS,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'RMSC', 'CAL']",0.3587,0.7388,0.0,linear_multi
+ZXX3,SHMAX,LLS,RF,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'RMSC', 'CAL']",0.9318,0.1582,0.5,"RF(n=300, depth=10, leaf=5)"
+ZXX3,SHMAX,LLS,XGBoost,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'RMSC', 'CAL']",0.9007,0.4093,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX3,SHMAX,LLS,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'RMSC', 'CAL']",0.7654,-13.6711,5.1,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX6,YMOD,LLS,Linear_single,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'RMSC', 'CAL']",0.9515,0.7806,0.0,-978.1 * DTC + 1.089e+05
+ZXX6,YMOD,LLS,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'RMSC', 'CAL']",0.9943,-1.6625,0.0,linear_multi
+ZXX6,YMOD,LLS,RF,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'RMSC', 'CAL']",0.9943,-0.0977,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX6,YMOD,LLS,XGBoost,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'RMSC', 'CAL']",0.999,0.0628,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX6,YMOD,LLS,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'RMSC', 'CAL']",0.9966,-7988.3478,4.9,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX6,SMOD,LLS,Linear_single,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'RMSC', 'CAL']",0.8879,0.7748,0.0,-0.3773 * DTC + 43.57
+ZXX6,SMOD,LLS,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'RMSC', 'CAL']",0.9938,-4.6427,0.0,linear_multi
+ZXX6,SMOD,LLS,RF,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'RMSC', 'CAL']",0.9941,-0.0435,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX6,SMOD,LLS,XGBoost,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'RMSC', 'CAL']",0.9987,0.0379,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX6,SMOD,LLS,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'RMSC', 'CAL']",0.9952,-28344.4753,1.7,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX6,POIS,LLS,Linear_single,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'RMSC', 'CAL']",0.996,0.8803,0.0,0.4803 * RMSC + -0.5716
+ZXX6,POIS,LLS,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'RMSC', 'CAL']",0.9972,-2.5133,0.0,linear_multi
+ZXX6,POIS,LLS,RF,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'RMSC', 'CAL']",0.998,0.6902,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX6,POIS,LLS,XGBoost,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'RMSC', 'CAL']",0.9892,0.57,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX6,POIS,LLS,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'RMSC', 'CAL']",0.9627,-46226.6985,1.4,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX6,SHMAX,LLS,Linear_single,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'RMSC', 'CAL']",0.0218,0.0714,0.0,-0.01658 * LLD + 88.68
+ZXX6,SHMAX,LLS,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'RMSC', 'CAL']",0.9191,-0.05,0.0,linear_multi
+ZXX6,SHMAX,LLS,RF,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'RMSC', 'CAL']",0.9868,-0.0287,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX6,SHMAX,LLS,XGBoost,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'RMSC', 'CAL']",0.9943,-0.0289,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX6,SHMAX,LLS,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'RMSC', 'CAL']",0.9362,-46.2176,2.8,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX7,YMOD,LLS,Linear_single,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'RMSC', 'CAL']",0.9339,0.9072,0.0,-688.8 * DTS + 1.283e+05
+ZXX7,YMOD,LLS,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'RMSC', 'CAL']",0.9867,-144.1653,0.0,linear_multi
+ZXX7,YMOD,LLS,RF,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'RMSC', 'CAL']",0.9981,0.9345,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX7,YMOD,LLS,XGBoost,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'RMSC', 'CAL']",0.9996,0.9257,0.3,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX7,YMOD,LLS,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'RMSC', 'CAL']",0.9963,-209.4729,3.5,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX7,SMOD,LLS,Linear_single,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'RMSC', 'CAL']",0.9428,0.9337,0.0,-0.281 * DTS + 51.59
+ZXX7,SMOD,LLS,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'RMSC', 'CAL']",0.9876,-207.2594,0.0,linear_multi
+ZXX7,SMOD,LLS,RF,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'RMSC', 'CAL']",0.9987,0.9409,0.5,"RF(n=300, depth=10, leaf=5)"
+ZXX7,SMOD,LLS,XGBoost,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'RMSC', 'CAL']",0.9996,0.9527,0.3,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX7,SMOD,LLS,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'RMSC', 'CAL']",0.9989,-431.2942,1.3,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX7,POIS,LLS,Linear_single,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'RMSC', 'CAL']",0.9648,0.9083,0.0,0.3244 * RMSC + -0.3077
+ZXX7,POIS,LLS,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'RMSC', 'CAL']",0.9717,-7.8386,0.0,linear_multi
+ZXX7,POIS,LLS,RF,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'RMSC', 'CAL']",0.9924,0.8949,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX7,POIS,LLS,XGBoost,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'RMSC', 'CAL']",0.9904,0.9193,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX7,POIS,LLS,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'RMSC', 'CAL']",0.9928,-1082.9438,3.6,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX7,SHMAX,LLS,Linear_single,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'RMSC', 'CAL']",0.0492,-0.1668,0.0,-0.05987 * LLD + -575.7
+ZXX7,SHMAX,LLS,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'RMSC', 'CAL']",0.886,-46367.7519,0.0,linear_multi
+ZXX7,SHMAX,LLS,RF,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'RMSC', 'CAL']",0.9911,-12.2746,0.5,"RF(n=300, depth=10, leaf=5)"
+ZXX7,SHMAX,LLS,XGBoost,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'RMSC', 'CAL']",1.0,-11.936,0.3,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX7,SHMAX,LLS,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'RMSC', 'CAL']",0.9976,-70930.3344,4.6,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX2,YMOD,RMSC,Linear_single,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'CAL']",0.6082,0.6993,0.0,-583.7 * DTC + 8.058e+04
+ZXX2,YMOD,RMSC,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'CAL']",0.8415,-2.1512,0.0,linear_multi
+ZXX2,YMOD,RMSC,RF,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'CAL']",0.971,0.5649,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX2,YMOD,RMSC,XGBoost,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'CAL']",0.9705,0.7334,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX2,YMOD,RMSC,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'CAL']",0.9085,-924.8553,8.9,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX2,SMOD,RMSC,Linear_single,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'CAL']",0.7701,0.5068,0.0,-0.1125 * DTS + 28.1
+ZXX2,SMOD,RMSC,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'CAL']",0.8059,-4.0035,0.0,linear_multi
+ZXX2,SMOD,RMSC,RF,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'CAL']",0.9707,0.3371,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX2,SMOD,RMSC,XGBoost,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'CAL']",0.9598,0.5726,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX2,SMOD,RMSC,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'CAL']",0.9635,-584.9114,3.9,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX2,POIS,RMSC,Linear_single,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'CAL']",0.0302,-0.2534,0.0,-0.001013 * DTC + 0.3792
+ZXX2,POIS,RMSC,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'CAL']",0.3653,-102.022,0.0,linear_multi
+ZXX2,POIS,RMSC,RF,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'CAL']",0.891,0.3037,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX2,POIS,RMSC,XGBoost,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'CAL']",0.833,0.2308,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX2,POIS,RMSC,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'CAL']",0.8912,-15963.44,1.7,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX2,SHMAX,RMSC,Linear_single,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'CAL']",0.6111,0.6782,0.0,-0.3944 * DTS + 170.8
+ZXX2,SHMAX,RMSC,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'CAL']",0.7981,-5.8078,0.0,linear_multi
+ZXX2,SHMAX,RMSC,RF,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'CAL']",0.9474,0.256,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX2,SHMAX,RMSC,XGBoost,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'CAL']",0.9672,0.2962,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX2,SHMAX,RMSC,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'CAL']",0.942,-15509.7787,5.1,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX3,YMOD,RMSC,Linear_single,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'CAL']",0.8398,0.9247,0.0,-1263 * DTC + 1.277e+05
+ZXX3,YMOD,RMSC,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'CAL']",0.9896,-33.1506,0.0,linear_multi
+ZXX3,YMOD,RMSC,RF,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'CAL']",0.9982,0.8193,0.5,"RF(n=300, depth=10, leaf=5)"
+ZXX3,YMOD,RMSC,XGBoost,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'CAL']",0.9985,0.8088,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX3,YMOD,RMSC,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'CAL']",0.9916,0.6963,2.9,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX3,SMOD,RMSC,Linear_single,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'CAL']",0.9602,0.9044,0.0,-0.2509 * DTS + 47.41
+ZXX3,SMOD,RMSC,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'CAL']",0.9882,-47.9952,0.0,linear_multi
+ZXX3,SMOD,RMSC,RF,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'CAL']",0.9985,0.8866,0.5,"RF(n=300, depth=10, leaf=5)"
+ZXX3,SMOD,RMSC,XGBoost,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'CAL']",0.9988,0.8646,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX3,SMOD,RMSC,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'CAL']",0.998,0.2823,2.3,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX3,POIS,RMSC,Linear_single,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'CAL']",0.001,-0.1234,0.0,0.009847 * DEN + 0.2499
+ZXX3,POIS,RMSC,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'CAL']",0.9877,-5.0596,0.0,linear_multi
+ZXX3,POIS,RMSC,RF,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'CAL']",0.9817,0.0219,0.5,"RF(n=300, depth=10, leaf=5)"
+ZXX3,POIS,RMSC,XGBoost,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'CAL']",0.9697,0.0448,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX3,POIS,RMSC,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'CAL']",0.9813,-2.5237,2.8,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX3,SHMAX,RMSC,Linear_single,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'CAL']",0.0113,0.0221,0.0,-0.1278 * CNL + 128
+ZXX3,SHMAX,RMSC,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'CAL']",0.395,-2502.209,0.0,linear_multi
+ZXX3,SHMAX,RMSC,RF,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'CAL']",0.9044,-0.3744,0.5,"RF(n=300, depth=10, leaf=5)"
+ZXX3,SHMAX,RMSC,XGBoost,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'CAL']",0.8997,-0.3749,0.3,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX3,SHMAX,RMSC,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'CAL']",0.7694,-9.5143,6.5,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX6,YMOD,RMSC,Linear_single,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'CAL']",0.9515,0.7806,0.0,-978.1 * DTC + 1.089e+05
+ZXX6,YMOD,RMSC,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'CAL']",0.9943,-20.1409,0.0,linear_multi
+ZXX6,YMOD,RMSC,RF,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'CAL']",0.9942,-0.0796,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX6,YMOD,RMSC,XGBoost,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'CAL']",0.9989,0.0856,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX6,YMOD,RMSC,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'CAL']",0.9962,-6671.8841,5.2,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX6,SMOD,RMSC,Linear_single,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'CAL']",0.8879,0.7748,0.0,-0.3773 * DTC + 43.57
+ZXX6,SMOD,RMSC,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'CAL']",0.994,-43.6818,0.0,linear_multi
+ZXX6,SMOD,RMSC,RF,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'CAL']",0.9941,-0.0397,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX6,SMOD,RMSC,XGBoost,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'CAL']",0.9986,0.0871,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX6,SMOD,RMSC,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'CAL']",0.9947,-21323.6704,1.4,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX6,POIS,RMSC,Linear_single,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'CAL']",0.3393,0.6579,0.0,-0.002936 * DTC + 0.4542
+ZXX6,POIS,RMSC,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'CAL']",0.9937,-8.8791,0.0,linear_multi
+ZXX6,POIS,RMSC,RF,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'CAL']",0.9695,0.2056,0.3,"RF(n=300, depth=10, leaf=5)"
+ZXX6,POIS,RMSC,XGBoost,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'CAL']",0.9563,0.0768,0.3,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX6,POIS,RMSC,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'CAL']",0.944,-62168.2348,1.0,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX6,SHMAX,RMSC,Linear_single,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'CAL']",0.0218,0.0714,0.0,-0.01658 * LLD + 88.68
+ZXX6,SHMAX,RMSC,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'CAL']",0.9197,-0.0095,0.0,linear_multi
+ZXX6,SHMAX,RMSC,RF,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'CAL']",0.9487,-0.0276,0.3,"RF(n=300, depth=10, leaf=5)"
+ZXX6,SHMAX,RMSC,XGBoost,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'CAL']",0.9789,-0.0277,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX6,SHMAX,RMSC,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'CAL']",0.9516,-19.6984,3.0,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX7,YMOD,RMSC,Linear_single,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'CAL']",0.9339,0.9072,0.0,-688.8 * DTS + 1.283e+05
+ZXX7,YMOD,RMSC,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'CAL']",0.9952,-7.0573,0.0,linear_multi
+ZXX7,YMOD,RMSC,RF,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'CAL']",0.998,0.9356,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX7,YMOD,RMSC,XGBoost,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'CAL']",0.9996,0.9198,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX7,YMOD,RMSC,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'CAL']",0.9967,-347.0121,3.2,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX7,SMOD,RMSC,Linear_single,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'CAL']",0.9428,0.9337,0.0,-0.281 * DTS + 51.59
+ZXX7,SMOD,RMSC,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'CAL']",0.9941,-12.9769,0.0,linear_multi
+ZXX7,SMOD,RMSC,RF,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'CAL']",0.9987,0.9371,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX7,SMOD,RMSC,XGBoost,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'CAL']",0.9996,0.9669,0.3,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX7,SMOD,RMSC,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'CAL']",0.9986,-569.7702,2.2,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX7,POIS,RMSC,Linear_single,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'CAL']",0.0004,-0.6637,0.0,0.0006297 * CAL + 0.277
+ZXX7,POIS,RMSC,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'CAL']",0.9613,-1.775,0.0,linear_multi
+ZXX7,POIS,RMSC,RF,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'CAL']",0.9824,-1.0625,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX7,POIS,RMSC,XGBoost,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'CAL']",0.9759,-0.9964,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX7,POIS,RMSC,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'CAL']",0.9795,-1598.7862,1.8,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX7,SHMAX,RMSC,Linear_single,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'CAL']",0.0492,-0.1668,0.0,-0.05987 * LLD + -575.7
+ZXX7,SHMAX,RMSC,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'CAL']",0.886,-40868.4095,0.0,linear_multi
+ZXX7,SHMAX,RMSC,RF,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'CAL']",0.991,-11.853,0.5,"RF(n=300, depth=10, leaf=5)"
+ZXX7,SHMAX,RMSC,XGBoost,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'CAL']",1.0,-12.3364,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX7,SHMAX,RMSC,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'CAL']",0.9977,-65130.7813,5.1,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX2,YMOD,CAL,Linear_single,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC']",0.6082,0.6993,0.0,-583.7 * DTC + 8.058e+04
+ZXX2,YMOD,CAL,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC']",0.8599,-0.5514,0.0,linear_multi
+ZXX2,YMOD,CAL,RF,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC']",0.9733,0.3951,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX2,YMOD,CAL,XGBoost,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC']",0.9749,0.5508,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX2,YMOD,CAL,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC']",0.917,-613.9202,9.4,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX2,SMOD,CAL,Linear_single,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC']",0.7701,0.5068,0.0,-0.1125 * DTS + 28.1
+ZXX2,SMOD,CAL,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC']",0.8738,-0.4822,0.0,linear_multi
+ZXX2,SMOD,CAL,RF,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC']",0.9788,0.2449,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX2,SMOD,CAL,XGBoost,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC']",0.9761,0.2974,0.3,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX2,SMOD,CAL,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC']",0.988,-410.7473,6.8,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX2,POIS,CAL,Linear_single,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC']",0.9844,0.8928,0.0,0.3068 * RMSC + -0.2756
+ZXX2,POIS,CAL,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC']",0.9873,0.2286,0.0,linear_multi
+ZXX2,POIS,CAL,RF,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC']",0.9998,0.8238,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX2,POIS,CAL,XGBoost,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC']",0.998,0.7743,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX2,POIS,CAL,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC']",0.9939,-6311.8635,4.1,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX2,SHMAX,CAL,Linear_single,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC']",0.6111,0.6782,0.0,-0.3944 * DTS + 170.8
+ZXX2,SHMAX,CAL,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC']",0.7976,-3.0036,0.0,linear_multi
+ZXX2,SHMAX,CAL,RF,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC']",0.9498,0.1463,0.5,"RF(n=300, depth=10, leaf=5)"
+ZXX2,SHMAX,CAL,XGBoost,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC']",0.9695,0.0591,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX2,SHMAX,CAL,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC']",0.9612,-6066.2795,5.8,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX3,YMOD,CAL,Linear_single,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC']",0.8398,0.9247,0.0,-1263 * DTC + 1.277e+05
+ZXX3,YMOD,CAL,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC']",0.9906,-20.7748,0.0,linear_multi
+ZXX3,YMOD,CAL,RF,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC']",0.9982,0.8206,0.5,"RF(n=300, depth=10, leaf=5)"
+ZXX3,YMOD,CAL,XGBoost,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC']",0.9986,0.8267,0.3,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX3,YMOD,CAL,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC']",0.9918,0.649,4.4,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX3,SMOD,CAL,Linear_single,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC']",0.9602,0.9044,0.0,-0.2509 * DTS + 47.41
+ZXX3,SMOD,CAL,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC']",0.9901,-29.4652,0.0,linear_multi
+ZXX3,SMOD,CAL,RF,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC']",0.9985,0.8875,0.5,"RF(n=300, depth=10, leaf=5)"
+ZXX3,SMOD,CAL,XGBoost,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC']",0.9988,0.8769,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX3,SMOD,CAL,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC']",0.9978,0.3202,2.8,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX3,POIS,CAL,Linear_single,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC']",0.9925,0.9571,0.0,0.3425 * RMSC + -0.3503
+ZXX3,POIS,CAL,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC']",0.9927,-0.8349,0.0,linear_multi
+ZXX3,POIS,CAL,RF,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC']",0.9992,0.9238,0.5,"RF(n=300, depth=10, leaf=5)"
+ZXX3,POIS,CAL,XGBoost,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC']",0.9947,0.8426,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX3,POIS,CAL,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC']",0.991,-10.0939,4.8,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX3,SHMAX,CAL,Linear_single,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC']",0.2466,0.5545,0.0,45.26 * RMSC + 42.8
+ZXX3,SHMAX,CAL,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC']",0.3499,-780.8725,0.0,linear_multi
+ZXX3,SHMAX,CAL,RF,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC']",0.8914,0.2147,0.5,"RF(n=300, depth=10, leaf=5)"
+ZXX3,SHMAX,CAL,XGBoost,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC']",0.8751,0.2647,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX3,SHMAX,CAL,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC']",0.6787,-12.5562,8.4,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX6,YMOD,CAL,Linear_single,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC']",0.9515,0.7806,0.0,-978.1 * DTC + 1.089e+05
+ZXX6,YMOD,CAL,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC']",0.9943,-26.7778,0.0,linear_multi
+ZXX6,YMOD,CAL,RF,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC']",0.9942,-0.0816,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX6,YMOD,CAL,XGBoost,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC']",0.999,0.1022,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX6,YMOD,CAL,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC']",0.9963,-7097.3554,4.6,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX6,SMOD,CAL,Linear_single,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC']",0.8879,0.7748,0.0,-0.3773 * DTC + 43.57
+ZXX6,SMOD,CAL,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC']",0.9939,-46.7609,0.0,linear_multi
+ZXX6,SMOD,CAL,RF,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC']",0.994,-0.0267,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX6,SMOD,CAL,XGBoost,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC']",0.9987,0.1315,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX6,SMOD,CAL,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC']",0.9972,-20293.2135,2.6,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX6,POIS,CAL,Linear_single,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC']",0.996,0.8803,0.0,0.4803 * RMSC + -0.5716
+ZXX6,POIS,CAL,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC']",0.9971,0.3353,0.0,linear_multi
+ZXX6,POIS,CAL,RF,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC']",0.998,0.6901,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX6,POIS,CAL,XGBoost,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC']",0.9892,0.57,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX6,POIS,CAL,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC']",0.8836,-376.8226,0.8,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX6,SHMAX,CAL,Linear_single,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC']",0.0218,0.0714,0.0,-0.01658 * LLD + 88.68
+ZXX6,SHMAX,CAL,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC']",0.9227,-0.0089,0.0,linear_multi
+ZXX6,SHMAX,CAL,RF,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC']",0.984,-0.0287,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX6,SHMAX,CAL,XGBoost,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC']",0.993,-0.029,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX6,SHMAX,CAL,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC']",0.9566,-35.6051,4.3,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX7,YMOD,CAL,Linear_single,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC']",0.9339,0.9072,0.0,-688.8 * DTS + 1.283e+05
+ZXX7,YMOD,CAL,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC']",0.9952,-10.0976,0.0,linear_multi
+ZXX7,YMOD,CAL,RF,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC']",0.9979,0.9314,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX7,YMOD,CAL,XGBoost,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC']",0.9996,0.9214,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX7,YMOD,CAL,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC']",0.9958,-283.2152,3.3,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX7,SMOD,CAL,Linear_single,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC']",0.9428,0.9337,0.0,-0.281 * DTS + 51.59
+ZXX7,SMOD,CAL,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC']",0.9949,-26.3362,0.0,linear_multi
+ZXX7,SMOD,CAL,RF,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC']",0.9987,0.9322,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX7,SMOD,CAL,XGBoost,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC']",0.9996,0.9511,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX7,SMOD,CAL,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC']",0.9985,-620.7719,1.6,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX7,POIS,CAL,Linear_single,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC']",0.9648,0.9083,0.0,0.3244 * RMSC + -0.3077
+ZXX7,POIS,CAL,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC']",0.9723,-18.9477,0.0,linear_multi
+ZXX7,POIS,CAL,RF,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC']",0.9924,0.8967,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX7,POIS,CAL,XGBoost,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC']",0.9906,0.9034,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX7,POIS,CAL,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC']",0.9548,-3757.1183,2.0,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX7,SHMAX,CAL,Linear_single,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC']",0.0492,-0.1668,0.0,-0.05987 * LLD + -575.7
+ZXX7,SHMAX,CAL,Linear_multi,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC']",0.8899,-37104.7662,0.0,linear_multi
+ZXX7,SHMAX,CAL,RF,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC']",0.9911,-11.4557,0.5,"RF(n=300, depth=10, leaf=5)"
+ZXX7,SHMAX,CAL,XGBoost,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC']",1.0,-11.8,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX7,SHMAX,CAL,MLP_BP,8,"['DTC', 'DTS', 'DEN', 'GR', 'CNL', 'LLD', 'LLS', 'RMSC']",0.9971,-56883.8251,5.7,"MLP-BP(128,64,32, adaptive_lr, ES)"

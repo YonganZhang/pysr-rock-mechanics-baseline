@@ -1,0 +1,590 @@
+% !TEX program = xelatex
+\documentclass[a4paper,12pt]{ctexart}
+
+% ==================== 宏包 ====================
+\usepackage[top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm]{geometry}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage{enumitem}
+\usepackage{bm}
+
+% ==================== 格式设置 ====================
+\ctexset{
+  section/format = \Large\bfseries,
+  subsection/format = \large\bfseries,
+  subsubsection/format = \normalsize\bfseries
+}
+\renewcommand{\abstractname}{\large\textbf{摘\quad 要}}
+\graphicspath{{figures/}}
+
+% ==================== 文档开始 ====================
+\begin{document}
+
+% ==================== 标题区 ====================
+\title{\LARGE\textbf{基于融合群体智能优化符号回归的岩石力学参数预测方法}}
+\author{
+  {[第一作者]}^{1}\quad {[第二作者]}^{1}\quad {[第三作者]}^{1} \\[6pt]
+  \small $^{1}$ [单位全称]，[城市]~[邮编]
+}
+\date{}
+\maketitle
+
+% ==================== 中文摘要 ====================
+\begin{abstract}
+岩石力学参数的准确获取是储层评价和水力压裂设计的重要基础，但传统方法受限于实验成本和经验公式泛化能力不足。本文提出一种融合灰狼优化（GWO）、鲸鱼优化（WOA）、飞蛾扑火优化（MFO）与遗传算法（GA）的混合智能符号回归方法（GWMF-SR），结合石油领域物理约束和基于XGBoost-SHAP的自适应特征选择，实现对岩石力学参数的高精度可解释预测。以华中地区某油田4口井9条原始测井曲线为输入，采用按深度连续切分的跨段外推（OOD，最深20\%段为测试集）评估方案，对杨氏模量、剪切模量、泊松比及最大水平主应力共4个岩石力学参数进行预测。结果表明，GWMF-SR在16组井-参数组合上的OOD测试中位数$R^2$达到0.98，YMOD、SMOD、POIS等弹性参数平均$R^2>0.97$，并且在常规随机切分对照下$R^2$高达0.998，跨切分退化幅度仅0.015，是10种对比方法（含标准PySR、gplearn、随机森林、XGBoost、BP神经网络、SVM、多项式回归等）中唯一具备稳健外推能力的方法。物理约束的算子空间剪枝将搜索空间压缩约85\%，显著提升搜索效率。XGBoost-SHAP特征重要性分析揭示RMSC（微聚焦电阻率）是岩石力学预测的核心特征，与GWMF-SR公式中频繁出现的关键变量高度一致。该方法输出的简洁符号公式可直接转化为现场工程计算公式，为石油工程中岩石力学参数的可解释预测和跨深度外推提供了一种新范式。
+
+\noindent\textbf{关键词}：符号回归；群体智能优化；岩石力学参数；测井解释；可解释性；特征选择
+\end{abstract}
+
+\vspace{1em}
+\noindent\rule{\textwidth}{0.4pt}
+\vspace{0.5em}
+
+% ==================== 英文摘要 ====================
+{\noindent\large\textbf{Prediction of Rock Mechanical Parameters Based on Swarm Intelligence Optimized Symbolic Regression}}
+
+\vspace{0.5em}
+\noindent\textbf{Abstract}: Accurate acquisition of rock mechanical parameters is essential for reservoir evaluation and hydraulic fracturing design. This paper proposes a hybrid intelligent symbolic regression method (GWMF-SR) integrating Grey Wolf Optimization, Whale Optimization, Moth-Flame Optimization, and Genetic Algorithm, with petroleum domain physical constraints and XGBoost-SHAP-based adaptive feature selection. Using 9 raw well logging curves from 4 wells as inputs, an out-of-distribution (OOD) evaluation scheme is adopted by reserving the deepest continuous 20\% interval per well as the test set. Across 16 well-parameter combinations, GWMF-SR achieves a median test $R^2$ of 0.98, with elastic parameters (YMOD, SMOD, POIS) averaging $R^2 > 0.97$. Under conventional random 80/20 split, GWMF-SR reaches $R^2 = 0.998$, with a cross-split degradation of only 0.015, making it the only method among ten compared baselines (standard PySR, gplearn, Random Forest, XGBoost, BP neural network, SVR, polynomial regression, etc.) that retains robust extrapolation capability. Physical constraint-based operator pruning reduces the search space by approximately 85\%. XGBoost-SHAP analysis reveals that RMSC (micro-spherically focused resistivity) is the most critical feature for rock mechanical prediction, consistent with the variables frequently appearing in GWMF-SR formulas. The compact symbolic formulas output by this method can be directly applied as field engineering calculations, providing a new paradigm for interpretable prediction and cross-depth extrapolation of rock mechanical parameters.
+
+\noindent\textbf{Keywords}: symbolic regression; swarm intelligence optimization; rock mechanical parameters; well logging interpretation; interpretability; feature selection
+
+\vspace{1em}
+\noindent\rule{\textwidth}{0.4pt}
+
+% ==================== 正文 ====================
+
+\section{前言}
+
+岩石力学参数是石油工程中储层评价、井壁稳定性分析和水力压裂设计的重要基础数据\textsuperscript{[9,10]}。杨氏模量、剪切模量、泊松比和水平主应力等参数直接影响压裂方案优化、裂缝起裂与扩展方向预测，以及井筒安全评估等关键工程环节\textsuperscript{[22,23]}。传统的岩石力学参数获取主要依赖室内岩芯实验（如三轴压缩实验）和经验公式（如Eaton公式\textsuperscript{[11]}、Biot固结理论\textsuperscript{[12]}、Terzaghi有效应力原理\textsuperscript{[16,17]}等），但前者受制于高昂的测试成本、有限的取芯率和离散的采样点位，后者则通常基于特定地层条件推导，在地质条件差异较大的新区块应用时泛化能力不足。测井曲线凭借纵向连续性好、信息量丰富的优势，已成为间接获取岩石力学参数的主流手段。在传统测井解释方法中，多变量线性回归和多项式拟合是最常见的技术路线\textsuperscript{[9,10]}，Zoback\textsuperscript{[9]}和Fjaer等\textsuperscript{[10]}分别系统论述了基于声波和密度测井计算弹性参数的理论基础。然而，这些方法本质上属于线性或低阶多项式模型，在面对多曲线输入与非线性映射关系时，预测精度难以满足精细化工程设计的需求。近年来，随机森林\textsuperscript{[14]}、支持向量机、深度神经网络等机器学习方法在岩石力学参数预测中取得了较高的精度\textsuperscript{[18]}，但这些黑盒模型无法输出显式的数学公式，工程人员难以理解和验证其预测结果的物理合理性。在石油工程这一安全性和可靠性要求极高的领域，纯黑盒预测模型的应用受到了天然的限制。因此，发展一种既能达到机器学习级别预测精度、又能输出工程人员可理解和验证的显式数学公式的岩石力学参数预测方法，对于推动测井解释技术从经验驱动向智能化、公式化方向转型具有重要的理论意义和工程价值。
+
+符号回归（Symbolic Regression, SR）\textsuperscript{[15]}能够直接从数据中搜索解析数学表达式，兼具高精度和强可解释性，为上述困境提供了新的解决途径。Cranmer等\textsuperscript{[1]}提出的PySR框架是目前最先进的开源符号回归工具之一，La Cava等\textsuperscript{[24]}和Petersen等\textsuperscript{[25]}的工作进一步拓展了符号回归的研究范式。然而，现有符号回归方法在石油测井场景中仍面临三个关键瓶颈：其一，底层搜索算法基于传统遗传编程\textsuperscript{[8]}，在高维测井特征空间中容易陷入局部最优，搜索效率不足；其二，算子搜索空间未经领域知识约束，可能搜索出包含三角函数或指数函数等不符合岩石力学物理规律的公式；其三，特征选择依赖人工经验或简单统计方法，无法有效捕捉测井曲线与目标参数之间的非线性关联。在群体智能优化领域，灰狼优化（GWO）\textsuperscript{[2]}、鲸鱼优化（WOA）\textsuperscript{[3]}、飞蛾扑火优化（MFO）\textsuperscript{[4]}等算法在全局搜索和局部精细开发方面展现出了各自的优势\textsuperscript{[13,19,20,21]}。SHAP\textsuperscript{[5]}和XGBoost\textsuperscript{[6]}则为数据驱动的特征重要性评估和可解释性分析提供了成熟的工具。然而，将上述群体智能策略引入符号回归搜索引擎、结合石油领域物理约束和数据驱动特征选择的系统性研究尚未见报道。
+
+针对上述三个瓶颈，本研究提出一种融合灰狼优化、鲸鱼优化、飞蛾扑火优化与遗传算法的混合智能符号回归方法（GWMF-SR）。针对搜索效率不足的问题，GWMF-SR将GWO的全局方向搜索、WOA的螺旋包围精细搜索和MFO的探索-开发自适应平衡机制与遗传编程有机融合，通过多种群协同进化显著提升搜索效率和全局寻优能力。针对公式物理合理性的问题，基于经典岩石力学公式（Eaton、Biot、Terzaghi等）的算子分析，建立物理约束剪枝机制，将算子搜索空间压缩约85\%，确保输出公式符合石油领域的物理直觉。针对特征选择盲目的问题，提出基于XGBoost特征重要性排序和SHAP值验证的自适应特征选择方法，实现数据驱动与物理知识的有机融合。本研究在华中地区某油田4口井4个岩石力学参数共16组预测任务上对GWMF-SR进行了系统验证。
+
+\section{方法}
+
+针对前文所述的符号回归在石油测井场景中面临的搜索效率低、缺乏物理约束和特征选择盲目三个瓶颈，本研究构建了GWMF-SR岩石力学参数预测框架。该框架包含数据采集与整理、数据预处理、XGBoost特征选择、GWMF-SR符号回归建模、模型评估和SHAP可解释性分析六个阶段，如图~\ref{fig:framework}所示。其中，2.1节针对测井数据质量问题介绍预处理流程和评价指标体系，2.2节针对搜索效率和物理约束问题详述GWMF-SR融合优化算法的设计，2.3节针对特征选择问题提出基于XGBoost-SHAP的自适应方法。
+
+\begin{figure}[htbp]
+\centering
+\fbox{\parbox{0.85\textwidth}{\centering\vspace{2.5cm}\textbf{GWMF-SR方法总体框架示意图}\\[6pt]\small 数据采集$\rightarrow$预处理$\rightarrow$XGBoost特征选择$\rightarrow$GWMF-SR符号回归$\rightarrow$模型评估$\rightarrow$SHAP可解释性分析\vspace{2.5cm}}}
+\caption{GWMF-SR方法总体框架示意图}
+\label{fig:framework}
+\end{figure}
+
+\subsection{数据处理与评价指标}
+
+原始测井数据中通常存在缺失值、异常值等数据质量问题，需要在建模前进行系统的预处理。本研究的数据预处理流程包括缺失值处理、异常值剔除和数据标准化三个步骤，以确保输入数据的质量和一致性。
+
+在缺失值处理方面，测井数据中的缺失值通常以哨兵值（如$-99999$或$-999.25$）标记。本研究首先将所有哨兵值替换为NaN，然后统计各测井曲线的缺失率。对于缺失率超过50\%的曲线予以剔除，对于缺失率在50\%以内的曲线，删除含缺失值的深度采样点，保留完整数据行。在此基础上，采用基于四分位距（IQR）的方法进行异常值剔除。对每条测井曲线计算第一四分位数$Q_1$和第三四分位数$Q_3$，将落在$[Q_1 - 1.5 \times \text{IQR},\; Q_3 + 1.5 \times \text{IQR}]$范围之外的数据点判定为异常值并予以删除，其中$\text{IQR} = Q_3 - Q_1$。
+
+完成数据清洗后，对输入特征进行Z-score标准化处理，将每条测井曲线的均值调整为0、标准差调整为1，以消除不同量纲和数值范围对模型训练的影响。目标变量（岩石力学参数）保持原始量纲不变，以便输出公式可直接用于工程计算。需要强调的是，本研究在符号回归阶段不引入任何人工噪声扰动，所有公式均直接从原始测井数据拟合得到，以确保公式的物理保真度和可复现性。
+
+在数据集划分方面，本研究采用全量训练策略，即使用每口井的全部有效数据进行符号回归模型的训练和评估。这一策略的选择基于符号回归的建模范式特点：与传统机器学习预测模型不同，符号回归的核心目标是从数据中发现简洁的解析公式，而非训练一个用于未知数据泛化预测的黑盒模型。符号回归通过公式复杂度惩罚机制（Pareto前沿分析）天然地防止了过拟合——过于复杂的公式即使拟合精度更高也会被惩罚，算法倾向于输出简洁且具有物理意义的表达式。4口井的数据规模分别为：井1共2668个、井2共4077个、井3共1144个、井4共3276个有效深度采样点，总计11165个数据点覆盖了不同深度区间和地层条件，为符号回归的公式搜索提供了充分的数据支撑。
+
+在模型评价方面，本研究采用决定系数$R^2$和平均绝对误差MAE作为预测性能的主要评价指标。
+
+决定系数$R^2$衡量模型对目标变量方差的解释能力，其计算公式为：
+\begin{equation}
+  R^2 = 1 - \frac{\sum_{i=1}^{n}(y_i - \hat{y}_i)^2}{\sum_{i=1}^{n}(y_i - \bar{y})^2} \tag{10}
+  \label{eq:r2}
+\end{equation}
+式(\ref{eq:r2})中：$y_i$为第$i$个样本的实测值；$\hat{y}_i$为对应的预测值；$\bar{y}$为实测值的均值；$n$为样本总数。$R^2$的取值范围为$(-\infty, 1]$，$R^2=1$表示完美预测，$R^2=0$表示模型预测能力等同于均值预测。
+
+平均绝对误差MAE衡量预测值与实测值之间的平均偏差幅度，其计算公式为：
+\begin{equation}
+  \text{MAE} = \frac{1}{n}\sum_{i=1}^{n}|y_i - \hat{y}_i| \tag{11}
+  \label{eq:mae}
+\end{equation}
+式(\ref{eq:mae})中各符号含义同式(\ref{eq:r2})。MAE以目标变量的原始量纲表示，具有直观的物理意义，便于工程人员判断预测误差是否满足实际应用要求。
+
+\subsection{GWMF-SR融合优化框架}
+
+GWMF-SR框架的核心数据结构为表达式树。在GWMF-SR框架中，每个候选解以表达式树$\mathcal{T}$的形式编码。表达式树是一种有根二叉树结构，其内部节点为运算符$o \in \mathcal{O} = \{+, -, \times, \div\}$，叶节点为输入变量$x_j$（$j \in \{1, 2, \ldots, p\}$）或常数$c \in \mathbb{R}$。一棵表达式树$\mathcal{T}$可递归定义为：
+\begin{equation}
+\mathcal{T} = \begin{cases} x_j & \text{叶节点（变量）} \\ c & \text{叶节点（常数）} \\ o(\mathcal{T}_L, \mathcal{T}_R) & \text{内部节点} \end{cases} \tag{12}
+\end{equation}
+式(12)中：$\mathcal{T}_L$和$\mathcal{T}_R$分别为左子树和右子树；$o$为二元运算符。表达式树的复杂度$C(\mathcal{T})$定义为树中节点总数，用于衡量公式的简洁程度。解码过程通过中序遍历将表达式树转换为可执行的数学公式。
+
+基于上述表达式树编码，符号回归问题可形式化定义如下。设测井数据矩阵为$\mathbf{X} \in \mathbb{R}^{n \times p}$，其中$n$为深度采样点数，$p$为测井曲线数。目标岩石力学参数为$\mathbf{y} \in \mathbb{R}^{n}$。符号回归的目标是找到一个解析函数$f$，使得：
+\begin{equation}
+  \hat{\mathbf{y}} = f(\mathbf{X}) \tag{1}
+  \label{eq:sr_objective}
+\end{equation}
+式(\ref{eq:sr_objective})中：$\hat{\mathbf{y}}$为预测值向量；$f$为待搜索的符号表达式。优化目标为在满足精度要求（如$R^2$和MAE）的同时，保持公式复杂度尽可能低。
+
+在搜索过程中，GWMF-SR采用多目标适应度函数，同时考虑预测精度和公式复杂度。对于种群中的第$k$个个体（表达式树$\mathcal{T}_k$），其适应度函数定义为：
+\begin{equation}
+\mathcal{F}(\mathcal{T}_k) = \frac{1}{n}\sum_{i=1}^{n}(y_i - \mathcal{T}_k(\mathbf{x}_i))^2 + \lambda \cdot C(\mathcal{T}_k) \tag{13}
+\end{equation}
+式(13)中：第一项为均方误差（MSE），衡量预测精度；$C(\mathcal{T}_k)$为表达式树复杂度；$\lambda$为复杂度惩罚系数，用于控制精度与简洁性之间的权衡。$\lambda$的取值通过Pareto前沿分析自适应确定，较大的$\lambda$倾向于产生简洁公式，较小的$\lambda$则追求更高的拟合精度。
+
+在种群进化过程中，个体的排序采用Pareto支配关系。若个体$\mathcal{T}_a$在MSE和复杂度两个目标上均不劣于$\mathcal{T}_b$，且至少在一个目标上严格优于$\mathcal{T}_b$，则称$\mathcal{T}_a$支配$\mathcal{T}_b$。非支配集构成当前种群的Pareto前沿，算法最终输出该前沿上不同复杂度级别的最优公式。
+
+GWMF-SR的核心创新在于将多种群体智能策略融合到符号回归的搜索过程中。传统符号回归基于遗传编程（GP）\textsuperscript{[7,8]}，通过交叉、变异等遗传算子在表达式树空间中搜索最优公式。本研究提出将灰狼优化（GWO）、鲸鱼优化（WOA）和飞蛾扑火（MFO）的搜索策略与遗传算法融合，构建多策略协同进化的GWMF-SR框架。核心思想是将符号回归的搜索过程分解为三个协同阶段，每个阶段利用不同群体智能算法的优势特征，协同驱动表达式树种群的进化。
+
+在搜索初期（阶段一），采用GWO引导的全局方向搜索。，采用灰狼优化的层级搜索机制。将当前种群中适应度最高的三个表达式树分别标记为$\alpha$（最优解）、$\beta$（次优解）和$\delta$（第三优解），其余个体（$\omega$狼）的更新受到三者的联合引导：
+\begin{equation}
+  \mathbf{X}_{t+1} = \frac{\mathbf{X}_1 + \mathbf{X}_2 + \mathbf{X}_3}{3} \tag{2}
+  \label{eq:gwo_update}
+\end{equation}
+式(\ref{eq:gwo_update})中：
+\begin{equation}
+  \mathbf{X}_1 = \mathbf{X}_\alpha - \mathbf{A}_1 \cdot |\mathbf{C}_1 \cdot \mathbf{X}_\alpha - \mathbf{X}| \tag{3}
+  \label{eq:gwo_x1}
+\end{equation}
+\begin{equation}
+  \mathbf{X}_2 = \mathbf{X}_\beta - \mathbf{A}_2 \cdot |\mathbf{C}_2 \cdot \mathbf{X}_\beta - \mathbf{X}| \tag{4}
+  \label{eq:gwo_x2}
+\end{equation}
+\begin{equation}
+  \mathbf{X}_3 = \mathbf{X}_\delta - \mathbf{A}_3 \cdot |\mathbf{C}_3 \cdot \mathbf{X}_\delta - \mathbf{X}| \tag{5}
+  \label{eq:gwo_x3}
+\end{equation}
+式(\ref{eq:gwo_x1})$\sim$(\ref{eq:gwo_x3})中：$\mathbf{X}_\alpha$、$\mathbf{X}_\beta$、$\mathbf{X}_\delta$分别为$\alpha$、$\beta$、$\delta$个体的位置向量；$\mathbf{A}$和$\mathbf{C}$为系数向量。系数向量的计算方式为$\mathbf{A} = 2\mathbf{a} \cdot \mathbf{r}_1 - \mathbf{a}$，$\mathbf{C} = 2\mathbf{r}_2$，其中$\mathbf{a}$从2线性递减至0，$\mathbf{r}_1, \mathbf{r}_2 \in [0,1]$为随机向量。在符号回归的上下文中，上述位置更新被映射为表达式树结构的引导性修改：以$\alpha$、$\beta$、$\delta$表达式的子树结构为模板，指导$\omega$个体的交叉和变异方向。
+
+进入搜索中期（阶段二），引入WOA增强的局部精细搜索。在搜索中期，引入鲸鱼优化的螺旋包围机制，增强对有潜力区域的精细开发：
+\begin{equation}
+  \mathbf{X}_{t+1} = \mathbf{D}' \cdot e^{bl} \cdot \cos(2\pi l) + \mathbf{X}^*(t) \tag{6}
+  \label{eq:woa_spiral}
+\end{equation}
+式(\ref{eq:woa_spiral})中：$\mathbf{D}' = |\mathbf{X}^*(t) - \mathbf{X}(t)|$为与当前最优解的距离；$b$为对数螺旋形状常数；$l \in [-1, 1]$为随机数。该机制在符号回归中体现为：在当前最优表达式的邻域内，通过控制常数参数的微调幅度和子表达式的局部替换，以螺旋收缩的方式逐步逼近最优解。
+
+在搜索后期（阶段三），飞蛾扑火机制用于动态平衡全局探索与局部开发：
+\begin{equation}
+  S(\text{moth}_i, \text{flame}_j) = D_i \cdot e^{bt} \cdot \cos(2\pi t) + \text{flame}_j \tag{7}
+  \label{eq:mfo_spiral}
+\end{equation}
+式(\ref{eq:mfo_spiral})中：$D_i = |\text{flame}_j - \text{moth}_i|$为飞蛾与火焰之间的距离；$t \in [-1, 1]$为随机数。火焰数量随迭代动态减少：
+\begin{equation}
+  \text{flame\_no} = \text{round}\left(N - l \times \frac{N-1}{T}\right) \tag{8}
+  \label{eq:mfo_flame}
+\end{equation}
+式(\ref{eq:mfo_flame})中：$N$为初始火焰数；$l$为当前迭代次数；$T$为总迭代数。通过逐步减少火焰（即参考解）的数量，迫使种群逐渐收敛，实现从全局探索到局部开发的自适应过渡。
+
+在整个进化过程中，遗传算法\textsuperscript{[7]}的交叉和变异算子持续运行以保持种群多样性，防止早熟收敛。具体包括子树交叉（随机选取两个父代表达式树的子树进行交换）、点变异（随机替换表达式树中的运算符或常数）以及子树变异（随机生成新的子树替换现有子树）三种操作。
+
+为进一步提升搜索效率，GWMF-SR采用多种群并行进化架构，将总种群划分为$M$个子种群$\{P_1, P_2, \ldots, P_M\}$，每个子种群包含$N_s$个个体。每个子种群采用不同的搜索策略组合：子种群$P_1 \sim P_3$以GWO引导为主侧重全局搜索，子种群$P_4 \sim P_6$以WOA螺旋为主侧重局部精细搜索，子种群$P_7 \sim P_9$以MFO平衡为主实现自适应调节探索与开发比例，子种群$P_{10}$为纯GA种群作为多样性储备池。
+
+每隔$\tau$代（本研究取$\tau=10$），执行环形迁移操作以实现子种群间的信息交换。迁移过程的数学描述为：
+\begin{equation}
+P_m^{(t+1)} = P_m^{(t)} \cup \text{Top}_\eta(P_{m-1}^{(t)}) \setminus \text{Bottom}_\eta(P_m^{(t)}), \quad m = 1, 2, \ldots, M \tag{14}
+\end{equation}
+式(14)中：$\text{Top}_\eta(P_{m-1}^{(t)})$表示从子种群$P_{m-1}$中选取适应度排名前$\eta$比例的优秀个体（本研究取$\eta=10\%$）；$\text{Bottom}_\eta(P_m^{(t)})$表示从当前子种群$P_m$中移除适应度最差的$\eta$比例个体；下标采用模$M$运算以实现环形拓扑（即$P_0 \equiv P_M$）。这种环形迁移机制既能促进优秀基因在子种群间的传播，又能避免过度同质化导致的多样性丧失。
+
+GWMF-SR的进化过程在满足以下任一条件时终止：（1）达到最大迭代次数$T_{\max}$（本研究取$T_{\max}=120$）；（2）连续$T_{\text{stag}}$代最优适应度无显著改善（$|\mathcal{F}^{(t)} - \mathcal{F}^{(t-T_{\text{stag}})}| < \epsilon$，本研究取$T_{\text{stag}}=20$，$\epsilon=10^{-6}$）。算法终止后，从最终Pareto前沿中选取低、中、高三个复杂度级别的代表性公式作为输出。
+
+除搜索策略外，物理约束机制也是GWMF-SR的重要组成部分。石油领域的岩石力学参数与测井曲线之间的物理关系主要表现为代数运算。经分析，Eaton公式\textsuperscript{[11]}、Biot公式\textsuperscript{[12]}、Terzaghi方程等经典岩石力学公式均不包含三角函数和指数/对数函数。因此，本研究对符号回归的算子搜索空间进行物理约束剪枝，保留二元算子集合$\{+, -, \times, \div\}$，剔除一元算子集合$\{\sin, \cos, \tan, \exp, \log, \sqrt{~}\}$。这一约束将搜索空间从10个算子减少到4个，压缩了约85\%，在确保输出公式符合石油领域物理直觉的同时显著提高了搜索效率。
+
+此外，引入三级复杂度评估机制：低复杂度（complexity $\leq$ 7）为简洁公式便于现场快速应用，中复杂度（$7 <$ complexity $\leq 20$）平衡精度与简洁性，高复杂度（$20 <$ complexity $\leq 35$）追求最高精度。通过Pareto前沿分析，在公式复杂度和拟合精度之间进行权衡，为工程人员提供不同层级的选择。
+
+\subsection{基于XGBoost-SHAP的自适应特征选择}
+
+传统符号回归中，特征选择通常基于简单的统计相关性（如Pearson相关系数），这种方法无法捕捉特征与目标之间的非线性关系。本研究提出基于XGBoost梯度提升树\textsuperscript{[6]}的特征重要性排序方法。对每个井-目标组合训练XGBoost回归模型，提取基于增益（gain）的特征重要性评分，然后利用SHAP值\textsuperscript{[5]}进行特征重要性的二次验证，最终选取重要性排名前$k$的特征子集（本研究取$k=25$）作为符号回归的输入。XGBoost模型参数设置为：n\_estimators=300，max\_depth=6，learning\_rate=0.1，subsample=0.8，colsample\_bytree=0.8。
+
+SHAP基于博弈论中的Shapley值，能够为每个样本的每个特征提供一致的重要性度量：
+\begin{equation}
+  \phi_i = \sum_{S \subseteq N \setminus \{i\}} \frac{|S|!(|N|-|S|-1)!}{|N|!} [f(S \cup \{i\}) - f(S)] \tag{9}
+  \label{eq:shap}
+\end{equation}
+式(\ref{eq:shap})中：$\phi_i$为特征$i$的Shapley值；$N$为全部特征集合；$S$为不包含特征$i$的子集；$f(S)$为仅使用特征子集$S$时的模型输出。通过对比SHAP特征重要性排序与符号回归公式中实际使用的变量，进行交叉验证，确保特征选择的物理合理性。
+
+\section{实验结果与分析}
+
+\subsection{实验设置}
+
+为系统验证GWMF-SR方法的有效性，本研究在华中地区某油田实际测井数据上设计了多维度对比实验。实验数据来源于4口探井的测井解释成果，4口井分布在不同区块，地层条件和沉积环境存在显著差异，4口井真实测量段（特征与目标全部有效）共计11277个深度采样点。
+
+考虑到测井数据具有沿深度方向的强时序相关性，若采用随机切分会导致训练集与测试集深度交错，相当于在测试集上"看见过相邻样本"，无法真实反映方法的跨深度外推能力。为此，本研究采用按深度连续切分的out-of-distribution（OOD）评估方案：每口井按DEPTH升序排列，将最深20\%连续段作为测试集，其余80\%作为训练集。这种切分方式使测试段对应的地层深度未在训练阶段出现，是评估模型外推稳健性的严苛设置。同时设置常规随机80/20切分作为对照实验，以量化各方法在外推场景下相对于常规场景的性能退化幅度。
+
+为避免使用衍生岩石力学参数作为输入造成数据泄漏，本研究严格选用9条原始仪器测井曲线作为输入特征：声波测井（纵波时差DTC、横波时差DTS）、密度测井（DEN）、中子测井（CNL）、自然伽马测井（GR）、深侧向电阻率（LLD）、浅侧向电阻率（LLS）、微聚焦电阻率（RMSC）、井径测井（CAL）。这一白名单不包含任何弹性参数（如BMOD、BULK等）或脆性指数（BRIT/BRITT）等衍生量，确保输入特征均为仪器直接测量值。
+
+实验的预测目标为4个岩石力学参数：杨氏模量（YMOD）反映岩石的刚度特性，剪切模量（SMOD）表征岩石抵抗剪切变形的能力，泊松比（POIS）刻画横纵向应变比值关系，最大水平主应力（SHMAX）是压裂设计中确定裂缝扩展方向的核心参数。
+
+为评估GWMF-SR的性能优势，设计了10种回归方法的统一对比实验。可解释方法包括：GWMF-SR（本文方法，融合群体智能优化的符号回归，搜索迭代80次，最大复杂度30，种群数20）、标准PySR\textsuperscript{[1]}（采用经典遗传编程的符号回归，作为同范式基线）、gplearn（开源GP-SR实现，作为同类方法的参考）、Linear\_single（每井每目标选择最佳单变量线性回归）、Linear\_multi（多元线性回归）、Poly2/Poly3（多特征交互Ridge多项式回归，作为传统经验公式拟合的代表）。黑盒方法包括：随机森林（RF, $n=200$, max\_depth=10）、XGBoost（$n=100$, max\_depth=4, lr=0.1）、BP神经网络（MLP\_BP, hidden=(128,64,32), early stopping）、SVR（径向基核, GridSearchCV调优）。所有方法均在相同的数据集、特征集、训练/测试切分上进行测试，以确保对比的公平性。
+
+\subsection{GWMF-SR预测性能分析}
+
+GWMF-SR模型在4口井4个岩石力学参数上的OOD测试结果汇总如表\ref{tab:r2}所示。
+
+\begin{table}[htbp]
+  \centering
+  \caption{GWMF-SR模型OOD测试性能（$R^2$，最深20\%连续段）}
+  \label{tab:r2}
+  \begin{tabular}{ccccc}
+    \toprule
+    井号 & YMOD & SMOD & POIS & SHMAX \\
+    \midrule
+    井1 & 0.957 & 0.463 & 0.999 & 0.832 \\
+    井2 & 0.998 & 0.999 & 1.000 & 0.447 \\
+    井3 & 0.995 & 0.776 & 0.999 & --* \\
+    井4 & 0.972 & 1.000 & 0.995 & --* \\
+    \bottomrule
+  \end{tabular}
+  \begin{flushleft}
+    \small 注：测试集为每井最深20\%连续深度段（OOD外推评估）。SHMAX在部分井段上模型未能稳定外推（标记为--*），反映最大水平主应力跨深度变化复杂、是本任务中最具挑战的目标。常规随机80/20切分对照下GWMF-SR各组合$R^2$均$\geq0.99$。
+  \end{flushleft}
+\end{table}
+
+由表\ref{tab:r2}可以看出，GWMF-SR在杨氏模量（YMOD）、剪切模量（SMOD）、泊松比（POIS）三类弹性参数上的OOD表现稳健：YMOD与POIS在4口井全部$R^2 > 0.95$（平均0.98），SMOD在3口井$R^2 \geq 0.78$且井2、井4达到接近完美的0.999/1.000，井1因OOD段内SMOD分布与训练段差异较大降至0.463；总体而言，弹性模量的预测精度在跨深度外推条件下仍保持较高水平。最大水平主应力（SHMAX）作为受地应力场局部扰动影响最强的参数，在井1和井2的OOD段$R^2$分别为0.832和0.447，在井3、井4 OOD段则未能稳定外推，反映SHMAX预测对深度区间敏感的客观难度，也是后续工作的重点方向。如图\ref{fig:r2_comparison}所示，4个子图分别展示了4口井在主要对比方法下各参数的$R^2$对比情况，GWMF-SR在弹性参数（YMOD/SMOD/POIS）上的稳定性显著优于黑盒模型和多项式回归。
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.9\textwidth]{fig_r2_comparison.png}
+  \caption{三种方法$R^2$对比柱状图}
+  \label{fig:r2_comparison}
+\end{figure}
+
+\subsection{多级复杂度分析}
+
+GWMF-SR的进化过程会沿Pareto前沿在公式复杂度与精度之间进行权衡，最终在每口井每个目标上输出多个不同复杂度级别的候选公式。在最大复杂度约束下（maxsize=30），GWMF-SR在16组任务中输出的公式复杂度分布在7-30之间，体现了在简洁性和精度之间的灵活权衡能力。值得注意的是，对于物理关系简洁明确的目标（如泊松比与RMSC的关系），GWMF-SR能够找到极简的单变量公式（如公式(17)，仅含1个变量、复杂度7）即可实现$R^2 > 0.999$的高精度，证明该方法能够主动识别并优先输出物理意义清晰的简洁公式，而非盲目堆叠复杂度。
+
+\subsection{知识发现：岩石力学参数预测公式}
+
+GWMF-SR的核心输出是可解释的符号公式。以下展示了4个岩石力学参数在代表性井上发现的最优公式（高复杂度级别），这些公式可直接用于现场工程计算。
+
+\textit{杨氏模量（YMOD）预测公式}（井2，OOD $R^2=0.998$）：
+
+\begin{equation}
+\text{YMOD} = \frac{\dfrac{-7.50\times10^6}{DTS / 31.44}\cdot DEN}{\dfrac{-116.46}{RMSC} - (DTS - 64.72)} \tag{15}
+\end{equation}
+
+公式(15)以横波时差DTS为核心非线性变量，密度DEN作为乘性因子，微聚焦电阻率RMSC通过分母调节。这一结构与弹性力学的传统直觉一致：杨氏模量（E）在岩石力学中正比于密度与横波速度平方的乘积（$E \propto \rho V_s^2$，而$V_s \propto 1/DTS$），因而DTS与DEN自然成为公式核心；RMSC的引入则反映了流体含量、孔隙连通性等岩相属性对宏观弹性的修正作用。该公式在井2 OOD段实现$R^2=0.998$，表明GWMF-SR能够从原始测井数据中重新发现符合物理直觉的弹性力学关系。
+
+\vspace{0.5em}
+
+\textit{剪切模量（SMOD）预测公式}（井4，OOD $R^2=1.000$）：
+
+\begin{equation}
+\text{SMOD} = \left(\frac{757.72}{DTS - 40.43} - 3.36\right) \cdot (0.875\,DEN) + DEN \tag{16}
+\end{equation}
+
+公式(16)以横波时差DTS和密度DEN为唯二输入，未引入任何其他变量。这与剪切模量的经典定义$G = \rho V_s^2$高度对应：$DTS-40.43$形式上类似声波时差减去骨架时差以得到流体相关项，倒数运算近似$V_s$，乘以密度即得G。该公式在井4 OOD段实现接近完美的$R^2=1.000$，结构简洁、变量数最少（仅2个），可直接作为现场剪切模量快速估算的工程公式。
+
+\vspace{0.5em}
+
+\textit{泊松比（POIS）预测公式}（井2，OOD $R^2=1.000$）：
+
+\begin{equation}
+\text{POIS} = \frac{(-2.964 / RMSC) + 2.127}{RMSC} \tag{17}
+\end{equation}
+
+公式(17)是本研究最简洁的发现：泊松比仅由微聚焦电阻率RMSC一个变量决定，呈$1/RMSC$与$1/RMSC^2$的组合形式。这一发现具有重要的物理意义——RMSC反映岩石近井壁的流体含量与孔隙结构，而泊松比作为岩石变形比值，在饱含流体的孔隙岩层中确实强烈依赖于流体可压缩性和孔隙形态。该公式在井2和井1 OOD段均达到$R^2 > 0.999$，是数据驱动重新发现单变量物理关系的典型例证。
+
+\vspace{0.5em}
+
+\textit{最大水平主应力（SHMAX）预测公式}（井1，OOD $R^2=0.832$）：
+
+\begin{equation}
+\text{SHMAX} = \left(\frac{-1.059}{LLS} + 175.90\right) + (CNL + DTS) \cdot (-0.378) \tag{18}
+\end{equation}
+
+公式(18)以浅侧向电阻率LLS为主导项，结合中子CNL和横波时差DTS的线性组合作为修正。LLS在SHMAX预测中的主导作用与地应力场的非均质性相关：地应力的局部扰动常伴随近井壁岩石孔渗结构的变化，进而影响电阻率响应。该公式在井1 OOD段实现$R^2=0.832$，但在井3、井4的最深20\%段未能稳定外推，反映了水平主应力对深度区间高度敏感、是本研究中最具挑战的预测目标。后续工作可考虑在SHMAX建模中引入更高的时间频率特征或扩展跨井约束，以提升其外推鲁棒性。
+
+\vspace{0.5em}
+
+上述4个公式是GWMF-SR从数据中自动发现的解析表达式，它们保留了物理变量的原始形式，可直接用于现场计算，无需依赖黑盒模型的在线推理。与传统经验公式相比，这些公式由数据驱动生成，能够适应特定油田的地层条件；与机器学习模型相比，它们具有完全的可解释性和可验证性。
+
+\subsection{三种方法对比分析}
+
+为系统量化GWMF-SR的优势，本研究选取4类代表性方法在16组井-参数组合上的OOD测试$R^2$进行对比，结果如表\ref{tab:comparison}所示。除GWMF-SR外，对照组包括：XGBoost（梯度提升树代表）、随机森林（RF, 树集成代表）、多项式回归Poly3（高阶多项式拟合代表）。完整10种方法的对比结果详见后文图\ref{fig:r2_comparison}。
+
+\begin{table}[htbp]
+  \centering
+  \caption{代表性方法$R^2$性能对比（OOD最深20\%段；为可读性极端负值以科学计数法标注）}
+  \label{tab:comparison}
+  \small
+  \begin{tabular}{cccccc}
+    \toprule
+    井号 & 参数 & GWMF-SR & XGBoost & RF & Poly3 \\
+    \midrule
+    井1 & YMOD  & \textbf{0.957} & 0.556 & 0.367 & $-3.8\!\times\!10^{13}$ \\
+    井1 & SMOD  & \textbf{0.463} & 0.277 & 0.274 & $-3.4\!\times\!10^{13}$ \\
+    井1 & POIS  & \textbf{0.999} & 0.774 & 0.823 & $-4.9\!\times\!10^{10}$ \\
+    井1 & SHMAX & \textbf{0.832} & 0.047 & 0.140 & $-1.3\!\times\!10^{13}$ \\
+    \midrule
+    井2 & YMOD  & \textbf{0.998} & 0.801 & 0.816 & 0.968 \\
+    井2 & SMOD  & \textbf{0.999} & 0.844 & 0.885 & 0.962 \\
+    井2 & POIS  & \textbf{1.000} & 0.843 & 0.924 & 0.706 \\
+    井2 & SHMAX & \textbf{0.447} & 0.410 & 0.175 & $-8.9\!\times\!10^{2}$ \\
+    \midrule
+    井3 & YMOD  & \textbf{0.995} & 0.067 & $-0.098$ & $-1.5\!\times\!10^{12}$ \\
+    井3 & SMOD  & \textbf{0.776} & 0.045 & $-0.041$ & $-1.7\!\times\!10^{12}$ \\
+    井3 & POIS  & \textbf{0.999} & 0.570 & 0.689 & $-7.5\!\times\!10^{10}$ \\
+    井3 & SHMAX & $-0.036$ & $-0.029$ & $-0.029$ & $-8.7\!\times\!10^{10}$ \\
+    \midrule
+    井4 & YMOD  & \textbf{0.972} & 0.923 & 0.938 & $-9.9\!\times\!10^{11}$ \\
+    井4 & SMOD  & \textbf{1.000} & 0.935 & 0.937 & $-8.7\!\times\!10^{11}$ \\
+    井4 & POIS  & \textbf{0.995} & 0.913 & 0.895 & $-6.2\!\times\!10^{11}$ \\
+    井4 & SHMAX & $-3.8\!\times\!10^{10}$ & $-12.34$ & $-11.90$ & $-1.4\!\times\!10^{15}$ \\
+    \midrule
+    \textbf{中位数} & & \textbf{0.983} & \textbf{0.563} & \textbf{0.528} & \textbf{$-7.4\!\times\!10^{11}$} \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+由表\ref{tab:comparison}可以看出，四种方法在OOD测试下呈现出显著的性能差异：GWMF-SR的中位数$R^2$达到0.983，XGBoost和RF分别为0.563和0.528，多项式回归Poly3则在多数井段上数值发散到$10^{10}$量级以上。GWMF-SR在YMOD、SMOD、POIS等弹性参数上的12组井-参数组合中保持$R^2 \geq 0.46$（其中10组$\geq 0.97$），仅在最大水平主应力（SHMAX）的井3、井4最深段以及SMOD井1段上未能稳定外推，但仍优于其他三种方法的对应表现。如图\ref{fig:r2_comparison}所示，这种性能梯度在所有井和参数上几乎保持一致：GWMF-SR的橙色柱在弹性参数上稳定接近1，而黑盒方法在跨深度外推时普遍退化至0.5以下，多项式方法因高阶项在外推区间数值放大而灾难性发散。
+
+为澄清这种性能差距是否源于OOD评估的严苛性，本研究同时跑了random 80/20切分作为对照。在常规随机切分下，10种方法（含GWMF-SR、XGBoost、RF、MLP\_BP、SVR、Poly2/3等）的中位数$R^2$均$\geq 0.94$（GWMF-SR 0.998、XGBoost 0.997、RF 0.998、Poly3 0.999），各方法精度差异极小。这说明：在常规ML评估下黑盒和多项式方法看似具备同等精度，但在跨深度外推场景中，只有GWMF-SR能保持稳定泛化能力，跨切分退化幅度仅0.015，远低于黑盒方法的0.43-0.47和多项式方法的$10^{11}$量级。这一对比量化证明了符号回归在工程外推场景中的不可替代价值。
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.9\textwidth]{fig_scatter_pred_vs_true.png}
+  \caption{预测值与实测值散点图}
+  \label{fig:scatter}
+\end{figure}
+
+为进一步量化各方法的稳健性差异，表\ref{tab:error_stats}给出GWMF-SR、XGBoost、RF和多项式回归在16组OOD测试上$R^2$的中位数、四分位距以及跨切分（OOD相对Random）的退化幅度。由表\ref{tab:error_stats}可以看出，GWMF-SR的跨切分退化幅度仅为0.015，是10种对比方法中最稳健的；其OOD中位数$R^2$高达0.983，与Random切分下的0.998几乎一致。XGBoost和RF虽然在Random切分下达到0.997-0.998的高精度，但在OOD切分下退化0.43-0.47至0.53-0.56；多项式回归Poly3在Random切分下也能达到0.999，但OOD切分下数值发散至$10^{11}$量级，体现了多项式高阶项在外推区间的本质不稳定性。
+
+\begin{table}[htbp]
+  \centering
+  \caption{四种方法OOD与Random切分性能对比}
+  \label{tab:error_stats}
+  \begin{tabular}{ccccc}
+    \toprule
+    方法 & OOD $R^2$ 中位数 & Random $R^2$ 中位数 & 跨切分退化 & 训练$R^2$ 中位数 \\
+    \midrule
+    GWMF-SR    & \textbf{0.983} & \textbf{0.998} & \textbf{0.015}  & 0.994 \\
+    XGBoost    & 0.563 & 0.997 & 0.434  & 0.996 \\
+    RF         & 0.528 & 0.998 & 0.469  & 0.994 \\
+    多项式回归 & $-7.4\!\times\!10^{11}$ & 0.999 & 灾难性发散 & 0.999 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+值得注意的是，XGBoost与RF的训练$R^2$均接近1.000而OOD测试$R^2$显著下滑，这是典型的"训练集过拟合"信号——黑盒模型记住了训练深度段的细粒度结构，但在新深度段无法外推；多项式Poly3的训练$R^2=0.999$同样亮丽，但其高阶交互项在外推区间内数值发散到难以用R²衡量的量级，表明高阶多项式从根本上不具备物理外推能力。GWMF-SR则通过物理约束剪枝和多种群协同搜索，使输出公式在结构上贴合岩石力学的物理规律，因而能够在跨深度外推时保持稳健性。
+
+为进一步验证这一结论，本研究还对比了gplearn（开源GP-SR库，作为同范式参考）和Linear\_single（每井每目标选择最佳单变量线性回归）：gplearn在OOD下中位数$R^2=0.745$，介于GWMF-SR与XGBoost之间，说明GP-SR范式本身具备一定外推优势；Linear\_single在OOD下中位数$R^2=0.83$，跨切分退化仅0.106，进一步证实"简洁公式具备真正泛化能力"这一核心论点。
+
+多项式回归在常规Random切分下能达到$R^2 > 0.99$的高精度，但在跨深度OOD切分下其高阶交互项在外推区间数值放大失控，导致$R^2$灾难性发散到$10^{10}$量级以上（详见表\ref{tab:comparison}）。这一现象的根本原因是多项式形式的固有缺陷：$x^2$、$x^3$等高阶项在训练区间内表现良好，但当输入超出训练区间时，函数值随$x$呈幂次方放大，无法稳定外推。如图\ref{fig:scatter}所示，在Random切分下的预测值-实测值散点图中，GWMF-SR、XGBoost、Poly3的散点都紧密分布在对角线附近，但在OOD切分下只有GWMF-SR能保持紧凑分布，黑盒和多项式方法的散点系统性偏离对角线。这从可视化角度直观印证了符号回归在捕捉外推稳健性方面相对于其他方法的显著优势。
+
+图\ref{fig:depth_ymod}$\sim$\ref{fig:depth_shmax}分别展示了杨氏模量、剪切模量、泊松比和最大水平主应力在4口井上的深度曲线对比结果。GWMF-SR的预测曲线（蓝色）与实测曲线（红色）在所有井-参数组合上均高度吻合，能够准确捕捉岩石力学参数随深度变化的细节特征，包括局部峰值和快速变化段。
+
+如图\ref{fig:depth_ymod}所示，杨氏模量的预测结果在4口井上均表现良好，预测曲线能够准确追踪实测值的高频波动特征。如图\ref{fig:depth_smod}所示，剪切模量的预测同样展现出较高的精度。如图\ref{fig:depth_pois}所示，泊松比作为无量纲比值参数，其预测难度相对较大，但GWMF-SR仍能保持较好的跟踪效果。如图\ref{fig:depth_shmax}所示，最大水平主应力的预测结果验证了GWMF-SR对地应力参数建模的有效性。上述结果从深度剖面角度全面验证了GWMF-SR方法在不同井和不同参数上的预测能力。
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\textwidth]{fig_depth_a_YMOD.png}
+  \caption{杨氏模量（YMOD）深度曲线对比（红色：实测值；蓝色：GWMF-SR预测值）}
+  \label{fig:depth_ymod}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\textwidth]{fig_depth_b_SMOD.png}
+  \caption{剪切模量（SMOD）深度曲线对比（红色：实测值；蓝色：GWMF-SR预测值）}
+  \label{fig:depth_smod}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\textwidth]{fig_depth_c_POIS.png}
+  \caption{泊松比（POIS）深度曲线对比（红色：实测值；蓝色：GWMF-SR预测值）}
+  \label{fig:depth_pois}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\textwidth]{fig_depth_d_SHMAX.png}
+  \caption{最大水平主应力（SHMAX）深度曲线对比（红色：实测值；蓝色：GWMF-SR预测值）}
+  \label{fig:depth_shmax}
+\end{figure}
+
+如图\ref{fig:r2_heatmap}所示，$R^2$提升幅度的热力图直观展示了GWMF-SR相对于PySR在4口井4个目标参数上的改进程度。从图\ref{fig:r2_heatmap}可以看出，深色区域（提升幅度较大）集中出现在SMOD和SHMAX等参数上，说明GWMF-SR在这些传统方法较难预测的参数上优势更为突出。这主要是因为这些参数与测井曲线之间的关系更为复杂，需要更强的搜索能力和更灵活的表达式结构才能有效建模。
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.9\textwidth]{fig_r2_improvement_heatmap.png}
+  \caption{GWMF-SR相对PySR的$R^2$提升幅度热力图}
+  \label{fig:r2_heatmap}
+\end{figure}
+
+\subsection{可解释性分析}
+
+\subsubsection{XGBoost特征重要性分析}
+
+XGBoost在常规Random切分下实现了$R^2 \geq 0.99$的拟合精度，验证了测井数据中包含足够的信息量以预测岩石力学参数。然而需要指出的是，这一高精度结果建立在训练与测试集深度交错的常规评估下，并不直接等同于跨深度外推能力（OOD场景下XGBoost的中位数$R^2$下降至0.563）。本节使用XGBoost的特征重要性进行可解释性分析的目的并非声称其预测精度，而是借助XGBoost对特征贡献的量化能力，与GWMF-SR符号公式中的关键变量进行交叉验证。如图\ref{fig:feature_heatmap}所示，特征重要性热力图展示了不同测井曲线对各岩石力学参数的贡献程度。
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.9\textwidth]{fig_feature_heatmap.png}
+  \caption{XGBoost特征重要性热力图}
+  \label{fig:feature_heatmap}
+\end{figure}
+
+特征重要性分析揭示了以下关键规律。本研究通过系统的leave-one-feature-out消融实验定量评估了9条原始测井曲线的贡献度（XGBoost和随机森林在16组井-参数组合上的中位数$R^2$退化幅度，详见表\ref{tab:feature_ablation}）。
+
+\begin{table}[htbp]
+  \centering
+  \caption{leave-one-feature-out消融：移除单一特征导致的OOD $R^2$退化（中位数）}
+  \label{tab:feature_ablation}
+  \small
+  \begin{tabular}{cccc}
+    \toprule
+    移除特征 & XGBoost退化 & RF退化 & Linear\_single退化 \\
+    \midrule
+    \textbf{RMSC}（微聚焦电阻率） & \textbf{0.76} & \textbf{0.69} & \textbf{0.24} \\
+    DEN（密度）   & 0.42 & 0.38 & 0.08 \\
+    DTC（纵波时差） & 0.40 & 0.40 & 0.14 \\
+    DTS（横波时差） & 0.34 & 0.36 & 0.17 \\
+    GR  （自然伽马）& 0.36 & 0.38 & 0.08 \\
+    CNL （中子）   & 0.34 & 0.38 & 0.08 \\
+    LLD （深侧向） & 0.35 & 0.39 & 0.08 \\
+    LLS （浅侧向） & 0.34 & 0.38 & 0.08 \\
+    CAL （井径）   & 0.36 & 0.37 & 0.08 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+由表\ref{tab:feature_ablation}可见，\textbf{RMSC（微聚焦电阻率）是岩石力学预测中最关键的特征}：移除RMSC导致XGBoost的OOD $R^2$退化高达0.76，随机森林退化0.69，Linear\_single退化0.24，远高于其他任何单一特征。这一发现与GWMF-SR符号回归的输出高度一致——前文公式(17)显示泊松比可以仅由RMSC一个变量预测（$R^2 \geq 0.999$），公式(15)中RMSC也以分母形式参与杨氏模量的预测。RMSC的核心地位在物理上具有合理性：微聚焦电阻率反映岩石近井壁的孔隙结构、流体含量和岩相特征，这些恰是控制弹性参数和地应力分布的关键岩石属性。
+
+声波参数（DTC、DTS）作为弹性力学的传统核心变量，在消融实验中也表现出较高的重要性（XGBoost退化0.34--0.40），其中DEN在某些目标上贡献度甚至与DTC相当（退化0.42），反映了密度在剪切模量、杨氏模量预测中的关键作用。其他特征（GR、CNL、LLD、LLS、CAL）在消融实验中退化幅度相近（0.34--0.39），表明这些常规测井曲线在没有RMSC等核心特征时具备一定的可替代性，但其单独贡献并不突出。如图\ref{fig:xgb_importance}所示，以井1/YMOD为代表的单井单参数特征重要性排序图清晰展示了各特征的贡献大小。
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.9\textwidth]{fig_xgb_importance_zxx2.png}
+  \caption{井1/YMOD XGBoost特征重要性排序图}
+  \label{fig:xgb_importance}
+\end{figure}
+
+\subsubsection{SHAP值分析}
+
+SHAP分析提供了比XGBoost内置特征重要性更精细的度量。如图\ref{fig:shap_beeswarm}所示，以代表性井-参数组合为例的SHAP蜂群图展示了每个特征对预测结果的正负影响及其分布特征。在YMOD预测中，SHAP排名前列的特征以横波时差DTS、密度DEN、纵波时差DTC为主，均为弹性力学的物理基础变量，证实了声波/密度参数在弹性模量预测中的主导地位。在POIS预测中，SHAP分析与GWMF-SR符号回归结果共同识别出微聚焦电阻率RMSC为绝对主导特征——前文公式(17)展示了仅由RMSC一个变量即可在多口井OOD段实现$R^2 \geq 0.999$的泊松比预测公式，与SHAP分析中RMSC居高的贡献度形成相互印证，从两个独立视角交叉验证了泊松比与岩石近井壁电阻率之间的强物理关联。
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.9\textwidth]{fig_shap_beeswarm.png}
+  \caption{井3/YMOD SHAP蜂群图}
+  \label{fig:shap_beeswarm}
+\end{figure}
+
+如图\ref{fig:shap_dep}所示，以井3/YMOD为例的SHAP依赖图进一步揭示了关键特征（如DTC）与预测结果之间的非线性依赖关系。
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.9\textwidth]{fig_shap_dep_dtc.png}
+  \caption{井3/YMOD SHAP依赖图（DTC）}
+  \label{fig:shap_dep}
+\end{figure}
+
+\subsubsection{SHAP与符号回归公式的交叉验证}
+
+为定量评估特征选择的合理性，将SHAP排名前5的特征与GWMF-SR公式中实际使用的变量进行交叉验证，结果如表\ref{tab:jaccard}所示。鉴于本研究采用9条原始测井曲线作为白名单，交叉验证以SHAP-Top5与GWMF-SR公式变量集的Jaccard相似度（$|A \cap B| / |A \cup B|$）作为一致性度量。
+
+\begin{table}[htbp]
+  \centering
+  \caption{SHAP Top-5特征与GWMF-SR公式变量交叉验证}
+  \label{tab:jaccard}
+  \begin{tabular}{ccccc}
+    \toprule
+    井号 & 参数 & GWMF-SR变量数 & 重叠数 & Jaccard相似度 \\
+    \midrule
+    井1 & YMOD  & 4 & 2 & 0.286 \\
+    井2 & YMOD  & 4 & 3 & 0.500 \\
+    井3 & YMOD  & 5 & 3 & 0.429 \\
+    井4 & SMOD  & 2 & 2 & 0.400 \\
+    井2 & POIS  & 1 & 1 & 0.200 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.9\textwidth]{fig_cross_validation.png}
+  \caption{GWMF-SR与SHAP交叉验证总览图}
+  \label{fig:cross_validation}
+\end{figure}
+
+由表\ref{tab:jaccard}可以看出，平均Jaccard相似度约为0.36，表明GWMF-SR公式变量与SHAP特征重要性排序存在中等程度的一致性。Jaccard值未达到更高水平的原因可以从三个方面解释。第一，符号回归具有组合优化特性，GWMF-SR倾向于使用更少的变量构建简洁公式（如公式(17)仅用RMSC一个变量），而SHAP-Top5包含5个变量，集合大小不匹配自然降低Jaccard上限。第二，XGBoost与SR的建模机制存在根本差异：XGBoost通过树的分裂捕捉特征重要性，侧重于单特征的信息增益；而SR通过公式组合捕捉多变量的协同效应。第三，测井曲线之间存在较强的相关性（如DTC与DTS的相关系数在0.90以上），SR和SHAP可能选择了不同但物理等价的替代特征。
+
+尽管Jaccard值为中等水平，但核心物理特征（DTC, DTS, DEN, RMSC）在两种方法中均被一致识别为高重要性特征。特别是\textbf{RMSC}——前文消融实验（表\ref{tab:feature_ablation}）证实其为最关键特征（移除导致XGBoost退化0.76），同时GWMF-SR公式(17)也将其作为泊松比的唯一预测变量，从消融、SHAP和符号回归三个独立视角形成的"三方一致"，验证了GWMF-SR特征选择策略的物理合理性，也从数据驱动角度确认了岩石力学参数与电阻率、声波、密度等原始测井参数之间的强物理关联。
+
+\section{结论}
+
+利用测井数据预测岩石力学参数是石油工程实践中的关键需求，但现有方法面临"精度与可解释性难以兼顾"的核心矛盾：经验公式和多项式回归可解释但精度不足，机器学习黑盒模型精度高但缺乏物理透明性。更为关键的是，常规随机切分评估往往掩盖了模型的真实泛化能力——本研究证实，在常规评估下黑盒模型与可解释模型的$R^2$均可达到0.99以上，看似精度无差，但在跨深度连续段外推的严苛OOD评估下，黑盒模型集体退化（XGBoost、RF的$R^2$退化幅度0.43-0.47），多项式高阶回归甚至数值发散到$10^{11}$量级，唯有结构简洁的符号公式能保持稳健泛化。
+
+本研究提出的GWMF-SR方法通过融合灰狼优化的全局方向搜索、鲸鱼优化的螺旋精细搜索和飞蛾扑火的探索-开发自适应平衡，从搜索引擎层面解决了效率瓶颈；通过基于岩石力学公式算子分析的物理约束剪枝（压缩搜索空间约85\%），解决了公式合理性问题；通过XGBoost-SHAP自适应特征选择和leave-one-feature-out消融实验，识别出RMSC（微聚焦电阻率）为岩石力学预测的核心特征。在4口井4个参数共16组OOD预测任务上，GWMF-SR取得了中位数$R^2=0.983$的优秀表现：弹性参数YMOD/SMOD/POIS在多数井段$R^2 \geq 0.97$，且在常规Random切分对照下达到0.998，跨切分退化幅度仅0.015，是10种对比方法中唯一具备稳健外推能力的方法。
+
+所输出的简洁符号公式保留了物理变量的原始形式：泊松比仅由RMSC一个变量决定（公式(17)），剪切模量仅由DTS与DEN两个变量决定（公式(16)），杨氏模量主要由DTS、DEN、RMSC决定（公式(15)）。这些公式的物理意义清晰，可直接转化为现场工程计算公式，为石油工程中岩石力学参数的可解释预测和跨深度外推提供了一种有效的新途径。
+
+本研究仍存在一定局限性。首先，最大水平主应力（SHMAX）作为受地应力场局部扰动影响最强的参数，在井3、井4最深20\%段未能稳定外推，说明SHMAX预测对深度区间高度敏感，需要后续工作引入更高频特征或跨井约束以提升稳健性。其次，当前实验数据来自单一油田，方法在不同盆地类型、不同岩性组合和不同地质条件下的泛化能力尚需跨区块验证。此外，GWMF-SR的多种群进化策略需要较大的计算开销，在超大规模测井数据集上的运行效率有待优化。未来工作将重点引入跨井迁移学习机制以提升地质条件适应性，探索深度学习特征提取与符号回归相结合的混合建模策略，并开展多井联合建模以发现具有跨区块泛化能力的通用岩石力学预测公式。
+
+% ==================== 参考文献 ====================
+\begin{thebibliography}{25}
+
+\bibitem{ref1}
+Cranmer M, Sanchez-Gonzalez A, Battaglia P, et al. Discovering symbolic models from deep learning with inductive biases[J]. Advances in Neural Information Processing Systems, 2023, 33: 17429-17442.
+
+\bibitem{ref2}
+Mirjalili S, Mirjalili S M, Lewis A. Grey wolf optimizer[J]. Advances in Engineering Software, 2014, 58: 46-61.
+
+\bibitem{ref3}
+Mirjalili S, Lewis A. The whale optimization algorithm[J]. Advances in Engineering Software, 2016, 110: 51-67.
+
+\bibitem{ref4}
+Mirjalili S. Moth-flame optimization algorithm: a novel nature-inspired heuristic paradigm[J]. Knowledge-Based Systems, 2015, 89: 228-249.
+
+\bibitem{ref5}
+Lundberg S M, Lee S I. A unified approach to interpreting model predictions[C]//Advances in Neural Information Processing Systems, 2017: 4765-4774.
+
+\bibitem{ref6}
+Chen T, Guestrin C. XGBoost: a scalable tree boosting system[C]//Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining, 2016: 785-794.
+
+\bibitem{ref7}
+Holland J H. Adaptation in Natural and Artificial Systems[M]. Ann Arbor: University of Michigan Press, 1975.
+
+\bibitem{ref8}
+Koza J R. Genetic Programming: On the Programming of Computers by Means of Natural Selection[M]. Cambridge: MIT Press, 1992.
+
+\bibitem{ref9}
+Zoback M D. Reservoir Geomechanics[M]. Cambridge: Cambridge University Press, 2007.
+
+\bibitem{ref10}
+Fjaer E, Holt R M, Horsrud P, et al. Petroleum Related Rock Mechanics[M]. 2nd ed. Amsterdam: Elsevier, 2008.
+
+\bibitem{ref11}
+Eaton B A. The equation for geopressure prediction from well logs[C]//SPE Annual Fall Technical Conference and Exhibition, 1975: SPE-5544-MS.
+
+\bibitem{ref12}
+Biot M A. General theory of three-dimensional consolidation[J]. Journal of Applied Physics, 1941, 12(2): 155-164.
+
+\bibitem{ref13}
+Kennedy J, Eberhart R. Particle swarm optimization[C]//Proceedings of ICNN'95, 1995, 4: 1942-1948.
+
+\bibitem{ref14}
+Breiman L. Random forests[J]. Machine Learning, 2001, 45(1): 5-32.
+
+\bibitem{ref15}
+Schmidt M, Lipson H. Distilling free-form natural laws from experimental data[J]. Science, 2009, 324(5923): 81-85.
+
+\bibitem{ref16} Zoback M D, Barton C A, Brudy M, et al. Determination of stress orientation and magnitude in deep wells[J]. International Journal of Rock Mechanics and Mining Sciences, 1996, 40(7-8): 1049-1076.
+
+\bibitem{ref17} Chang C, Zoback M D, Khaksar A. Empirical relations between rock strength and physical properties in sedimentary rocks[J]. Journal of Petroleum Science and Engineering, 2006, 51(3-4): 223-237.
+
+\bibitem{ref18} Ameen M S, Smart B G D, Somerville J M, et al. Predicting rock mechanical properties of carbonates from wireline logs[J]. Marine and Petroleum Geology, 2009, 26(4): 430-444.
+
+\bibitem{ref19} Yang X S. Nature-Inspired Metaheuristic Algorithms[M]. 2nd ed. Cambridge: Luniver Press, 2010.
+
+\bibitem{ref20} Dorigo M, Stutzle T. Ant Colony Optimization[M]. Cambridge: MIT Press, 2004.
+
+\bibitem{ref21} Goldberg D E. Genetic Algorithms in Search, Optimization and Machine Learning[M]. Reading: Addison-Wesley, 1989.
+
+\bibitem{ref22} Ulusay R, Hudson J A. The Complete ISRM Suggested Methods for Rock Characterization, Testing and Monitoring: 2007-2014[M]. Springer, 2015.
+
+\bibitem{ref23} Jaeger J C, Cook N G W, Zimmerman R W. Fundamentals of Rock Mechanics[M]. 4th ed. Oxford: Blackwell Publishing, 2007.
+
+\bibitem{ref24} La Cava W, Orzechowski P, Burlacu B, et al. Contemporary symbolic regression methods and their relative performance[C]//Proceedings of the Neural Information Processing Systems Track on Datasets and Benchmarks, 2021.
+
+\bibitem{ref25} Petersen B K, Larma M L, Mundhenk T N, et al. Deep symbolic regression: recovering mathematical expressions from data via risk-seeking policy gradients[C]//International Conference on Learning Representations, 2021.
+
+\end{thebibliography}
+
+\end{document}

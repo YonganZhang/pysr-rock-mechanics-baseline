@@ -1,0 +1,27 @@
+{
+  "well": "ZXX7",
+  "target": "YMOD",
+  "model": "SVR_rbf",
+  "split_mode": "last20",
+  "n_train": 2621,
+  "n_test": 655,
+  "features": [
+    "DTC",
+    "DTS",
+    "DEN",
+    "GR",
+    "CNL",
+    "LLD",
+    "LLS",
+    "RMSC",
+    "CAL"
+  ],
+  "n_features": 9,
+  "elapsed_sec": 0.15,
+  "r2_train": 0.9983,
+  "r2_test": -0.0211,
+  "mae_test": 12509.8495,
+  "formula_or_arch": "SVR(rbf, {'svr__C': 100, 'svr__gamma': 0.1}, y-scaled)",
+  "feature_importance": null,
+  "feature_used": null
+}
