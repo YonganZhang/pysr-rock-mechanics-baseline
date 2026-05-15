@@ -65,132 +65,196 @@ ZXX6,YMOD,gplearn,Random,0.9731,0.9759,"(scaled) div(DTC, -1.005)",WellC
 ZXX6,POIS,gplearn,Random,0.995,0.9955,"(scaled) add(mul(-0.160, mul(add(mul(-0.160, add(sub(DEN, DTC), div(add(add(add(1.204, RMSC), add(add(1.435, RMSC), sub(CNL, LLS))), RMSC), DEN))), RMSC), DEN)), RMSC)",WellC
 ZXX3,SMOD,Linear_single,OOD,0.9602,0.9044,-0.2509 * DTS + 47.41,WellB
 ZXX3,SMOD,SVR_rbf,OOD,0.9979,-0.0252,"SVR(rbf, {'svr__C': 10, 'svr__gamma': 0.1}, y-scaled)",WellB
-ZXX3,SMOD,XGBoost,OOD,0.9988,0.8441,"XGB(n=300, depth=4, lr=0.05, reg)",WellB
-ZXX3,SMOD,Poly3,OOD,0.9989,0.9616,Poly(deg=3),WellB
 ZXX3,SMOD,Poly2,OOD,0.9987,0.9824,Poly(deg=2),WellB
+ZXX3,SMOD,XGBoost,OOD,0.9988,0.8441,"XGB(n=300, depth=4, lr=0.05, reg)",WellB
+ZXX3,SMOD,Poly3,OOD,0.9429,0.4665,"Poly(deg=3, alpha=1000.0, x_clip=3σ, y_pad=0.5, interaction_only=True)",WellB
+ZXX3,SMOD,Poly3,OOD,0.9989,0.9616,Poly(deg=3),WellB
+ZXX3,SMOD,Poly2,OOD,0.9536,0.5137,"Poly(deg=2, alpha=1000.0, x_clip=3σ, y_pad=0.5, interaction_only=False)",WellB
 ZXX3,SMOD,RF,OOD,0.9985,0.8851,"RF(n=300, depth=10, leaf=5)",WellB
 ZXX3,SMOD,MLP_BP,OOD,0.997,-0.012,"MLP-BP(128,64,32, adaptive_lr, ES)",WellB
 ZXX3,SMOD,Linear_multi,OOD,0.9901,-33.4669,linear_multi,WellB
+ZXX3,SMOD,Poly3_robust,OOD,0.9429,0.4665,"Poly(deg=3, alpha=1000.0, x_clip=3σ, y_pad=0.5, interaction_only=True)",WellB
+ZXX3,SMOD,Poly2_robust,OOD,0.9536,0.5137,"Poly(deg=2, alpha=1000.0, x_clip=3σ, y_pad=0.5, interaction_only=False)",WellB
 ZXX3,SHMAX,Linear_single,OOD,0.2466,0.5545,45.26 * RMSC + 42.8,WellB
 ZXX3,SHMAX,SVR_rbf,OOD,0.725,-0.4035,"SVR(rbf, {'svr__C': 10, 'svr__gamma': 0.1}, y-scaled)",WellB
-ZXX3,SHMAX,XGBoost,OOD,0.9112,0.4096,"XGB(n=300, depth=4, lr=0.05, reg)",WellB
-ZXX3,SHMAX,Poly3,OOD,0.6762,-889.3116,Poly(deg=3),WellB
 ZXX3,SHMAX,Poly2,OOD,0.5467,-11.3046,Poly(deg=2),WellB
+ZXX3,SHMAX,XGBoost,OOD,0.9112,0.4096,"XGB(n=300, depth=4, lr=0.05, reg)",WellB
+ZXX3,SHMAX,Poly3,OOD,0.4297,-0.591,"Poly(deg=3, alpha=1000.0, x_clip=3σ, y_pad=0.5, interaction_only=True)",WellB
+ZXX3,SHMAX,Poly3,OOD,0.6762,-889.3116,Poly(deg=3),WellB
+ZXX3,SHMAX,Poly2,OOD,0.4058,0.0643,"Poly(deg=2, alpha=1000.0, x_clip=3σ, y_pad=0.5, interaction_only=False)",WellB
 ZXX3,SHMAX,RF,OOD,0.934,0.1747,"RF(n=300, depth=10, leaf=5)",WellB
 ZXX3,SHMAX,MLP_BP,OOD,0.8004,-20.9761,"MLP-BP(128,64,32, adaptive_lr, ES)",WellB
 ZXX3,SHMAX,Linear_multi,OOD,0.4022,-2922.1945,linear_multi,WellB
+ZXX3,SHMAX,Poly3_robust,OOD,0.4297,-0.591,"Poly(deg=3, alpha=1000.0, x_clip=3σ, y_pad=0.5, interaction_only=True)",WellB
+ZXX3,SHMAX,Poly2_robust,OOD,0.4058,0.0643,"Poly(deg=2, alpha=1000.0, x_clip=3σ, y_pad=0.5, interaction_only=False)",WellB
 ZXX3,YMOD,Linear_single,OOD,0.8398,0.9247,-1263 * DTC + 1.277e+05,WellB
 ZXX3,YMOD,SVR_rbf,OOD,0.9979,-0.0229,"SVR(rbf, {'svr__C': 10, 'svr__gamma': 0.1}, y-scaled)",WellB
-ZXX3,YMOD,XGBoost,OOD,0.9986,0.8012,"XGB(n=300, depth=4, lr=0.05, reg)",WellB
-ZXX3,YMOD,Poly3,OOD,0.9987,0.9677,Poly(deg=3),WellB
 ZXX3,YMOD,Poly2,OOD,0.9985,0.9865,Poly(deg=2),WellB
+ZXX3,YMOD,XGBoost,OOD,0.9986,0.8012,"XGB(n=300, depth=4, lr=0.05, reg)",WellB
+ZXX3,YMOD,Poly3,OOD,0.9384,0.5418,"Poly(deg=3, alpha=1000.0, x_clip=3σ, y_pad=0.5, interaction_only=True)",WellB
+ZXX3,YMOD,Poly3,OOD,0.9987,0.9677,Poly(deg=3),WellB
+ZXX3,YMOD,Poly2,OOD,0.9498,0.4997,"Poly(deg=2, alpha=1000.0, x_clip=3σ, y_pad=0.5, interaction_only=False)",WellB
 ZXX3,YMOD,RF,OOD,0.9983,0.8163,"RF(n=300, depth=10, leaf=5)",WellB
 ZXX3,YMOD,MLP_BP,OOD,0.9888,0.6575,"MLP-BP(128,64,32, adaptive_lr, ES)",WellB
 ZXX3,YMOD,Linear_multi,OOD,0.9907,-25.1552,linear_multi,WellB
+ZXX3,YMOD,Poly3_robust,OOD,0.9384,0.5418,"Poly(deg=3, alpha=1000.0, x_clip=3σ, y_pad=0.5, interaction_only=True)",WellB
+ZXX3,YMOD,Poly2_robust,OOD,0.9498,0.4997,"Poly(deg=2, alpha=1000.0, x_clip=3σ, y_pad=0.5, interaction_only=False)",WellB
 ZXX3,POIS,Linear_single,OOD,0.9925,0.9571,0.3425 * RMSC + -0.3503,WellB
 ZXX3,POIS,SVR_rbf,OOD,0.9974,0.1086,"SVR(rbf, {'svr__C': 1, 'svr__gamma': 0.1}, y-scaled)",WellB
-ZXX3,POIS,XGBoost,OOD,0.9947,0.8428,"XGB(n=300, depth=4, lr=0.05, reg)",WellB
-ZXX3,POIS,Poly3,OOD,0.9995,0.706,Poly(deg=3),WellB
 ZXX3,POIS,Poly2,OOD,0.9995,0.9952,Poly(deg=2),WellB
+ZXX3,POIS,XGBoost,OOD,0.9947,0.8428,"XGB(n=300, depth=4, lr=0.05, reg)",WellB
+ZXX3,POIS,Poly3,OOD,0.9353,0.7633,"Poly(deg=3, alpha=1000.0, x_clip=3σ, y_pad=0.5, interaction_only=True)",WellB
+ZXX3,POIS,Poly3,OOD,0.9995,0.706,Poly(deg=3),WellB
+ZXX3,POIS,Poly2,OOD,0.9354,0.688,"Poly(deg=2, alpha=1000.0, x_clip=3σ, y_pad=0.5, interaction_only=False)",WellB
 ZXX3,POIS,RF,OOD,0.9992,0.9236,"RF(n=300, depth=10, leaf=5)",WellB
 ZXX3,POIS,MLP_BP,OOD,0.9036,-22.4741,"MLP-BP(128,64,32, adaptive_lr, ES)",WellB
 ZXX3,POIS,Linear_multi,OOD,0.9929,0.8344,linear_multi,WellB
+ZXX3,POIS,Poly3_robust,OOD,0.9353,0.7633,"Poly(deg=3, alpha=1000.0, x_clip=3σ, y_pad=0.5, interaction_only=True)",WellB
+ZXX3,POIS,Poly2_robust,OOD,0.9354,0.688,"Poly(deg=2, alpha=1000.0, x_clip=3σ, y_pad=0.5, interaction_only=False)",WellB
 ZXX2,SMOD,Linear_single,OOD,0.7701,0.5068,-0.1125 * DTS + 28.1,WellA
 ZXX2,SMOD,SVR_rbf,OOD,0.9328,-0.6251,"SVR(rbf, {'svr__C': 1, 'svr__gamma': 0.1}, y-scaled)",WellA
-ZXX2,SMOD,XGBoost,OOD,0.9787,0.2766,"XGB(n=300, depth=4, lr=0.05, reg)",WellA
-ZXX2,SMOD,Poly3,OOD,0.9484,-33927331086128.953,Poly(deg=3),WellA
 ZXX2,SMOD,Poly2,OOD,0.9192,-4484161.4991,Poly(deg=2),WellA
+ZXX2,SMOD,XGBoost,OOD,0.9787,0.2766,"XGB(n=300, depth=4, lr=0.05, reg)",WellA
+ZXX2,SMOD,Poly3,OOD,0.699,0.5533,"Poly(deg=3, alpha=1000.0, x_clip=3σ, y_pad=0.5, interaction_only=True)",WellA
+ZXX2,SMOD,Poly3,OOD,0.9484,-33927331086128.953,Poly(deg=3),WellA
+ZXX2,SMOD,Poly2,OOD,0.7814,0.0371,"Poly(deg=2, alpha=1000.0, x_clip=3σ, y_pad=0.5, interaction_only=False)",WellA
 ZXX2,SMOD,RF,OOD,0.9802,0.2741,"RF(n=300, depth=10, leaf=5)",WellA
 ZXX2,SMOD,MLP_BP,OOD,0.9883,-1418.9555,"MLP-BP(128,64,32, adaptive_lr, ES)",WellA
 ZXX2,SMOD,Linear_multi,OOD,0.8739,-0.5208,linear_multi,WellA
+ZXX2,SMOD,Poly3_robust,OOD,0.699,0.5533,"Poly(deg=3, alpha=1000.0, x_clip=3σ, y_pad=0.5, interaction_only=True)",WellA
+ZXX2,SMOD,Poly2_robust,OOD,0.7814,0.0371,"Poly(deg=2, alpha=1000.0, x_clip=3σ, y_pad=0.5, interaction_only=False)",WellA
 ZXX2,SHMAX,Linear_single,OOD,0.6111,0.6782,-0.3944 * DTS + 170.8,WellA
 ZXX2,SHMAX,SVR_rbf,OOD,0.8947,-1.0626,"SVR(rbf, {'svr__C': 1, 'svr__gamma': 0.1}, y-scaled)",WellA
-ZXX2,SHMAX,XGBoost,OOD,0.9718,0.0468,"XGB(n=300, depth=4, lr=0.05, reg)",WellA
-ZXX2,SHMAX,Poly3,OOD,0.9388,-13209640388542.727,Poly(deg=3),WellA
 ZXX2,SHMAX,Poly2,OOD,0.9018,-8233869.935,Poly(deg=2),WellA
+ZXX2,SHMAX,XGBoost,OOD,0.9718,0.0468,"XGB(n=300, depth=4, lr=0.05, reg)",WellA
+ZXX2,SHMAX,Poly3,OOD,0.5902,0.8867,"Poly(deg=3, alpha=1000.0, x_clip=3σ, y_pad=0.5, interaction_only=True)",WellA
+ZXX2,SHMAX,Poly3,OOD,0.9388,-13209640388542.727,Poly(deg=3),WellA
+ZXX2,SHMAX,Poly2,OOD,0.6771,-0.2197,"Poly(deg=2, alpha=1000.0, x_clip=3σ, y_pad=0.5, interaction_only=False)",WellA
 ZXX2,SHMAX,RF,OOD,0.9501,0.1404,"RF(n=300, depth=10, leaf=5)",WellA
 ZXX2,SHMAX,MLP_BP,OOD,0.9646,-13459.919,"MLP-BP(128,64,32, adaptive_lr, ES)",WellA
 ZXX2,SHMAX,Linear_multi,OOD,0.7982,-5.3964,linear_multi,WellA
+ZXX2,SHMAX,Poly3_robust,OOD,0.5902,0.8867,"Poly(deg=3, alpha=1000.0, x_clip=3σ, y_pad=0.5, interaction_only=True)",WellA
+ZXX2,SHMAX,Poly2_robust,OOD,0.6771,-0.2197,"Poly(deg=2, alpha=1000.0, x_clip=3σ, y_pad=0.5, interaction_only=False)",WellA
 ZXX2,YMOD,Linear_single,OOD,0.6082,0.6993,-583.7 * DTC + 8.058e+04,WellA
 ZXX2,YMOD,SVR_rbf,OOD,0.9216,-0.4254,"SVR(rbf, {'svr__C': 1, 'svr__gamma': 0.1}, y-scaled)",WellA
-ZXX2,YMOD,XGBoost,OOD,0.9751,0.5562,"XGB(n=300, depth=4, lr=0.05, reg)",WellA
-ZXX2,YMOD,Poly3,OOD,0.9435,-37680342381096.36,Poly(deg=3),WellA
 ZXX2,YMOD,Poly2,OOD,0.9117,-4864002.0202,Poly(deg=2),WellA
+ZXX2,YMOD,XGBoost,OOD,0.9751,0.5562,"XGB(n=300, depth=4, lr=0.05, reg)",WellA
+ZXX2,YMOD,Poly3,OOD,0.6555,0.7283,"Poly(deg=3, alpha=1000.0, x_clip=3σ, y_pad=0.5, interaction_only=True)",WellA
+ZXX2,YMOD,Poly3,OOD,0.9435,-37680342381096.36,Poly(deg=3),WellA
+ZXX2,YMOD,Poly2,OOD,0.7651,0.1879,"Poly(deg=2, alpha=1000.0, x_clip=3σ, y_pad=0.5, interaction_only=False)",WellA
 ZXX2,YMOD,RF,OOD,0.975,0.3668,"RF(n=300, depth=10, leaf=5)",WellA
 ZXX2,YMOD,MLP_BP,OOD,0.9351,-1310.6548,"MLP-BP(128,64,32, adaptive_lr, ES)",WellA
 ZXX2,YMOD,Linear_multi,OOD,0.8599,-0.5225,linear_multi,WellA
+ZXX2,YMOD,Poly3_robust,OOD,0.6555,0.7283,"Poly(deg=3, alpha=1000.0, x_clip=3σ, y_pad=0.5, interaction_only=True)",WellA
+ZXX2,YMOD,Poly2_robust,OOD,0.7651,0.1879,"Poly(deg=2, alpha=1000.0, x_clip=3σ, y_pad=0.5, interaction_only=False)",WellA
 ZXX2,POIS,Linear_single,OOD,0.9844,0.8928,0.3068 * RMSC + -0.2756,WellA
 ZXX2,POIS,SVR_rbf,OOD,0.9975,-0.0157,"SVR(rbf, {'svr__C': 10, 'svr__gamma': 0.1}, y-scaled)",WellA
-ZXX2,POIS,XGBoost,OOD,0.998,0.7743,"XGB(n=300, depth=4, lr=0.05, reg)",WellA
-ZXX2,POIS,Poly3,OOD,0.9998,-48722729062.0546,Poly(deg=3),WellA
 ZXX2,POIS,Poly2,OOD,0.9997,-20207.2786,Poly(deg=2),WellA
+ZXX2,POIS,XGBoost,OOD,0.998,0.7743,"XGB(n=300, depth=4, lr=0.05, reg)",WellA
+ZXX2,POIS,Poly3,OOD,0.8722,-0.0414,"Poly(deg=3, alpha=1000.0, x_clip=3σ, y_pad=0.5, interaction_only=True)",WellA
+ZXX2,POIS,Poly3,OOD,0.9998,-48722729062.0546,Poly(deg=3),WellA
+ZXX2,POIS,Poly2,OOD,0.8952,0.5823,"Poly(deg=2, alpha=1000.0, x_clip=3σ, y_pad=0.5, interaction_only=False)",WellA
 ZXX2,POIS,RF,OOD,0.9998,0.8232,"RF(n=300, depth=10, leaf=5)",WellA
 ZXX2,POIS,MLP_BP,OOD,0.9772,-42346.9369,"MLP-BP(128,64,32, adaptive_lr, ES)",WellA
 ZXX2,POIS,Linear_multi,OOD,0.9873,0.2855,linear_multi,WellA
+ZXX2,POIS,Poly3_robust,OOD,0.8722,-0.0414,"Poly(deg=3, alpha=1000.0, x_clip=3σ, y_pad=0.5, interaction_only=True)",WellA
+ZXX2,POIS,Poly2_robust,OOD,0.8952,0.5823,"Poly(deg=2, alpha=1000.0, x_clip=3σ, y_pad=0.5, interaction_only=False)",WellA
 ZXX7,SMOD,Linear_single,OOD,0.9428,0.9337,-0.281 * DTS + 51.59,WellD
 ZXX7,SMOD,SVR_rbf,OOD,0.9982,-0.0431,"SVR(rbf, {'svr__C': 100, 'svr__gamma': 0.1}, y-scaled)",WellD
-ZXX7,SMOD,XGBoost,OOD,0.9996,0.9347,"XGB(n=300, depth=4, lr=0.05, reg)",WellD
-ZXX7,SMOD,Poly3,OOD,0.9996,-869503419487.4015,Poly(deg=3),WellD
 ZXX7,SMOD,Poly2,OOD,0.9996,-261180.0101,Poly(deg=2),WellD
+ZXX7,SMOD,XGBoost,OOD,0.9996,0.9347,"XGB(n=300, depth=4, lr=0.05, reg)",WellD
+ZXX7,SMOD,Poly3,OOD,0.805,0.469,"Poly(deg=3, alpha=1000.0, x_clip=3σ, y_pad=0.5, interaction_only=True)",WellD
+ZXX7,SMOD,Poly3,OOD,0.9996,-869503419487.4015,Poly(deg=3),WellD
+ZXX7,SMOD,Poly2,OOD,0.858,0.5361,"Poly(deg=2, alpha=1000.0, x_clip=3σ, y_pad=0.5, interaction_only=False)",WellD
 ZXX7,SMOD,RF,OOD,0.9987,0.9372,"RF(n=300, depth=10, leaf=5)",WellD
 ZXX7,SMOD,MLP_BP,OOD,0.9985,-511.8566,"MLP-BP(128,64,32, adaptive_lr, ES)",WellD
 ZXX7,SMOD,Linear_multi,OOD,0.9949,-25.1281,linear_multi,WellD
+ZXX7,SMOD,Poly3_robust,OOD,0.805,0.469,"Poly(deg=3, alpha=1000.0, x_clip=3σ, y_pad=0.5, interaction_only=True)",WellD
+ZXX7,SMOD,Poly2_robust,OOD,0.858,0.5361,"Poly(deg=2, alpha=1000.0, x_clip=3σ, y_pad=0.5, interaction_only=False)",WellD
 ZXX7,SHMAX,Linear_single,OOD,0.0492,-0.1668,-0.05987 * LLD + -575.7,WellD
 ZXX7,SHMAX,SVR_rbf,OOD,0.9962,-36.4801,"SVR(rbf, {'svr__C': 100, 'svr__gamma': 0.1}, y-scaled)",WellD
-ZXX7,SHMAX,XGBoost,OOD,1.0,-12.343,"XGB(n=300, depth=4, lr=0.05, reg)",WellD
-ZXX7,SHMAX,Poly3,OOD,0.9983,-1368843122737721.5,Poly(deg=3),WellD
 ZXX7,SHMAX,Poly2,OOD,0.979,-62798186364.8674,Poly(deg=2),WellD
+ZXX7,SHMAX,XGBoost,OOD,1.0,-12.343,"XGB(n=300, depth=4, lr=0.05, reg)",WellD
+ZXX7,SHMAX,Poly3,OOD,0.6966,-7.5939,"Poly(deg=3, alpha=1000.0, x_clip=3σ, y_pad=0.5, interaction_only=True)",WellD
+ZXX7,SHMAX,Poly3,OOD,0.9983,-1368843122737721.5,Poly(deg=3),WellD
+ZXX7,SHMAX,Poly2,OOD,0.7923,-8.5207,"Poly(deg=2, alpha=1000.0, x_clip=3σ, y_pad=0.5, interaction_only=False)",WellD
 ZXX7,SHMAX,RF,OOD,0.9911,-11.9024,"RF(n=300, depth=10, leaf=5)",WellD
 ZXX7,SHMAX,MLP_BP,OOD,0.9984,-41360.0179,"MLP-BP(128,64,32, adaptive_lr, ES)",WellD
 ZXX7,SHMAX,Linear_multi,OOD,0.89,-36785.0195,linear_multi,WellD
+ZXX7,SHMAX,Poly3_robust,OOD,0.6966,-7.5939,"Poly(deg=3, alpha=1000.0, x_clip=3σ, y_pad=0.5, interaction_only=True)",WellD
+ZXX7,SHMAX,Poly2_robust,OOD,0.7923,-8.5207,"Poly(deg=2, alpha=1000.0, x_clip=3σ, y_pad=0.5, interaction_only=False)",WellD
 ZXX7,YMOD,Linear_single,OOD,0.9339,0.9072,-688.8 * DTS + 1.283e+05,WellD
 ZXX7,YMOD,SVR_rbf,OOD,0.9983,-0.0211,"SVR(rbf, {'svr__C': 100, 'svr__gamma': 0.1}, y-scaled)",WellD
-ZXX7,YMOD,XGBoost,OOD,0.9996,0.9235,"XGB(n=300, depth=4, lr=0.05, reg)",WellD
-ZXX7,YMOD,Poly3,OOD,0.9997,-989130189726.5144,Poly(deg=3),WellD
 ZXX7,YMOD,Poly2,OOD,0.9996,-666626.9368,Poly(deg=2),WellD
+ZXX7,YMOD,XGBoost,OOD,0.9996,0.9235,"XGB(n=300, depth=4, lr=0.05, reg)",WellD
+ZXX7,YMOD,Poly3,OOD,0.7947,0.4753,"Poly(deg=3, alpha=1000.0, x_clip=3σ, y_pad=0.5, interaction_only=True)",WellD
+ZXX7,YMOD,Poly3,OOD,0.9997,-989130189726.5144,Poly(deg=3),WellD
+ZXX7,YMOD,Poly2,OOD,0.8499,0.4935,"Poly(deg=2, alpha=1000.0, x_clip=3σ, y_pad=0.5, interaction_only=False)",WellD
 ZXX7,YMOD,RF,OOD,0.998,0.9383,"RF(n=300, depth=10, leaf=5)",WellD
 ZXX7,YMOD,MLP_BP,OOD,0.9972,-285.0133,"MLP-BP(128,64,32, adaptive_lr, ES)",WellD
 ZXX7,YMOD,Linear_multi,OOD,0.9952,-9.3838,linear_multi,WellD
+ZXX7,YMOD,Poly3_robust,OOD,0.7947,0.4753,"Poly(deg=3, alpha=1000.0, x_clip=3σ, y_pad=0.5, interaction_only=True)",WellD
+ZXX7,YMOD,Poly2_robust,OOD,0.8499,0.4935,"Poly(deg=2, alpha=1000.0, x_clip=3σ, y_pad=0.5, interaction_only=False)",WellD
 ZXX7,POIS,Linear_single,OOD,0.9648,0.9083,0.3244 * RMSC + -0.3077,WellD
 ZXX7,POIS,SVR_rbf,OOD,0.9964,-0.3326,"SVR(rbf, {'svr__C': 100, 'svr__gamma': 0.1}, y-scaled)",WellD
-ZXX7,POIS,XGBoost,OOD,0.9908,0.9127,"XGB(n=300, depth=4, lr=0.05, reg)",WellD
-ZXX7,POIS,Poly3,OOD,0.9962,-616175308109.3303,Poly(deg=3),WellD
 ZXX7,POIS,Poly2,OOD,0.9951,-1669188.0309,Poly(deg=2),WellD
+ZXX7,POIS,XGBoost,OOD,0.9908,0.9127,"XGB(n=300, depth=4, lr=0.05, reg)",WellD
+ZXX7,POIS,Poly3,OOD,0.8517,0.1931,"Poly(deg=3, alpha=1000.0, x_clip=3σ, y_pad=0.5, interaction_only=True)",WellD
+ZXX7,POIS,Poly3,OOD,0.9962,-616175308109.3303,Poly(deg=3),WellD
+ZXX7,POIS,Poly2,OOD,0.8741,0.0241,"Poly(deg=2, alpha=1000.0, x_clip=3σ, y_pad=0.5, interaction_only=False)",WellD
 ZXX7,POIS,RF,OOD,0.9925,0.8955,"RF(n=300, depth=10, leaf=5)",WellD
 ZXX7,POIS,MLP_BP,OOD,0.9051,-17248.9031,"MLP-BP(128,64,32, adaptive_lr, ES)",WellD
 ZXX7,POIS,Linear_multi,OOD,0.9723,-18.6615,linear_multi,WellD
+ZXX7,POIS,Poly3_robust,OOD,0.8517,0.1931,"Poly(deg=3, alpha=1000.0, x_clip=3σ, y_pad=0.5, interaction_only=True)",WellD
+ZXX7,POIS,Poly2_robust,OOD,0.8741,0.0241,"Poly(deg=2, alpha=1000.0, x_clip=3σ, y_pad=0.5, interaction_only=False)",WellD
 ZXX6,SMOD,Linear_single,OOD,0.8879,0.7748,-0.3773 * DTC + 43.57,WellC
 ZXX6,SMOD,SVR_rbf,OOD,0.995,-1.2508,"SVR(rbf, {'svr__C': 1, 'svr__gamma': 0.1}, y-scaled)",WellC
-ZXX6,SMOD,XGBoost,OOD,0.9987,0.0452,"XGB(n=300, depth=4, lr=0.05, reg)",WellC
-ZXX6,SMOD,Poly3,OOD,0.999,-1701356202731.0242,Poly(deg=3),WellC
 ZXX6,SMOD,Poly2,OOD,0.9982,-887866.8893,Poly(deg=2),WellC
+ZXX6,SMOD,XGBoost,OOD,0.9987,0.0452,"XGB(n=300, depth=4, lr=0.05, reg)",WellC
+ZXX6,SMOD,Poly3,OOD,0.9058,0.2892,"Poly(deg=3, alpha=1000.0, x_clip=3σ, y_pad=0.5, interaction_only=True)",WellC
+ZXX6,SMOD,Poly3,OOD,0.999,-1701356202731.0242,Poly(deg=3),WellC
+ZXX6,SMOD,Poly2,OOD,0.8887,-0.2084,"Poly(deg=2, alpha=1000.0, x_clip=3σ, y_pad=0.5, interaction_only=False)",WellC
 ZXX6,SMOD,RF,OOD,0.9941,-0.0414,"RF(n=300, depth=10, leaf=5)",WellC
 ZXX6,SMOD,MLP_BP,OOD,0.9955,-35313.7033,"MLP-BP(128,64,32, adaptive_lr, ES)",WellC
 ZXX6,SMOD,Linear_multi,OOD,0.994,-41.8947,linear_multi,WellC
+ZXX6,SMOD,Poly3_robust,OOD,0.9058,0.2892,"Poly(deg=3, alpha=1000.0, x_clip=3σ, y_pad=0.5, interaction_only=True)",WellC
+ZXX6,SMOD,Poly2_robust,OOD,0.8887,-0.2084,"Poly(deg=2, alpha=1000.0, x_clip=3σ, y_pad=0.5, interaction_only=False)",WellC
 ZXX6,SHMAX,Linear_single,OOD,0.0218,0.0714,-0.01658 * LLD + 88.68,WellC
 ZXX6,SHMAX,SVR_rbf,OOD,0.9937,-0.027,"SVR(rbf, {'svr__C': 100, 'svr__gamma': 0.1}, y-scaled)",WellC
-ZXX6,SHMAX,XGBoost,OOD,0.9946,-0.029,"XGB(n=300, depth=4, lr=0.05, reg)",WellC
-ZXX6,SHMAX,Poly3,OOD,0.9783,-87429818389.8513,Poly(deg=3),WellC
 ZXX6,SHMAX,Poly2,OOD,0.9546,-2787.0096,Poly(deg=2),WellC
+ZXX6,SHMAX,XGBoost,OOD,0.9946,-0.029,"XGB(n=300, depth=4, lr=0.05, reg)",WellC
+ZXX6,SHMAX,Poly3,OOD,0.7616,-0.0314,"Poly(deg=3, alpha=1000.0, x_clip=3σ, y_pad=0.5, interaction_only=True)",WellC
+ZXX6,SHMAX,Poly3,OOD,0.9783,-87429818389.8513,Poly(deg=3),WellC
+ZXX6,SHMAX,Poly2,OOD,0.6503,-0.0285,"Poly(deg=2, alpha=1000.0, x_clip=3σ, y_pad=0.5, interaction_only=False)",WellC
 ZXX6,SHMAX,RF,OOD,0.9869,-0.0287,"RF(n=300, depth=10, leaf=5)",WellC
 ZXX6,SHMAX,MLP_BP,OOD,0.9664,-81.8721,"MLP-BP(128,64,32, adaptive_lr, ES)",WellC
 ZXX6,SHMAX,Linear_multi,OOD,0.9245,-0.0067,linear_multi,WellC
+ZXX6,SHMAX,Poly3_robust,OOD,0.7616,-0.0314,"Poly(deg=3, alpha=1000.0, x_clip=3σ, y_pad=0.5, interaction_only=True)",WellC
+ZXX6,SHMAX,Poly2_robust,OOD,0.6503,-0.0285,"Poly(deg=2, alpha=1000.0, x_clip=3σ, y_pad=0.5, interaction_only=False)",WellC
 ZXX6,YMOD,Linear_single,OOD,0.9515,0.7806,-978.1 * DTC + 1.089e+05,WellC
 ZXX6,YMOD,SVR_rbf,OOD,0.9956,-1.0392,"SVR(rbf, {'svr__C': 1, 'svr__gamma': 0.1}, y-scaled)",WellC
-ZXX6,YMOD,XGBoost,OOD,0.999,0.0668,"XGB(n=300, depth=4, lr=0.05, reg)",WellC
-ZXX6,YMOD,Poly3,OOD,0.9991,-1492383817235.672,Poly(deg=3),WellC
 ZXX6,YMOD,Poly2,OOD,0.9984,-576837.9963,Poly(deg=2),WellC
+ZXX6,YMOD,XGBoost,OOD,0.999,0.0668,"XGB(n=300, depth=4, lr=0.05, reg)",WellC
+ZXX6,YMOD,Poly3,OOD,0.916,0.4292,"Poly(deg=3, alpha=1000.0, x_clip=3σ, y_pad=0.5, interaction_only=True)",WellC
+ZXX6,YMOD,Poly3,OOD,0.9991,-1492383817235.672,Poly(deg=3),WellC
+ZXX6,YMOD,Poly2,OOD,0.9009,-0.1074,"Poly(deg=2, alpha=1000.0, x_clip=3σ, y_pad=0.5, interaction_only=False)",WellC
 ZXX6,YMOD,RF,OOD,0.9943,-0.0978,"RF(n=300, depth=10, leaf=5)",WellC
 ZXX6,YMOD,MLP_BP,OOD,0.9964,-8591.6648,"MLP-BP(128,64,32, adaptive_lr, ES)",WellC
 ZXX6,YMOD,Linear_multi,OOD,0.9944,-23.6177,linear_multi,WellC
+ZXX6,YMOD,Poly3_robust,OOD,0.916,0.4292,"Poly(deg=3, alpha=1000.0, x_clip=3σ, y_pad=0.5, interaction_only=True)",WellC
+ZXX6,YMOD,Poly2_robust,OOD,0.9009,-0.1074,"Poly(deg=2, alpha=1000.0, x_clip=3σ, y_pad=0.5, interaction_only=False)",WellC
 ZXX6,POIS,Linear_single,OOD,0.996,0.8803,0.4803 * RMSC + -0.5716,WellC
 ZXX6,POIS,SVR_rbf,OOD,0.9971,-0.1311,"SVR(rbf, {'svr__C': 10, 'svr__gamma': 0.1}, y-scaled)",WellC
-ZXX6,POIS,XGBoost,OOD,0.9892,0.57,"XGB(n=300, depth=4, lr=0.05, reg)",WellC
-ZXX6,POIS,Poly3,OOD,0.9995,-75120404727.7694,Poly(deg=3),WellC
 ZXX6,POIS,Poly2,OOD,0.9995,-486809.6662,Poly(deg=2),WellC
+ZXX6,POIS,XGBoost,OOD,0.9892,0.57,"XGB(n=300, depth=4, lr=0.05, reg)",WellC
+ZXX6,POIS,Poly3,OOD,0.8923,0.9388,"Poly(deg=3, alpha=1000.0, x_clip=3σ, y_pad=0.5, interaction_only=True)",WellC
+ZXX6,POIS,Poly3,OOD,0.9995,-75120404727.7694,Poly(deg=3),WellC
+ZXX6,POIS,Poly2,OOD,0.8564,0.5725,"Poly(deg=2, alpha=1000.0, x_clip=3σ, y_pad=0.5, interaction_only=False)",WellC
 ZXX6,POIS,RF,OOD,0.998,0.6894,"RF(n=300, depth=10, leaf=5)",WellC
 ZXX6,POIS,MLP_BP,OOD,0.9209,-181407.514,"MLP-BP(128,64,32, adaptive_lr, ES)",WellC
 ZXX6,POIS,Linear_multi,OOD,0.9972,0.0016,linear_multi,WellC
+ZXX6,POIS,Poly3_robust,OOD,0.8923,0.9388,"Poly(deg=3, alpha=1000.0, x_clip=3σ, y_pad=0.5, interaction_only=True)",WellC
+ZXX6,POIS,Poly2_robust,OOD,0.8564,0.5725,"Poly(deg=2, alpha=1000.0, x_clip=3σ, y_pad=0.5, interaction_only=False)",WellC
 ZXX3,SMOD,Linear_single,Random,0.9437,0.943,-0.2958 * DTS + 53.28,WellB
 ZXX3,SMOD,SVR_rbf,Random,0.9977,0.9969,"SVR(rbf, {'svr__C': 1, 'svr__gamma': 0.1}, y-scaled)",WellB
 ZXX3,SMOD,XGBoost,Random,0.9995,0.9984,"XGB(n=300, depth=4, lr=0.05, reg)",WellB
