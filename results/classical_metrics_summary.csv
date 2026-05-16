@@ -1,0 +1,129 @@
+﻿well,target,model,split_mode,r2_train,r2_test,mae_test,elapsed_sec,formula
+ZXX2,YMOD,Linear_single,last20,0.6069,0.7277,6874.9158,0.01,-613.4 * DTC + 8.304e+04
+ZXX2,YMOD,Linear_multi,last20,0.8609,0.8474,4582.9925,0.0,linear_multi
+ZXX2,YMOD,Poly2,last20,0.8935,-579462.0567,5004527.3213,0.0,Poly(deg=2)
+ZXX2,YMOD,Poly3,last20,0.9336,-1082919953626.7104,5235349537.5656,0.02,Poly(deg=3)
+ZXX2,YMOD,SVR_rbf,last20,0.9324,-0.4427,14346.8047,1.92,"SVR(rbf, {'svr__C': 1, 'svr__gamma': 0.1}, y-scaled)"
+ZXX2,YMOD,RF,last20,0.9857,0.0459,11783.7975,0.43,"RF(n=300, depth=10, leaf=5)"
+ZXX2,YMOD,XGBoost,last20,0.9738,0.0249,11983.1857,1.83,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX2,YMOD,MLP_BP,last20,0.9321,-1500.2409,340847.1827,11.49,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX2,SMOD,Linear_single,last20,0.5012,0.5439,3.8086,0.0,-0.2291 * DTC + 29.49
+ZXX2,SMOD,Linear_multi,last20,0.8767,0.8555,1.7783,0.0,linear_multi
+ZXX2,SMOD,Poly2,last20,0.9063,-520316.4544,1933.6463,0.0,Poly(deg=2)
+ZXX2,SMOD,Poly3,last20,0.9416,-968207133392.6703,2017794.9872,0.01,Poly(deg=3)
+ZXX2,SMOD,SVR_rbf,last20,0.9412,-0.6511,6.303,0.87,"SVR(rbf, {'svr__C': 1, 'svr__gamma': 0.1}, y-scaled)"
+ZXX2,SMOD,RF,last20,0.9874,-0.1277,5.0432,0.41,"RF(n=300, depth=10, leaf=5)"
+ZXX2,SMOD,XGBoost,last20,0.9774,-0.1488,5.0921,0.22,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX2,SMOD,MLP_BP,last20,0.9872,-1063.782,117.3161,5.9,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX2,POIS,Linear_single,last20,0.9861,0.8958,0.0086,0.0,0.3092 * RMSC + -0.2801
+ZXX2,POIS,Linear_multi,last20,0.9884,0.9129,0.0085,0.0,linear_multi
+ZXX2,POIS,Poly2,last20,0.9997,-7.7965,0.0498,0.0,Poly(deg=2)
+ZXX2,POIS,Poly3,last20,0.9998,-274601038.9162,236.2521,0.01,Poly(deg=3)
+ZXX2,POIS,SVR_rbf,last20,0.9972,-0.0597,0.0363,0.14,"SVR(rbf, {'svr__C': 10, 'svr__gamma': 0.1}, y-scaled)"
+ZXX2,POIS,RF,last20,0.9998,0.8195,0.006,0.41,"RF(n=300, depth=10, leaf=5)"
+ZXX2,POIS,XGBoost,last20,0.9979,0.7579,0.0085,0.21,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX2,POIS,MLP_BP,last20,0.9911,-25113.3857,3.8905,7.72,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX2,SHMAX,Linear_single,last20,0.611,0.7057,9.2022,0.0,-0.942 * DTC + 186.9
+ZXX2,SHMAX,Linear_multi,last20,0.8348,0.3866,7.9294,0.0,linear_multi
+ZXX2,SHMAX,Poly2,last20,0.8792,-1786153.2029,9032.8282,0.0,Poly(deg=2)
+ZXX2,SHMAX,Poly3,last20,0.9255,-4407484359160.171,10789757.8232,0.01,Poly(deg=3)
+ZXX2,SHMAX,SVR_rbf,last20,0.9211,-0.9455,17.3422,1.02,"SVR(rbf, {'svr__C': 1, 'svr__gamma': 0.1}, y-scaled)"
+ZXX2,SHMAX,RF,last20,0.981,-0.1447,13.4975,0.43,"RF(n=300, depth=10, leaf=5)"
+ZXX2,SHMAX,XGBoost,last20,0.9701,-0.1823,13.4747,0.22,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX2,SHMAX,MLP_BP,last20,0.96,-17328.6805,1188.0337,6.91,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX3,YMOD,Linear_single,last20,0.8577,0.9258,3602.0898,0.0,-1263 * DTC + 1.277e+05
+ZXX3,YMOD,Linear_multi,last20,0.9907,-24.8103,30412.3798,0.0,linear_multi
+ZXX3,YMOD,Poly2,last20,0.9986,-0.7479,8083.614,0.0,Poly(deg=2)
+ZXX3,YMOD,Poly3,last20,0.9988,-6.0303,15500.3509,0.01,Poly(deg=3)
+ZXX3,YMOD,SVR_rbf,last20,0.9965,-0.0308,9574.8601,0.24,"SVR(rbf, {'svr__C': 1, 'svr__gamma': 0.1}, y-scaled)"
+ZXX3,YMOD,RF,last20,0.9978,0.8148,4368.487,0.51,"RF(n=300, depth=10, leaf=5)"
+ZXX3,YMOD,XGBoost,last20,0.9987,0.7979,4145.1835,0.23,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX3,YMOD,MLP_BP,last20,0.9508,0.2758,8400.3963,12.07,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX3,SMOD,Linear_single,last20,0.9713,0.9024,1.1891,0.0,-0.2497 * DTS + 47.27
+ZXX3,SMOD,Linear_multi,last20,0.9903,-32.9293,12.6614,0.0,linear_multi
+ZXX3,SMOD,Poly2,last20,0.9987,-2.0407,3.8221,0.0,Poly(deg=2)
+ZXX3,SMOD,Poly3,last20,0.9989,-7.0112,6.0304,0.01,Poly(deg=3)
+ZXX3,SMOD,SVR_rbf,last20,0.9978,-0.0294,3.47,0.25,"SVR(rbf, {'svr__C': 10, 'svr__gamma': 0.1}, y-scaled)"
+ZXX3,SMOD,RF,last20,0.9983,0.8857,1.1398,0.56,"RF(n=300, depth=10, leaf=5)"
+ZXX3,SMOD,XGBoost,last20,0.9989,0.853,1.2537,0.22,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX3,SMOD,MLP_BP,last20,0.9664,-0.2515,3.7051,4.01,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX3,POIS,Linear_single,last20,0.9929,0.9575,0.006,0.0,0.3443 * RMSC + -0.3534
+ZXX3,POIS,Linear_multi,last20,0.9936,0.8861,0.0091,0.0,linear_multi
+ZXX3,POIS,Poly2,last20,0.9995,0.7969,0.0074,0.0,Poly(deg=2)
+ZXX3,POIS,Poly3,last20,0.9995,-33.7534,0.092,0.01,Poly(deg=3)
+ZXX3,POIS,SVR_rbf,last20,0.998,0.0619,0.0319,0.21,"SVR(rbf, {'svr__C': 100, 'svr__gamma': 0.1}, y-scaled)"
+ZXX3,POIS,RF,last20,0.999,0.9223,0.0054,0.49,"RF(n=300, depth=10, leaf=5)"
+ZXX3,POIS,XGBoost,last20,0.9944,0.8372,0.01,0.19,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX3,POIS,MLP_BP,last20,-5.2586,-78.8206,0.2487,1.77,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX3,SHMAX,Linear_single,last20,0.2787,0.5927,4.1505,0.0,48.88 * RMSC + 36.32
+ZXX3,SHMAX,Linear_multi,last20,0.4087,-3598.9331,164.2437,0.0,linear_multi
+ZXX3,SHMAX,Poly2,last20,0.5996,-178.3217,40.6928,0.0,Poly(deg=2)
+ZXX3,SHMAX,Poly3,last20,0.7219,-2169.668,135.25,0.01,Poly(deg=3)
+ZXX3,SHMAX,SVR_rbf,last20,0.8348,-0.7067,6.8416,3.74,"SVR(rbf, {'svr__C': 100, 'svr__gamma': 0.1}, y-scaled)"
+ZXX3,SHMAX,RF,last20,0.9417,0.2621,4.3623,0.53,"RF(n=300, depth=10, leaf=5)"
+ZXX3,SHMAX,XGBoost,last20,0.9159,0.3228,4.1612,0.23,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX3,SHMAX,MLP_BP,last20,0.3488,-103.249,49.1304,4.83,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX6,YMOD,Linear_single,last20,0.9515,0.7806,4377.8967,0.0,-978.1 * DTC + 1.089e+05
+ZXX6,YMOD,Linear_multi,last20,0.9944,-23.6177,22670.0187,0.0,linear_multi
+ZXX6,YMOD,Poly2,last20,0.9984,-576837.9963,2629852.6388,0.0,Poly(deg=2)
+ZXX6,YMOD,Poly3,last20,0.9991,-1492383817235.672,3657388350.9636,0.01,Poly(deg=3)
+ZXX6,YMOD,SVR_rbf,last20,0.9956,-1.0392,13176.2682,0.06,"SVR(rbf, {'svr__C': 1, 'svr__gamma': 0.1}, y-scaled)"
+ZXX6,YMOD,RF,last20,0.9943,-0.0978,9194.7289,0.36,"RF(n=300, depth=10, leaf=5)"
+ZXX6,YMOD,XGBoost,last20,0.999,0.0668,8420.2609,0.22,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX6,YMOD,MLP_BP,last20,0.9964,-8591.6648,442672.2844,5.54,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX6,SMOD,Linear_single,last20,0.8879,0.7748,1.7159,0.0,-0.3773 * DTC + 43.57
+ZXX6,SMOD,Linear_multi,last20,0.994,-41.8947,10.3435,0.0,linear_multi
+ZXX6,SMOD,Poly2,last20,0.9982,-887866.8893,1138.7917,0.0,Poly(deg=2)
+ZXX6,SMOD,Poly3,last20,0.999,-1701356202731.0242,1354088.0291,0.01,Poly(deg=3)
+ZXX6,SMOD,SVR_rbf,last20,0.995,-1.2508,4.8911,0.08,"SVR(rbf, {'svr__C': 1, 'svr__gamma': 0.1}, y-scaled)"
+ZXX6,SMOD,RF,last20,0.9941,-0.0414,3.2674,0.38,"RF(n=300, depth=10, leaf=5)"
+ZXX6,SMOD,XGBoost,last20,0.9987,0.0452,3.073,0.23,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX6,SMOD,MLP_BP,last20,0.9955,-35313.7033,312.883,1.95,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX6,POIS,Linear_single,last20,0.996,0.8803,0.0118,0.0,0.4803 * RMSC + -0.5716
+ZXX6,POIS,Linear_multi,last20,0.9972,0.0016,0.0191,0.0,linear_multi
+ZXX6,POIS,Poly2,last20,0.9995,-486809.6662,10.0384,0.0,Poly(deg=2)
+ZXX6,POIS,Poly3,last20,0.9995,-75120404727.7694,3325.8213,0.01,Poly(deg=3)
+ZXX6,POIS,SVR_rbf,last20,0.9971,-0.1311,0.0412,0.06,"SVR(rbf, {'svr__C': 10, 'svr__gamma': 0.1}, y-scaled)"
+ZXX6,POIS,RF,last20,0.998,0.6894,0.0191,0.37,"RF(n=300, depth=10, leaf=5)"
+ZXX6,POIS,XGBoost,last20,0.9892,0.57,0.0239,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX6,POIS,MLP_BP,last20,0.9209,-181407.514,8.2368,2.17,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX6,SHMAX,Linear_single,last20,0.8182,0.7264,2.8489,0.0,35.79 * RMSC + 27.38
+ZXX6,SHMAX,Linear_multi,last20,0.9215,-174.1941,27.8239,0.0,linear_multi
+ZXX6,SHMAX,Poly2,last20,0.9563,-86026028.604,16035.1849,0.0,Poly(deg=2)
+ZXX6,SHMAX,Poly3,last20,0.9777,-141194765946627.9,18739911.5105,0.01,Poly(deg=3)
+ZXX6,SHMAX,SVR_rbf,last20,0.9936,-0.2927,6.004,0.24,"SVR(rbf, {'svr__C': 100, 'svr__gamma': 0.1}, y-scaled)"
+ZXX6,SHMAX,RF,last20,0.9879,0.1439,4.7427,0.36,"RF(n=300, depth=10, leaf=5)"
+ZXX6,SHMAX,XGBoost,last20,0.9947,0.1655,4.6597,0.22,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX6,SHMAX,MLP_BP,last20,0.9566,-355830.8823,1444.3042,4.44,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX7,YMOD,Linear_single,last20,0.9804,0.8117,4219.2256,0.0,-485.9 * DTS + 1.009e+05
+ZXX7,YMOD,Linear_multi,last20,0.9914,0.8007,3753.0832,0.0,linear_multi
+ZXX7,YMOD,Poly2,last20,0.9985,-83.1664,32234.7886,0.0,Poly(deg=2)
+ZXX7,YMOD,Poly3,last20,0.9987,-10294230.6917,8150293.4349,0.01,Poly(deg=3)
+ZXX7,YMOD,SVR_rbf,last20,0.9839,0.0093,10309.6381,0.21,"SVR(rbf, {'svr__C': 1, 'svr__gamma': 0.1}, y-scaled)"
+ZXX7,YMOD,RF,last20,0.9937,0.7654,5013.4625,0.46,"RF(n=300, depth=10, leaf=5)"
+ZXX7,YMOD,XGBoost,last20,0.9989,0.8048,4351.4014,0.22,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX7,YMOD,MLP_BP,last20,0.9953,-302.703,89341.5807,5.53,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX7,SMOD,Linear_single,last20,0.9878,0.8933,0.9143,0.0,-0.2051 * DTS + 41.35
+ZXX7,SMOD,Linear_multi,last20,0.9912,0.7367,1.5443,0.0,linear_multi
+ZXX7,SMOD,Poly2,last20,0.9985,-164.0407,16.1961,0.0,Poly(deg=2)
+ZXX7,SMOD,Poly3,last20,0.9987,-12016122.943,3085.0772,0.01,Poly(deg=3)
+ZXX7,SMOD,SVR_rbf,last20,0.9977,0.0058,3.656,0.22,"SVR(rbf, {'svr__C': 10, 'svr__gamma': 0.1}, y-scaled)"
+ZXX7,SMOD,RF,last20,0.9948,0.7933,1.3543,0.42,"RF(n=300, depth=10, leaf=5)"
+ZXX7,SMOD,XGBoost,last20,0.999,0.8206,1.2334,0.23,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX7,SMOD,MLP_BP,last20,0.998,-1443.6117,64.8578,4.15,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX7,POIS,Linear_single,last20,0.987,0.8689,0.0139,0.0,0.3075 * RMSC + -0.2762
+ZXX7,POIS,Linear_multi,last20,0.9922,0.864,0.012,0.0,linear_multi
+ZXX7,POIS,Poly2,last20,0.9978,-71.9008,0.115,0.0,Poly(deg=2)
+ZXX7,POIS,Poly3,last20,0.9981,-352800.4262,8.9511,0.02,Poly(deg=3)
+ZXX7,POIS,SVR_rbf,last20,0.9971,-1.095,0.0631,0.48,"SVR(rbf, {'svr__C': 100, 'svr__gamma': 0.1}, y-scaled)"
+ZXX7,POIS,RF,last20,0.9982,0.4374,0.0269,0.45,"RF(n=300, depth=10, leaf=5)"
+ZXX7,POIS,XGBoost,last20,0.9941,0.2619,0.0326,0.19,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX7,POIS,MLP_BP,last20,0.9533,-13622.174,1.9781,3.99,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX7,SHMAX,Linear_single,last20,0.2444,0.5558,3.6137,0.0,-0.5106 * CNL + 122.5
+ZXX7,SHMAX,Linear_multi,last20,0.5628,-43.9183,20.5068,0.0,linear_multi
+ZXX7,SHMAX,Poly2,last20,0.8522,-2084288.4873,2779.0177,0.0,Poly(deg=2)
+ZXX7,SHMAX,Poly3,last20,0.9378,-116670945050.5456,663591.9761,0.01,Poly(deg=3)
+ZXX7,SHMAX,SVR_rbf,last20,0.9112,-0.138,5.2252,1.36,"SVR(rbf, {'svr__C': 1, 'svr__gamma': 0.1}, y-scaled)"
+ZXX7,SHMAX,RF,last20,0.956,0.2648,4.2631,0.45,"RF(n=300, depth=10, leaf=5)"
+ZXX7,SHMAX,XGBoost,last20,0.957,0.1644,4.5208,0.23,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX7,SHMAX,MLP_BP,last20,0.9255,-37426.7341,519.1289,6.0,"MLP-BP(128,64,32, adaptive_lr, ES)"

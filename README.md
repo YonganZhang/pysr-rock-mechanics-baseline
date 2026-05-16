@@ -1,6 +1,6 @@
 # PySR Rock Mechanics Baseline
 
-> 岩石力学测井参数预测的可解释机器学习对比研究 — V2.1 真跑 baseline + 消融实验完整交付包
+> 岩石力学测井参数预测的可解释机器学习对比研究 — V2.4 真跑 baseline (双层物理过滤) + 消融实验完整交付包
 
 [![DOI](https://img.shields.io/badge/PDF-论文修复版-blue)](paper/main.pdf)
 [![Tests](https://img.shields.io/badge/Real_fits-1416-green)](results/)
@@ -8,7 +8,7 @@
 
 ## 🎯 项目 TL;DR
 
-> **本项目证明**：在常规 random 切分下 10 种回归方法 R² 均 ≥ 0.94，看似精度无差；但在跨深度 OOD 测试下，**只有 PySR 符号回归**保持稳定（OOD R²=0.983 / Random R²=0.998，drop 仅 0.015）。其他方法（XGBoost/RF/MLP/Poly3）严重过拟合训练深度段，跨深度泛化失败。
+> **本项目证明**：在常规 random 切分下 10 种回归方法 R² 均 ≥ 0.94，看似精度无差；但在跨深度 OOD 测试下，**只有 PySR 符号回归**保持稳定（OOD R²=0.983 / Random R²=0.998，drop 仅 0.015（V2.4 双层物理过滤后））。其他方法（XGBoost/RF/MLP/Poly3）严重过拟合训练深度段，跨深度泛化失败。
 
 ## 📊 核心结果
 
@@ -18,14 +18,15 @@
 + PySR random sanity 16 fits
 **= 1416 个真实训练实验**
 
-| 排名 | 模型 | OOD R² 中位 | Random R² 中位 | drop |
-|---|---|---|---|---|
-| 🥇 | **PySR** | **0.983** | **0.998** | **0.015** |
-| 🥈 | Linear_single | 0.830 | 0.936 | 0.106 |
-| 🥉 | gplearn | 0.745 | 0.982 | 0.237 |
-| 4 | XGBoost | 0.563 | 0.997 | 0.434 |
-| 5 | RF | 0.528 | 0.998 | 0.469 |
-| ... | （详见 `results/ranking_OOD_v21.csv`）| ... | ... | ... |
+| 排名 | 模型 | OOD R² 中位 | Random R² 中位 | drop | 备注 |
+|---|---|---|---|---|---|
+| 🥇 | **PySR (GWMF-SR)** | **0.983** | **0.998** | **0.015** | 唯一 drop < 0.1 |
+| 🥈 | Linear_single | 0.796 | 0.941 | 0.145 | 简洁公式胜出 |
+| 🥉 | gplearn | 0.745 | 0.982 | 0.237 | (V2.2 数据) |
+| 4 | Poly3 (鲁棒) | 0.359 | 0.919 | 0.560 | Ridge α=1000 + ±3σ 剪裁 |
+| 5 | RF | 0.351 | 0.997 | 0.646 | 黑盒过拟合 |
+| 6 | XGBoost | 0.292 | 0.999 | 0.706 | 黑盒过拟合 |
+| ... | （V2.4 双层物理过滤后 16 组中位）| ... | ... | ... | |
 
 详细排名见 [`results/RESULTS_README.md`](results/RESULTS_README.md)。
 
@@ -146,7 +147,7 @@ xelatex main.tex   # 二次编译解决 cross-reference
 
 ## 📚 进一步阅读
 
-- **论文**：[`paper/main.pdf`](paper/main.pdf) (24 页)
+- **论文**：[`paper/main.pdf`](paper/main.pdf) (28 页 · V2.4)
 - **输入输出契约**：[`INPUT_OUTPUT.md`](INPUT_OUTPUT.md)
 - **结果详情**：[`results/RESULTS_README.md`](results/RESULTS_README.md)
 - **数据说明**：[`data/desensitized/`](data/desensitized/) （脱敏 Well A-D × 4 目标 × predictions.csv）
@@ -164,6 +165,22 @@ xelatex main.tex   # 二次编译解决 cross-reference
 ## 🪪 License
 
 MIT (see [LICENSE](LICENSE))
+
+---
+
+
+## 📝 Changelog
+
+**V2.4 (2026-05-16)** — 双层物理过滤大修
+- **背景**：SHMAX 全井 OOD 集体为负被发现，深查发现数据中有 5 类隐藏哨兵值（-9999/-9998.4/-25400/-66652/-526.89/...）未被原 `abs() > 1e-9` 过滤捕获
+- **新方法**：`scripts/physical_filter.py` 双层过滤：① 物理范围硬约束（依据 Schlumberger 测井解释经验，如 YMOD 1k-200k MPa、SHMAX 10-300 MPa）② IQR 软过滤（q01-5×IQR ~ q99+5×IQR）
+- **效果**：井3 SHMAX 从 -0.036 → 0.958（10⁹ 量级救回），井4 SHMAX 从 -3.8×10¹⁰ → -0.056（基本回归合理量级）
+- **副作用**：经典模型 OOD 中位数从虚高跌到真实——XGBoost 0.563→0.292、RF 0.528→0.351；GWMF-SR 维持 0.983 不变（符号公式根本不学异常点）
+- 新增 `scripts/diagnose_outliers.py` 异常值诊断（boxplot 矩阵 + histogram + 深度散点）
+
+**V2.2 (2026-05-08)** — Poly3 鲁棒化（Ridge α=1000 + ±3σ 截断 + ±50% 预测剪裁）
+
+**V2.1 (2026-05-07)** — 真跑 baseline 1416 实验完整交付
 
 ---
 

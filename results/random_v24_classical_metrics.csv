@@ -1,0 +1,129 @@
+﻿well,target,model,split_mode,r2_train,r2_test,mae_test,elapsed_sec,formula
+ZXX2,YMOD,Linear_single,random,0.8872,0.9013,2326.2123,0.0,-921.1 * DTC + 1.087e+05
+ZXX2,YMOD,Linear_multi,random,0.9588,0.97,1267.5693,0.0,linear_multi
+ZXX2,YMOD,Poly2,random,0.9877,0.9909,722.6299,0.0,Poly(deg=2)
+ZXX2,YMOD,Poly3,random,0.9915,0.9129,744.4974,0.01,Poly(deg=3)
+ZXX2,YMOD,SVR_rbf,random,0.9904,0.9891,709.908,1.24,"SVR(rbf, {'svr__C': 1, 'svr__gamma': 'scale'}, y-scaled)"
+ZXX2,YMOD,RF,random,0.9974,0.9959,409.9174,0.42,"RF(n=300, depth=10, leaf=5)"
+ZXX2,YMOD,XGBoost,random,0.9966,0.995,487.8549,1.78,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX2,YMOD,MLP_BP,random,0.9849,0.9845,838.5519,4.56,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX2,SMOD,Linear_single,random,0.9034,0.921,0.8981,0.0,-0.2295 * DTS + 45.9
+ZXX2,SMOD,Linear_multi,random,0.9668,0.9747,0.5228,0.0,linear_multi
+ZXX2,SMOD,Poly2,random,0.9899,0.9926,0.2768,0.0,Poly(deg=2)
+ZXX2,SMOD,Poly3,random,0.9925,0.9405,0.2858,0.01,Poly(deg=3)
+ZXX2,SMOD,SVR_rbf,random,0.9911,0.9899,0.2753,0.3,"SVR(rbf, {'svr__C': 1, 'svr__gamma': 0.1}, y-scaled)"
+ZXX2,SMOD,RF,random,0.9983,0.9973,0.1523,0.36,"RF(n=300, depth=10, leaf=5)"
+ZXX2,SMOD,XGBoost,random,0.9973,0.9967,0.1839,0.17,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX2,SMOD,MLP_BP,random,0.9939,0.9932,0.2388,1.5,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX2,POIS,Linear_single,random,0.9623,0.9708,0.0035,0.0,0.3547 * RMSC + -0.3661
+ZXX2,POIS,Linear_multi,random,0.9742,0.979,0.003,0.0,linear_multi
+ZXX2,POIS,Poly2,random,0.9994,0.9994,0.0005,0.0,Poly(deg=2)
+ZXX2,POIS,Poly3,random,0.9999,0.9998,0.0003,0.01,Poly(deg=3)
+ZXX2,POIS,SVR_rbf,random,0.9951,0.9951,0.0014,0.1,"SVR(rbf, {'svr__C': 1, 'svr__gamma': 0.1}, y-scaled)"
+ZXX2,POIS,RF,random,0.9987,0.9994,0.0002,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX2,POIS,XGBoost,random,0.9983,0.999,0.0003,0.18,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX2,POIS,MLP_BP,random,0.987,0.9478,0.0037,2.23,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX2,SHMAX,Linear_single,random,0.9056,0.924,2.3648,0.0,-0.6121 * DTS + 204.3
+ZXX2,SHMAX,Linear_multi,random,0.9505,0.9595,1.6581,0.0,linear_multi
+ZXX2,SHMAX,Poly2,random,0.9791,0.9828,1.0846,0.0,Poly(deg=2)
+ZXX2,SHMAX,Poly3,random,0.9839,0.8053,1.1945,0.01,Poly(deg=3)
+ZXX2,SHMAX,SVR_rbf,random,0.9829,0.9817,1.0301,0.51,"SVR(rbf, {'svr__C': 1, 'svr__gamma': 'scale'}, y-scaled)"
+ZXX2,SHMAX,RF,random,0.9966,0.9945,0.5931,0.42,"RF(n=300, depth=10, leaf=5)"
+ZXX2,SHMAX,XGBoost,random,0.9943,0.9928,0.7178,0.17,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX2,SHMAX,MLP_BP,random,0.9858,0.9839,0.9986,5.36,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX3,YMOD,Linear_single,random,0.9243,0.9302,1574.6291,0.0,-1284 * DTC + 1.299e+05
+ZXX3,YMOD,Linear_multi,random,0.9867,0.987,608.1769,0.0,linear_multi
+ZXX3,YMOD,Poly2,random,0.9994,0.9993,135.7969,0.0,Poly(deg=2)
+ZXX3,YMOD,Poly3,random,0.9996,0.992,137.6013,0.01,Poly(deg=3)
+ZXX3,YMOD,SVR_rbf,random,0.9973,0.993,322.2925,0.14,"SVR(rbf, {'svr__C': 1, 'svr__gamma': 0.1}, y-scaled)"
+ZXX3,YMOD,RF,random,0.999,0.9985,182.8641,0.5,"RF(n=300, depth=10, leaf=5)"
+ZXX3,YMOD,XGBoost,random,0.9994,0.9988,167.1869,0.18,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX3,YMOD,MLP_BP,random,0.9976,0.9909,239.5068,4.6,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX3,SMOD,Linear_single,random,0.9462,0.9448,0.4655,0.0,-0.2967 * DTS + 53.41
+ZXX3,SMOD,Linear_multi,random,0.9864,0.9867,0.2317,0.0,linear_multi
+ZXX3,SMOD,Poly2,random,0.9993,0.9993,0.0528,0.0,Poly(deg=2)
+ZXX3,SMOD,Poly3,random,0.9995,0.99,0.0546,0.01,Poly(deg=3)
+ZXX3,SMOD,SVR_rbf,random,0.9973,0.9928,0.1205,0.16,"SVR(rbf, {'svr__C': 1, 'svr__gamma': 0.1}, y-scaled)"
+ZXX3,SMOD,RF,random,0.9992,0.9983,0.0644,0.49,"RF(n=300, depth=10, leaf=5)"
+ZXX3,SMOD,XGBoost,random,0.9994,0.9988,0.0626,0.18,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX3,SMOD,MLP_BP,random,0.998,0.9907,0.0946,1.59,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX3,POIS,Linear_single,random,0.9767,0.9763,0.0022,0.0,0.3698 * RMSC + -0.401
+ZXX3,POIS,Linear_multi,random,0.992,0.9917,0.0013,0.0,linear_multi
+ZXX3,POIS,Poly2,random,0.9998,0.9997,0.0003,0.0,Poly(deg=2)
+ZXX3,POIS,Poly3,random,0.9999,0.9998,0.0002,0.01,Poly(deg=3)
+ZXX3,POIS,SVR_rbf,random,0.9958,0.9968,0.001,0.16,"SVR(rbf, {'svr__C': 1, 'svr__gamma': 0.1}, y-scaled)"
+ZXX3,POIS,RF,random,0.9998,0.9998,0.0002,0.43,"RF(n=300, depth=10, leaf=5)"
+ZXX3,POIS,XGBoost,random,0.9985,0.9984,0.0003,0.17,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX3,POIS,MLP_BP,random,0.9648,0.8177,0.004,2.78,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX3,SHMAX,Linear_single,random,0.5066,0.5272,2.6662,0.0,50.64 * RMSC + 33.89
+ZXX3,SHMAX,Linear_multi,random,0.6498,0.6837,2.1268,0.0,linear_multi
+ZXX3,SHMAX,Poly2,random,0.7258,0.7564,1.8484,0.0,Poly(deg=2)
+ZXX3,SHMAX,Poly3,random,0.7947,0.7763,1.6027,0.01,Poly(deg=3)
+ZXX3,SHMAX,SVR_rbf,random,0.8787,0.8901,1.0377,1.97,"SVR(rbf, {'svr__C': 100, 'svr__gamma': 0.1}, y-scaled)"
+ZXX3,SHMAX,RF,random,0.959,0.9248,0.7619,0.48,"RF(n=300, depth=10, leaf=5)"
+ZXX3,SHMAX,XGBoost,random,0.9485,0.9225,0.8608,0.18,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX3,SHMAX,MLP_BP,random,0.8411,0.6808,1.3076,4.38,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX6,YMOD,Linear_single,random,0.9731,0.9761,1082.788,0.0,-1326 * DTC + 1.337e+05
+ZXX6,YMOD,Linear_multi,random,0.9938,0.9935,466.8272,0.0,linear_multi
+ZXX6,YMOD,Poly2,random,0.9995,0.9989,155.2938,0.0,Poly(deg=2)
+ZXX6,YMOD,Poly3,random,0.9998,0.9992,137.9467,0.0,Poly(deg=3)
+ZXX6,YMOD,SVR_rbf,random,0.997,0.9936,454.3888,0.05,"SVR(rbf, {'svr__C': 100, 'svr__gamma': 0.1}, y-scaled)"
+ZXX6,YMOD,RF,random,0.9985,0.9975,284.3824,0.35,"RF(n=300, depth=10, leaf=5)"
+ZXX6,YMOD,XGBoost,random,0.9998,0.9988,194.3418,0.18,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX6,YMOD,MLP_BP,random,0.9951,0.9951,441.6646,2.29,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX6,SMOD,Linear_single,random,0.9627,0.963,0.4766,0.0,-0.4876 * DTC + 51.51
+ZXX6,SMOD,Linear_multi,random,0.9945,0.993,0.1821,0.0,linear_multi
+ZXX6,SMOD,Poly2,random,0.9995,0.9994,0.0508,0.0,Poly(deg=2)
+ZXX6,SMOD,Poly3,random,0.9997,0.9993,0.0522,0.0,Poly(deg=3)
+ZXX6,SMOD,SVR_rbf,random,0.9972,0.9943,0.1612,0.04,"SVR(rbf, {'svr__C': 10, 'svr__gamma': 0.1}, y-scaled)"
+ZXX6,SMOD,RF,random,0.9988,0.9976,0.0983,0.3,"RF(n=300, depth=10, leaf=5)"
+ZXX6,SMOD,XGBoost,random,0.9997,0.999,0.0703,0.17,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX6,SMOD,MLP_BP,random,0.9985,0.9973,0.1067,1.17,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX6,POIS,Linear_single,random,0.9705,0.9761,0.0032,0.0,0.393 * RMSC + -0.4244
+ZXX6,POIS,Linear_multi,random,0.9963,0.9963,0.0011,0.0,linear_multi
+ZXX6,POIS,Poly2,random,0.9997,0.9993,0.0004,0.0,Poly(deg=2)
+ZXX6,POIS,Poly3,random,0.9998,0.9992,0.0004,0.0,Poly(deg=3)
+ZXX6,POIS,SVR_rbf,random,0.9973,0.9929,0.0014,0.07,"SVR(rbf, {'svr__C': 10, 'svr__gamma': 0.1}, y-scaled)"
+ZXX6,POIS,RF,random,0.9994,0.9981,0.0005,0.32,"RF(n=300, depth=10, leaf=5)"
+ZXX6,POIS,XGBoost,random,0.9974,0.9952,0.0007,0.16,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX6,POIS,MLP_BP,random,0.9507,0.8898,0.0067,0.99,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX6,SHMAX,Linear_single,random,0.9381,0.9449,0.7999,0.0,56.43 * RMSC + -7.454
+ZXX6,SHMAX,Linear_multi,random,0.9839,0.9818,0.3872,0.0,linear_multi
+ZXX6,SHMAX,Poly2,random,0.9904,0.9888,0.2945,0.0,Poly(deg=2)
+ZXX6,SHMAX,Poly3,random,0.995,0.9894,0.2517,0.0,Poly(deg=3)
+ZXX6,SHMAX,SVR_rbf,random,0.9912,0.9791,0.334,0.12,"SVR(rbf, {'svr__C': 1, 'svr__gamma': 0.1}, y-scaled)"
+ZXX6,SHMAX,RF,random,0.9981,0.9965,0.164,0.29,"RF(n=300, depth=10, leaf=5)"
+ZXX6,SHMAX,XGBoost,random,0.9991,0.9968,0.1511,0.2,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX6,SHMAX,MLP_BP,random,0.9761,0.9699,0.4462,1.72,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX7,YMOD,Linear_single,random,0.8952,0.892,1495.5584,0.0,-637 * DTS + 1.213e+05
+ZXX7,YMOD,Linear_multi,random,0.9869,0.9874,497.7612,0.0,linear_multi
+ZXX7,YMOD,Poly2,random,0.9995,0.9994,96.9704,0.0,Poly(deg=2)
+ZXX7,YMOD,Poly3,random,0.9996,0.9987,99.1439,0.01,Poly(deg=3)
+ZXX7,YMOD,SVR_rbf,random,0.998,0.9965,260.1801,0.16,"SVR(rbf, {'svr__C': 10, 'svr__gamma': 0.1}, y-scaled)"
+ZXX7,YMOD,RF,random,0.9989,0.9973,164.2829,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX7,YMOD,XGBoost,random,0.9995,0.9988,149.1281,0.17,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX7,YMOD,MLP_BP,random,0.9977,0.9974,222.6927,5.27,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX7,SMOD,Linear_single,random,0.9396,0.9373,0.4321,0.0,-0.2409 * DTS + 46.25
+ZXX7,SMOD,Linear_multi,random,0.9878,0.9882,0.1863,0.0,linear_multi
+ZXX7,SMOD,Poly2,random,0.9994,0.9994,0.0387,0.0,Poly(deg=2)
+ZXX7,SMOD,Poly3,random,0.9995,0.9971,0.0424,0.01,Poly(deg=3)
+ZXX7,SMOD,SVR_rbf,random,0.9979,0.9956,0.1072,0.14,"SVR(rbf, {'svr__C': 100, 'svr__gamma': 0.1}, y-scaled)"
+ZXX7,SMOD,RF,random,0.9984,0.9972,0.0601,0.4,"RF(n=300, depth=10, leaf=5)"
+ZXX7,SMOD,XGBoost,random,0.9995,0.9991,0.0489,0.18,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX7,SMOD,MLP_BP,random,0.9986,0.9979,0.0792,1.4,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX7,POIS,Linear_single,random,0.9658,0.9676,0.0037,0.0,0.3668 * RMSC + -0.3873
+ZXX7,POIS,Linear_multi,random,0.9893,0.9904,0.0019,0.0,linear_multi
+ZXX7,POIS,Poly2,random,0.9994,0.999,0.0006,0.0,Poly(deg=2)
+ZXX7,POIS,Poly3,random,0.9996,0.9928,0.0006,0.01,Poly(deg=3)
+ZXX7,POIS,SVR_rbf,random,0.9973,0.994,0.0014,0.13,"SVR(rbf, {'svr__C': 1, 'svr__gamma': 0.1}, y-scaled)"
+ZXX7,POIS,RF,random,0.9995,0.9988,0.0006,0.38,"RF(n=300, depth=10, leaf=5)"
+ZXX7,POIS,XGBoost,random,0.9981,0.9985,0.0007,0.17,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX7,POIS,MLP_BP,random,0.8986,0.9673,0.0039,2.15,"MLP-BP(128,64,32, adaptive_lr, ES)"
+ZXX7,SHMAX,Linear_single,random,0.7687,0.806,1.4843,0.0,-1.101 * CNL + 132.5
+ZXX7,SHMAX,Linear_multi,random,0.905,0.9231,0.9563,0.0,linear_multi
+ZXX7,SHMAX,Poly2,random,0.9385,0.955,0.7545,0.0,Poly(deg=2)
+ZXX7,SHMAX,Poly3,random,0.957,0.9658,0.615,0.01,Poly(deg=3)
+ZXX7,SHMAX,SVR_rbf,random,0.9779,0.9819,0.4271,1.04,"SVR(rbf, {'svr__C': 100, 'svr__gamma': 'scale'}, y-scaled)"
+ZXX7,SHMAX,RF,random,0.9873,0.9872,0.3521,0.42,"RF(n=300, depth=10, leaf=5)"
+ZXX7,SHMAX,XGBoost,random,0.9895,0.9875,0.3612,0.17,"XGB(n=300, depth=4, lr=0.05, reg)"
+ZXX7,SHMAX,MLP_BP,random,0.9663,0.9688,0.5875,4.16,"MLP-BP(128,64,32, adaptive_lr, ES)"
